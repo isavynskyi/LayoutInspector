@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37F7159721D2E3820055F233 /* HierarchyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7159621D2E3820055F233 /* HierarchyBuilder.swift */; };
 		37F93C2221D28B41007CBE78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F93C2121D28B41007CBE78 /* AppDelegate.swift */; };
 		37F93C2421D28B41007CBE78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F93C2321D28B41007CBE78 /* ViewController.swift */; };
 		37F93C2721D28B41007CBE78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C2521D28B41007CBE78 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37F7159621D2E3820055F233 /* HierarchyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchyBuilder.swift; sourceTree = "<group>"; };
 		37F93C1E21D28B41007CBE78 /* LayoutInspectorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutInspectorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F93C2121D28B41007CBE78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37F93C2321D28B41007CBE78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				37F93C4621D299EF007CBE78 /* LayoutInspector.swift */,
+				37F7159621D2E3820055F233 /* HierarchyBuilder.swift */,
 				37F93C4221D28C8A007CBE78 /* ViewDescriptor.swift */,
 				37F93C4421D28D5E007CBE78 /* UIView+Extension.swift */,
 				37F93C4921D29FC5007CBE78 /* LayoutInspector.storyboard */,
@@ -208,7 +211,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "Igor Savynskyi";
+				ORGANIZATIONNAME = "Ihor Savynskyi";
 				TargetAttributes = {
 					37F93C1D21D28B41007CBE78 = {
 						CreatedOnToolsVersion = 10.1;
@@ -279,6 +282,7 @@
 				37F93C4521D28D5E007CBE78 /* UIView+Extension.swift in Sources */,
 				37F93C4321D28C8A007CBE78 /* ViewDescriptor.swift in Sources */,
 				37F93C4721D299EF007CBE78 /* LayoutInspector.swift in Sources */,
+				37F7159721D2E3820055F233 /* HierarchyBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
