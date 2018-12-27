@@ -18,8 +18,8 @@ public class LayoutInspector {
     
     //MARK: - API
     func showLayout() {
-        _ = hierarchyBuilder.snapshotHierarchy()
-        presenter.showInspectorView()
+        let viewDescriptionTree = hierarchyBuilder.snapshotHierarchy()
+        presenter.showInspectorView(for: viewDescriptionTree)
     }
 }
 
@@ -30,7 +30,11 @@ private extension LayoutInspector {
     func makeLayoutInspectorPresenter() -> LayoutInspectorPresenter {
         let view = layoutInspectorPresenterView()
         viewController = view
+        
+        // TODO: - fix, trigger
         view.loadView()
+        view.viewDidLoad()
+        
         let presenter = LayoutInspectorPresenter()
         view.output = presenter
         presenter.view = view

@@ -62,11 +62,40 @@
                                     <action selector="inspectLayoutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CWE-Y3-BnY"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LNW-DF-XTR">
+                                <rect key="frame" x="64" y="84" width="51" height="31"/>
+                            </switch>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H02-VX-mHO">
+                                <rect key="frame" x="64" y="136" width="121" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Ww-6s-6lu">
+                                <rect key="frame" x="64" y="192" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="A9V-Yy-8Gs">
+                                <rect key="frame" x="226" y="192" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pnf-Be-jvp">
+                                <rect key="frame" x="64" y="252" width="150" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FBh-sq-eU0">
+                                <rect key="frame" x="174" y="84" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RRO-f6-wkd" firstAttribute="top" secondItem="jZf-de-uBu" secondAttribute="bottom" constant="128" id="5ge-63-Xcm"/>
                             <constraint firstItem="RRO-f6-wkd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FVe-cd-KlH"/>
+                            <constraint firstItem="LNW-DF-XTR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="NeU-n8-TvO"/>
+                            <constraint firstItem="LNW-DF-XTR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="elX-gq-rdW"/>
                             <constraint firstItem="jZf-de-uBu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jAL-Ln-p2Q"/>
                             <constraint firstItem="jZf-de-uBu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sMW-GM-MDz"/>
                         </constraints>

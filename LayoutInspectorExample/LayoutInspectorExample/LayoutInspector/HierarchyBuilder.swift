@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HierarchyBuilder {
-    func snapshotHierarchy() -> ViewDescriptorProtocol
+    func snapshotHierarchy() -> ViewDescriptionProtocol
 }
 
 class HierarchyBuilderImpl {
@@ -17,7 +17,7 @@ class HierarchyBuilderImpl {
 }
 
 extension HierarchyBuilderImpl: HierarchyBuilder {
-    func snapshotHierarchy() -> ViewDescriptorProtocol {
+    func snapshotHierarchy() -> ViewDescriptionProtocol {
         return buildHierarchy(view: UIApplication.shared.windows.first!)
     }
 }
@@ -25,12 +25,17 @@ extension HierarchyBuilderImpl: HierarchyBuilder {
 // MARK: Private API
 private extension HierarchyBuilderImpl {
     // TODO: -
-    func buildHierarchy(view: UIView) -> ViewDescriptorProtocol {
+    func buildHierarchy(view: UIView) -> ViewDescriptionProtocol {
         let children = view.subviews.map { buildHierarchy(view: $0)}
         view.subviews.forEach {$0.isHidden = true}
         let image = view.asImage()
         view.subviews.forEach {$0.isHidden = false}
-        let descriptor = ViewDescriptor(frame: view.frame, snapshot: image, subviews: children)
+
+        let descriptor = ViewDescription(frame: view.frame,
+                                         snapshot: image,
+                                         subviews: children,
+                                         parentSize: view.superview?.frame.size,
+                                         center: view.center)
         
         count += 1
         storeImage(image, name: String(count))

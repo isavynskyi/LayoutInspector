@@ -16,7 +16,7 @@ class LayoutInspectorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureSceneView()
+        configure()
     }
     
     //MARK: - Actions
@@ -24,13 +24,23 @@ class LayoutInspectorViewController: UIViewController {
         output?.didCloseAction()
     }
     
-    private func configureSceneView() {
+    func configure() {
         sceneView.allowsCameraControl = true
+        sceneView.scene = SCNScene()
+        sceneView.scene?.background.contents = #colorLiteral(red: 0.8199721342, green: 1, blue: 0.9764705896, alpha: 1)
     }
 }
 
 extension LayoutInspectorViewController: LayoutInspectorViewInput {
     func rootView() -> UIView {
         return view
+    }
+    
+    func addNodeToScene(_ node: SCNNode) {
+        sceneView.scene?.rootNode.addChildNode(node)
+    }
+    
+    func removeNode(_ node: SCNNode) {
+        node.removeFromParentNode()
     }
 }
