@@ -33,6 +33,7 @@ private extension RenderingTreeBuilder {
         let plane = SCNPlane(width: viewDescription.frame.size.width/CGFloat(Constants.pointsInSceneKitMeter),
                              height: viewDescription.frame.size.height/CGFloat(Constants.pointsInSceneKitMeter))
         plane.firstMaterial?.diffuse.contents = viewDescription.snapshot
+        plane.firstMaterial?.isDoubleSided = true
         return plane
     }
     

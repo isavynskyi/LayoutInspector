@@ -12,11 +12,37 @@ import SceneKit
 class LayoutInspectorViewController: UIViewController {
     var output: LayoutInspectorViewOutput?
     
-    @IBOutlet weak var sceneView: SCNView!
+    @IBOutlet private weak var sceneView: SCNView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+    }
+    
+    
+    // MARK: - Private API
+    private func configure() {
+        sceneView.allowsCameraControl = true
+        sceneView.scene = SCNScene()
+        sceneView.scene?.background.contents = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
+        sceneView.pointOfView = createCameraNode()
+        setToPointOfViewDefaultPosition(sceneView.pointOfView)
+    }
+    
+    private func createCameraNode() -> SCNNode {
+        let camera = SCNCamera()
+        camera.usesOrthographicProjection = true
+        camera.orthographicScale = 4
+        camera.zNear = 0
+        camera.zFar = 100
+        let cameraNode = SCNNode()
+        cameraNode.camera = camera
+        return cameraNode
+    }
+    
+    private func setToPointOfViewDefaultPosition(_ cameraNode: SCNNode?) {
+        sceneView.pointOfView?.position = SCNVector3(0, 0, 10)
+        sceneView.pointOfView?.eulerAngles = SCNVector3()
     }
     
     //MARK: - Actions
@@ -24,10 +50,8 @@ class LayoutInspectorViewController: UIViewController {
         output?.didCloseAction()
     }
     
-    func configure() {
-        sceneView.allowsCameraControl = true
-        sceneView.scene = SCNScene()
-        sceneView.scene?.background.contents = #colorLiteral(red: 0.8199721342, green: 1, blue: 0.9764705896, alpha: 1)
+    @IBAction func resetCameraPositionAction(_ sender: Any) {
+        setToPointOfViewDefaultPosition(sceneView.pointOfView)
     }
 }
 

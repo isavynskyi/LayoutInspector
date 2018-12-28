@@ -29,12 +29,23 @@
                                     <action selector="closeAction:" destination="tHq-Ag-i7Y" eventType="touchUpInside" id="dwv-jF-G50"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXR-WR-Nss">
+                                <rect key="frame" x="170" y="621" width="35" height="30"/>
+                                <state key="normal" title="reset">
+                                    <color key="titleColor" red="0.1529411765" green="0.59215686270000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetCameraPositionAction:" destination="tHq-Ag-i7Y" eventType="touchUpInside" id="Qrr-oe-9wt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.59215686270000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NGx-4d-3i9" firstAttribute="leading" secondItem="AqF-aB-iw6" secondAttribute="leading" id="4IB-4m-Caq"/>
                             <constraint firstAttribute="bottom" secondItem="NGx-4d-3i9" secondAttribute="bottom" id="BHK-de-qqk"/>
                             <constraint firstItem="NGx-4d-3i9" firstAttribute="top" secondItem="v03-Ls-WcO" secondAttribute="top" id="EaM-N4-FJ8"/>
+                            <constraint firstItem="AqF-aB-iw6" firstAttribute="bottom" secondItem="ZXR-WR-Nss" secondAttribute="bottom" constant="16" id="Oqv-g1-myG"/>
+                            <constraint firstItem="ZXR-WR-Nss" firstAttribute="centerX" secondItem="AqF-aB-iw6" secondAttribute="centerX" id="dlF-K3-iTV"/>
                             <constraint firstItem="AqF-aB-iw6" firstAttribute="trailing" secondItem="NGx-4d-3i9" secondAttribute="trailing" id="s3F-Pf-1RD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AqF-aB-iw6"/>
