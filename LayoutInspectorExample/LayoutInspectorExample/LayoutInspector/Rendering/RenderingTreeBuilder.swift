@@ -32,7 +32,11 @@ private extension RenderingTreeBuilder {
     func plane(for viewDescription: ViewDescriptionProtocol) -> SCNPlane {
         let plane = SCNPlane(width: viewDescription.frame.size.width/CGFloat(Constants.pointsInSceneKitMeter),
                              height: viewDescription.frame.size.height/CGFloat(Constants.pointsInSceneKitMeter))
-        plane.firstMaterial?.diffuse.contents = viewDescription.snapshot
+        if viewDescription.isTransparent {
+            plane.firstMaterial?.diffuse.contents = UIImage(named: "transparent_view_image")
+        } else {
+            plane.firstMaterial?.diffuse.contents = viewDescription.snapshot
+        }
         plane.firstMaterial?.isDoubleSided = true
         return plane
     }

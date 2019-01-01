@@ -28,18 +28,22 @@ private extension HierarchyBuilderImpl {
     func buildHierarchy(view: UIView) -> ViewDescriptionProtocol {
         let children = view.subviews.map { buildHierarchy(view: $0)}
         view.subviews.forEach {$0.isHidden = true}
-        let image = view.asImage()
+        let isTransparent = view.backgroundColor == .clear
+        let image = isTransparent ? nil : view.asImage()
         view.subviews.forEach {$0.isHidden = false}
-
         let descriptor = ViewDescription(frame: view.frame,
                                          snapshot: image,
                                          subviews: children,
                                          parentSize: view.superview?.frame.size,
-                                         center: view.center)
+                                         center: view.center,
+                                         isHidden: view.isHidden)
         
+        // TODO: - remove if needed
         count += 1
-        storeImage(image, name: String(count))
-        print( "\(count): dframe = \(view.frame.width), \(view.frame.height), \(view.frame.origin)")
+        if let image = image {
+            storeImage(image, name: String(count))
+            print( "\(count): dframe = \(view.frame.width), \(view.frame.height), \(view.frame.origin)")
+        }
         return descriptor
     }
     

@@ -31,6 +31,7 @@
 		37F93C6E21D2AD66007CBE78 /* 7_375x667.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C6721D2AD66007CBE78 /* 7_375x667.png */; };
 		37F93C7021D2B6B1007CBE78 /* 5_100x30.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C6F21D2B6B1007CBE78 /* 5_100x30.png */; };
 		37F93C7221D2B6E6007CBE78 /* 4_65x18_.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C7121D2B6E6007CBE78 /* 4_65x18_.png */; };
+		37F989EC21DB87F200BC7483 /* LayoutInspectorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F989EB21DB87F200BC7483 /* LayoutInspectorAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		37F93C6721D2AD66007CBE78 /* 7_375x667.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7_375x667.png; sourceTree = "<group>"; };
 		37F93C6F21D2B6B1007CBE78 /* 5_100x30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5_100x30.png; sourceTree = "<group>"; };
 		37F93C7121D2B6E6007CBE78 /* 4_65x18_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_65x18_.png; sourceTree = "<group>"; };
+		37F989EB21DB87F200BC7483 /* LayoutInspectorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LayoutInspectorAssets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				37F7159C21D2ED3A0055F233 /* Constants.swift */,
 				37F93C4921D29FC5007CBE78 /* LayoutInspector.storyboard */,
 				37F93C4B21D2A104007CBE78 /* Rendering */,
+				37F989E421DB80E700BC7483 /* Resources */,
 			);
 			path = LayoutInspector;
 			sourceTree = "<group>";
@@ -170,6 +173,14 @@
 				37F93C6F21D2B6B1007CBE78 /* 5_100x30.png */,
 				37F93C6121D2AD66007CBE78 /* 6_375x667.png */,
 				37F93C6721D2AD66007CBE78 /* 7_375x667.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		37F989E421DB80E700BC7483 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				37F989EB21DB87F200BC7483 /* LayoutInspectorAssets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -267,6 +278,7 @@
 				37F93C2721D28B41007CBE78 /* Main.storyboard in Resources */,
 				37F93C6D21D2AD66007CBE78 /* 2_64x64.png in Resources */,
 				37F93C6821D2AD66007CBE78 /* 6_375x667.png in Resources */,
+				37F989EC21DB87F200BC7483 /* LayoutInspectorAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

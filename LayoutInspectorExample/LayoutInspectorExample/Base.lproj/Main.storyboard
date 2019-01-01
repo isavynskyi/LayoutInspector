@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZf-de-uBu">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZf-de-uBu">
                                 <rect key="frame" x="67.5" y="279.5" width="240" height="128"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nM-Yb-Tl6">
@@ -51,10 +51,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRO-f6-wkd">
-                                <rect key="frame" x="137.5" y="535.5" width="100" height="30"/>
+                                <rect key="frame" x="155" y="535.5" width="65" height="30"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59215686270000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Dng-qx-nar"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Dng-qx-nar"/>
                                 </constraints>
                                 <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Snapshot"/>
@@ -89,12 +89,34 @@
                                 <rect key="frame" x="174" y="84" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stepper>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofp-CY-QTc">
+                                <rect key="frame" x="77.5" y="416" width="220" height="100"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9M-5w-IZy">
+                                        <rect key="frame" x="108.5" y="48.5" width="3" height="3"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="3" id="3fM-Fp-X1s"/>
+                                            <constraint firstAttribute="width" secondItem="w9M-5w-IZy" secondAttribute="height" multiplier="1:1" id="a1V-Tm-48E"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="w9M-5w-IZy" firstAttribute="centerX" secondItem="ofp-CY-QTc" secondAttribute="centerX" id="JBk-VD-8bM"/>
+                                    <constraint firstAttribute="width" constant="220" id="Q4V-H7-tsM"/>
+                                    <constraint firstAttribute="height" constant="100" id="vbq-9B-ZB2"/>
+                                    <constraint firstItem="w9M-5w-IZy" firstAttribute="centerY" secondItem="ofp-CY-QTc" secondAttribute="centerY" id="w1h-dJ-haY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ofp-CY-QTc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5CW-GB-1yt"/>
                             <constraint firstItem="RRO-f6-wkd" firstAttribute="top" secondItem="jZf-de-uBu" secondAttribute="bottom" constant="128" id="5ge-63-Xcm"/>
                             <constraint firstItem="RRO-f6-wkd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FVe-cd-KlH"/>
                             <constraint firstItem="LNW-DF-XTR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="NeU-n8-TvO"/>
+                            <constraint firstItem="RRO-f6-wkd" firstAttribute="top" secondItem="ofp-CY-QTc" secondAttribute="bottom" constant="19.5" id="S7m-qZ-aW6"/>
                             <constraint firstItem="LNW-DF-XTR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="elX-gq-rdW"/>
                             <constraint firstItem="jZf-de-uBu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jAL-Ln-p2Q"/>
                             <constraint firstItem="jZf-de-uBu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sMW-GM-MDz"/>
@@ -104,6 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
 </document>
