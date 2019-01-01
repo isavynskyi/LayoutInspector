@@ -9,6 +9,12 @@
 import UIKit
 import SceneKit
 
+fileprivate enum CameraParameters {
+    static let orthographicScale = 4.0
+    static let zNear = 0.0
+    static let zFar = 100.0
+}
+
 class LayoutInspectorViewController: UIViewController {
     var output: LayoutInspectorViewOutput?
     
@@ -26,23 +32,23 @@ class LayoutInspectorViewController: UIViewController {
         sceneView.scene = SCNScene()
         sceneView.scene?.background.contents = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
         sceneView.pointOfView = createCameraNode()
-        setToPointOfViewDefaultPosition(sceneView.pointOfView)
+        resetPointOfViewToDefaults(sceneView.pointOfView)
     }
     
     private func createCameraNode() -> SCNNode {
         let camera = SCNCamera()
         camera.usesOrthographicProjection = true
-        camera.orthographicScale = 4
-        camera.zNear = 0
-        camera.zFar = 100
+        camera.zNear = CameraParameters.zNear
+        camera.zFar = CameraParameters.zFar
         let cameraNode = SCNNode()
         cameraNode.camera = camera
         return cameraNode
     }
     
-    private func setToPointOfViewDefaultPosition(_ cameraNode: SCNNode?) {
+    private func resetPointOfViewToDefaults(_ cameraNode: SCNNode?) {
         sceneView.pointOfView?.position = SCNVector3(0, 0, 10)
         sceneView.pointOfView?.eulerAngles = SCNVector3()
+        sceneView.pointOfView?.camera?.orthographicScale = CameraParameters.orthographicScale
     }
     
     //MARK: - Actions
@@ -51,7 +57,7 @@ class LayoutInspectorViewController: UIViewController {
     }
     
     @IBAction func resetCameraPositionAction(_ sender: Any) {
-        setToPointOfViewDefaultPosition(sceneView.pointOfView)
+        resetPointOfViewToDefaults(sceneView.pointOfView)
     }
 }
 
