@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol ViewDescriptionProtocol {
+protocol ViewDescriptionProtocol {
     var frame: CGRect { get }
     var snapshot: UIImage? { get }
     var subviews: [ViewDescriptionProtocol]? { get set }
@@ -17,9 +17,15 @@ public protocol ViewDescriptionProtocol {
     var center: CGPoint { get }
     var isHidden: Bool { get }
     var isTransparent: Bool { get }
+    var className: String { get }
+    var isUserInteractionEnabled: Bool { get }
+    var alpha: Float { get }
+    var backgroundColor: UIColor? { get }
+    var tint: UIColor? { get }
+    var clipToBounds: Bool { get }
 }
 
-open class ViewDescription: ViewDescriptionProtocol {
+class ViewDescription: ViewDescriptionProtocol {
     public let frame: CGRect
     public let snapshot: UIImage?
     public var subviews: [ViewDescriptionProtocol]?
@@ -29,13 +35,26 @@ open class ViewDescription: ViewDescriptionProtocol {
     public var isTransparent: Bool {
         return snapshot == nil
     }
+    var className: String
+    var isUserInteractionEnabled: Bool
+    var alpha: Float
+    var backgroundColor: UIColor?
+    var tint: UIColor?
+    var clipToBounds: Bool
 
+    // MARK: - Init
     init(frame: CGRect,
          snapshot: UIImage?,
          subviews: [ViewDescriptionProtocol]?,
          parentSize: CGSize?,
          center: CGPoint,
-         isHidden: Bool)
+         isHidden: Bool,
+         className: String,
+         isUserInteractionEnabled: Bool,
+         alpha: Float,
+         backgroundColor: UIColor?,
+         tint: UIColor?,
+         clipToBounds: Bool)
     {
         self.frame = frame
         self.snapshot = snapshot
@@ -43,5 +62,11 @@ open class ViewDescription: ViewDescriptionProtocol {
         self.parentSize = parentSize
         self.center = center
         self.isHidden = isHidden
+        self.className = className
+        self.isUserInteractionEnabled = isUserInteractionEnabled
+        self.alpha = alpha
+        self.backgroundColor = backgroundColor
+        self.tint = tint
+        self.clipToBounds = clipToBounds
     }
 }

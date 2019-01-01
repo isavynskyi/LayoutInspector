@@ -33,7 +33,10 @@ class RenderingTreeBuilder: RenderingTreeBuilderProtocol {
 private extension RenderingTreeBuilder {
     func node (for viewDescription: ViewDescriptionProtocol) -> SCNNode {
         let viewPlane = plane(for: viewDescription)
-        return SCNNode(geometry: viewPlane)
+        let node = DebugNode()
+        node.geometry = viewPlane
+        node.metadata = ViewMetadata(with: viewDescription)
+        return node
     }
     
     func plane(for viewDescription: ViewDescriptionProtocol) -> SCNPlane {
@@ -65,3 +68,4 @@ private extension RenderingTreeBuilder {
                                    Float(Constants.layerStep))
     }
 }
+

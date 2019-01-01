@@ -19,7 +19,10 @@ class LayoutInspectorViewController: UIViewController {
     var output: LayoutInspectorViewOutput?
     
     @IBOutlet private weak var sceneView: SCNView!
-    
+    private var tapGestureRecognizer: UITapGestureRecognizer {
+        return UITapGestureRecognizer.init(target: self, action: #selector(handleTap(_:)))
+    }
+    private var selectedNode: DebugNode?
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -28,11 +31,21 @@ class LayoutInspectorViewController: UIViewController {
     
     // MARK: - Private API
     private func configure() {
+        configureSceneView()
+        configureGestures()
+    }
+    
+    private func configureSceneView() {
         sceneView.allowsCameraControl = true
         sceneView.scene = SCNScene()
-        sceneView.scene?.background.contents = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
+        sceneView.scene?.background.contents = UIColor.sceneBackground
         sceneView.pointOfView = createCameraNode()
         resetPointOfViewToDefaults(sceneView.pointOfView)
+        sceneView.delegate = self
+    }
+    
+    private func configureGestures() {
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
     
     private func createCameraNode() -> SCNNode {
@@ -51,6 +64,19 @@ class LayoutInspectorViewController: UIViewController {
         sceneView.pointOfView?.camera?.orthographicScale = CameraParameters.orthographicScale
     }
     
+    private func setSelectedNode(_ newSelectedNode: DebugNode) {
+        if selectedNode != nil, selectedNode != newSelectedNode {
+            selectedNode?.isSelected = false
+        }
+        
+        newSelectedNode.isSelected = !newSelectedNode.isSelected
+        selectedNode = newSelectedNode
+        
+        if selectedNode?.isSelected == false {
+            selectedNode = nil
+        }
+    }
+    
     //MARK: - Actions
     @IBAction private func closeAction(_ sender: Any) {
         output?.didCloseAction()
@@ -58,6 +84,14 @@ class LayoutInspectorViewController: UIViewController {
     
     @IBAction func resetCameraPositionAction(_ sender: Any) {
         resetPointOfViewToDefaults(sceneView.pointOfView)
+    }
+    
+    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
+        let location: CGPoint = sender.location(in: view)
+        let hits = sceneView.hitTest(location, options: nil)
+        if let tappedNode = hits.first?.node as? DebugNode {
+            setSelectedNode(tappedNode)
+        }
     }
 }
 
@@ -73,4 +107,12 @@ extension LayoutInspectorViewController: LayoutInspectorViewInput {
     func removeNode(_ node: SCNNode) {
         node.removeFromParentNode()
     }
+}
+
+
+extension LayoutInspectorViewController: SCNSceneRendererDelegate {
+    func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) {
+            print(sceneView.pointOfView?.eulerAngles)
+    }
+
 }

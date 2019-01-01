@@ -37,12 +37,21 @@ private extension HierarchyBuilderImpl {
         // hidden subviews rollback
         temporaryHiddenViews.forEach {$0.isHidden = false}
         
+        String(describing: view)
+        
+        class_getSuperclass(view.superclass)
         let descriptor = ViewDescription(frame: view.frame,
                                          snapshot: image,
                                          subviews: children,
                                          parentSize: view.superview?.frame.size,
                                          center: view.center,
-                                         isHidden: view.isHidden)
+                                         isHidden: view.isHidden,
+                                         className: String(describing: type(of: view)),
+                                         isUserInteractionEnabled: view.isUserInteractionEnabled,
+                                         alpha: Float(view.alpha),
+                                         backgroundColor: view.backgroundColor,
+                                         tint: view.tintColor,
+                                         clipToBounds: view.clipsToBounds)
         
         // TODO: - remove if needed
         count += 1

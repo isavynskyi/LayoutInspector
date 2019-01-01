@@ -26,9 +26,20 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRD-u3-htU">
                                                 <rect key="frame" x="16" y="16" width="32" height="32"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mario" translatesAutoresizingMaskIntoConstraints="NO" id="qsN-ff-fLI">
+                                                        <rect key="frame" x="6" y="6" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="gVY-LQ-XN7"/>
+                                                            <constraint firstAttribute="width" secondItem="qsN-ff-fLI" secondAttribute="height" multiplier="1:1" id="yQD-7L-xI6"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="4Ic-VY-BI6"/>
+                                                    <constraint firstItem="qsN-ff-fLI" firstAttribute="centerX" secondItem="fRD-u3-htU" secondAttribute="centerX" id="OeU-Xd-xp1"/>
+                                                    <constraint firstItem="qsN-ff-fLI" firstAttribute="centerY" secondItem="fRD-u3-htU" secondAttribute="centerY" id="cLj-Ij-A9b"/>
                                                     <constraint firstAttribute="width" constant="32" id="zru-LB-Ewp"/>
                                                 </constraints>
                                             </view>
@@ -173,4 +184,7 @@
             <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mario" width="303" height="381.394287109375"/>
+    </resources>
 </document>
