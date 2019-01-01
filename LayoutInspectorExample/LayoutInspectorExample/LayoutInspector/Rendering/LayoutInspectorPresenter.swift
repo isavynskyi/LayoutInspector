@@ -33,8 +33,10 @@ private extension LayoutInspectorPresenter {
     
     func renderLayoutNodes(for viewDescription: ViewDescriptionProtocol) {
         let renderingTree = renderingTreeBuilder.build(from: viewDescription)
-        wrapperNode.addChildNode(renderingTree.viewNode)
-        view?.addNodeToScene(wrapperNode)
+        if let rootNode = renderingTree.viewNode {
+            wrapperNode.addChildNode(rootNode)
+            view?.addNodeToScene(wrapperNode)
+        }
     }
 }
 

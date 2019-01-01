@@ -10,13 +10,13 @@ import Foundation
 import SceneKit
 
 protocol RenderingViewProtocol {
-    var viewNode: SCNNode {get}
+    var viewNode: SCNNode? {get}
     var viewDescription: ViewDescriptionProtocol {get}
     var subviews: [RenderingViewProtocol]? {get}
 }
 
 struct RenderingView: RenderingViewProtocol {
-    var viewNode: SCNNode
+    var viewNode: SCNNode?
     var viewDescription: ViewDescriptionProtocol
     var subviews: [RenderingViewProtocol]?
 }

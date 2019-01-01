@@ -10,5 +10,5 @@ import Foundation
 
 struct Constants {
     static let pointsInSceneKitMeter = 100.0
-    static let layerStep = 0.2
+    static let layerStep = 0.3
 }

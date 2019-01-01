@@ -15,10 +15,17 @@ protocol RenderingTreeBuilderProtocol {
 class RenderingTreeBuilder: RenderingTreeBuilderProtocol {
     func build(from viewDescription: ViewDescriptionProtocol) -> RenderingViewProtocol {
         let renderingSubviews = viewDescription.subviews?.compactMap {build(from: $0)}
-        // TODO: - correct node position
-        let viewNode = node(for: viewDescription)
-        adjustNodePositionToSceneKitCoordinateSystem(viewNode, with: viewDescription)
-        renderingSubviews?.forEach({ viewNode.addChildNode($0.viewNode)})
+        var viewNode: SCNNode?
+        
+        // skip nodes for hidden views
+        if viewDescription.isHidden == false {
+            viewNode = node(for: viewDescription)
+            adjustNodePositionToSceneKitCoordinateSystem(viewNode, with: viewDescription)
+            renderingSubviews?.forEach({
+                guard let node = $0.viewNode else { return }
+                viewNode?.addChildNode(node)
+            })
+        }
         return RenderingView(viewNode: viewNode, viewDescription: viewDescription, subviews: renderingSubviews)
     }
 }
@@ -48,9 +55,9 @@ private extension RenderingTreeBuilder {
   |               |     *(0,0)|
   |____x          |___________|
 */
- func adjustNodePositionToSceneKitCoordinateSystem(_ node: SCNNode, with viewDescription: ViewDescriptionProtocol) {
+ func adjustNodePositionToSceneKitCoordinateSystem(_ node: SCNNode?, with viewDescription: ViewDescriptionProtocol) {
     // TODO:   node.width instead of sourceViewFrame/CGFloat(Constants.pointsInSceneKitMeter)
-    guard let parentSize = viewDescription.parentSize else { return }
+    guard let parentSize = viewDescription.parentSize, let node = node else { return }
     let viewCenter = viewDescription.center
     
     node.position = SCNVector3Make(Float((-parentSize.width/2.0 + viewCenter.x))/Float(Constants.pointsInSceneKitMeter),

@@ -27,10 +27,16 @@ private extension HierarchyBuilderImpl {
     // TODO: -
     func buildHierarchy(view: UIView) -> ViewDescriptionProtocol {
         let children = view.subviews.map { buildHierarchy(view: $0)}
-        view.subviews.forEach {$0.isHidden = true}
+        let temporaryHiddenViews = view.subviews.filter {$0.isHidden == false}
+        
+        // don't capture visible subviews for current view snapshot
+        temporaryHiddenViews.forEach { $0.isHidden = true }
         let isTransparent = view.backgroundColor == .clear
         let image = isTransparent ? nil : view.asImage()
-        view.subviews.forEach {$0.isHidden = false}
+
+        // hidden subviews rollback
+        temporaryHiddenViews.forEach {$0.isHidden = false}
+        
         let descriptor = ViewDescription(frame: view.frame,
                                          snapshot: image,
                                          subviews: children,
