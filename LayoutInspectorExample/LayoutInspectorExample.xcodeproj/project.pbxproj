@@ -35,6 +35,16 @@
 		37F989EE21DBA94F00BC7483 /* DebugNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F989ED21DBA94F00BC7483 /* DebugNode.swift */; };
 		37FB8F0521DCBF3400BCA9CD /* SceneViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F0421DCBF3400BCA9CD /* SceneViewManager.swift */; };
 		37FB8F0721DCC3B700BCA9CD /* SceneViewManagerInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F0621DCC3B700BCA9CD /* SceneViewManagerInterfaces.swift */; };
+		37FB8F0921DCD57400BCA9CD /* ObjectInspectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F0821DCD57400BCA9CD /* ObjectInspectionManager.swift */; };
+		37FB8F0D21DCD8BF00BCA9CD /* ObjectInspectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F0C21DCD8BF00BCA9CD /* ObjectInspectionViewController.swift */; };
+		37FB8F1021DCE3F500BCA9CD /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F0F21DCE3F500BCA9CD /* Segue.swift */; };
+		37FB8F1221DCE5D300BCA9CD /* TextAttributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F1121DCE5D300BCA9CD /* TextAttributeCell.swift */; };
+		37FB8F1421DD5F8E00BCA9CD /* ColorAttributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F1321DD5F8E00BCA9CD /* ColorAttributeCell.swift */; };
+		37FB8F1621DD605B00BCA9CD /* UICollectionView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F1521DD605B00BCA9CD /* UICollectionView+Extention.swift */; };
+		37FB8F1821DD65C100BCA9CD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F1721DD65C100BCA9CD /* UIColor+Extension.swift */; };
+		37FB8F1A21DD683F00BCA9CD /* UtilsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F1921DD683F00BCA9CD /* UtilsProtocols.swift */; };
+		37FB8F1C21DD68D100BCA9CD /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F1B21DD68D100BCA9CD /* UIFont+Extension.swift */; };
+		37FB8F1E21DD7B6000BCA9CD /* ObjectInspectionManagerInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F1D21DD7B6000BCA9CD /* ObjectInspectionManagerInterfaces.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +90,16 @@
 		37F989ED21DBA94F00BC7483 /* DebugNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugNode.swift; sourceTree = "<group>"; };
 		37FB8F0421DCBF3400BCA9CD /* SceneViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewManager.swift; sourceTree = "<group>"; };
 		37FB8F0621DCC3B700BCA9CD /* SceneViewManagerInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewManagerInterfaces.swift; sourceTree = "<group>"; };
+		37FB8F0821DCD57400BCA9CD /* ObjectInspectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectInspectionManager.swift; sourceTree = "<group>"; };
+		37FB8F0C21DCD8BF00BCA9CD /* ObjectInspectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectInspectionViewController.swift; sourceTree = "<group>"; };
+		37FB8F0F21DCE3F500BCA9CD /* Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
+		37FB8F1121DCE5D300BCA9CD /* TextAttributeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttributeCell.swift; sourceTree = "<group>"; };
+		37FB8F1321DD5F8E00BCA9CD /* ColorAttributeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAttributeCell.swift; sourceTree = "<group>"; };
+		37FB8F1521DD605B00BCA9CD /* UICollectionView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extention.swift"; sourceTree = "<group>"; };
+		37FB8F1721DD65C100BCA9CD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		37FB8F1921DD683F00BCA9CD /* UtilsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsProtocols.swift; sourceTree = "<group>"; };
+		37FB8F1B21DD68D100BCA9CD /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		37FB8F1D21DD7B6000BCA9CD /* ObjectInspectionManagerInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectInspectionManagerInterfaces.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +172,7 @@
 				37F7159C21D2ED3A0055F233 /* Constants.swift */,
 				37F93C4921D29FC5007CBE78 /* LayoutInspector.storyboard */,
 				37F93C4B21D2A104007CBE78 /* Rendering */,
+				37FB8F0E21DCE3E200BCA9CD /* Utils */,
 				37F989E421DB80E700BC7483 /* Resources */,
 			);
 			path = LayoutInspector;
@@ -160,13 +181,8 @@
 		37F93C4B21D2A104007CBE78 /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
-				37F93C4C21D2A129007CBE78 /* LayoutInspectorViewController.swift */,
-				37FB8F0621DCC3B700BCA9CD /* SceneViewManagerInterfaces.swift */,
-				37FB8F0421DCBF3400BCA9CD /* SceneViewManager.swift */,
-				37F93C4E21D2A1FD007CBE78 /* LayoutInspectorPresenter.swift */,
-				37F7159821D2E9AA0055F233 /* RenderingView.swift */,
-				37F7159A21D2EC060055F233 /* RenderingTreeBuilder.swift */,
-				37F989ED21DBA94F00BC7483 /* DebugNode.swift */,
+				37FB8F0B21DCD87D00BCA9CD /* LayoutInspector */,
+				37FB8F0A21DCD86000BCA9CD /* ObjectInspection */,
 			);
 			path = Rendering;
 			sourceTree = "<group>";
@@ -192,6 +208,44 @@
 				37F989EB21DB87F200BC7483 /* LayoutInspectorAssets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		37FB8F0A21DCD86000BCA9CD /* ObjectInspection */ = {
+			isa = PBXGroup;
+			children = (
+				37FB8F0C21DCD8BF00BCA9CD /* ObjectInspectionViewController.swift */,
+				37FB8F1D21DD7B6000BCA9CD /* ObjectInspectionManagerInterfaces.swift */,
+				37FB8F0821DCD57400BCA9CD /* ObjectInspectionManager.swift */,
+				37FB8F1121DCE5D300BCA9CD /* TextAttributeCell.swift */,
+				37FB8F1321DD5F8E00BCA9CD /* ColorAttributeCell.swift */,
+			);
+			path = ObjectInspection;
+			sourceTree = "<group>";
+		};
+		37FB8F0B21DCD87D00BCA9CD /* LayoutInspector */ = {
+			isa = PBXGroup;
+			children = (
+				37F93C4C21D2A129007CBE78 /* LayoutInspectorViewController.swift */,
+				37FB8F0621DCC3B700BCA9CD /* SceneViewManagerInterfaces.swift */,
+				37FB8F0421DCBF3400BCA9CD /* SceneViewManager.swift */,
+				37F93C4E21D2A1FD007CBE78 /* LayoutInspectorPresenter.swift */,
+				37F7159821D2E9AA0055F233 /* RenderingView.swift */,
+				37F7159A21D2EC060055F233 /* RenderingTreeBuilder.swift */,
+				37F989ED21DBA94F00BC7483 /* DebugNode.swift */,
+			);
+			path = LayoutInspector;
+			sourceTree = "<group>";
+		};
+		37FB8F0E21DCE3E200BCA9CD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				37FB8F0F21DCE3F500BCA9CD /* Segue.swift */,
+				37FB8F1521DD605B00BCA9CD /* UICollectionView+Extention.swift */,
+				37FB8F1921DD683F00BCA9CD /* UtilsProtocols.swift */,
+				37FB8F1721DD65C100BCA9CD /* UIColor+Extension.swift */,
+				37FB8F1B21DD68D100BCA9CD /* UIFont+Extension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,17 +359,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37FB8F1821DD65C100BCA9CD /* UIColor+Extension.swift in Sources */,
 				37F93C4F21D2A1FD007CBE78 /* LayoutInspectorPresenter.swift in Sources */,
+				37FB8F0D21DCD8BF00BCA9CD /* ObjectInspectionViewController.swift in Sources */,
+				37FB8F1A21DD683F00BCA9CD /* UtilsProtocols.swift in Sources */,
 				37FB8F0521DCBF3400BCA9CD /* SceneViewManager.swift in Sources */,
+				37FB8F1C21DD68D100BCA9CD /* UIFont+Extension.swift in Sources */,
 				37F7159D21D2ED3A0055F233 /* Constants.swift in Sources */,
 				37F93C2421D28B41007CBE78 /* ViewController.swift in Sources */,
 				37F93C2221D28B41007CBE78 /* AppDelegate.swift in Sources */,
+				37FB8F1621DD605B00BCA9CD /* UICollectionView+Extention.swift in Sources */,
 				37F7159921D2E9AA0055F233 /* RenderingView.swift in Sources */,
 				37F93C4D21D2A129007CBE78 /* LayoutInspectorViewController.swift in Sources */,
+				37FB8F1E21DD7B6000BCA9CD /* ObjectInspectionManagerInterfaces.swift in Sources */,
 				37F93C4521D28D5E007CBE78 /* UIView+Extension.swift in Sources */,
+				37FB8F1221DCE5D300BCA9CD /* TextAttributeCell.swift in Sources */,
+				37FB8F1421DD5F8E00BCA9CD /* ColorAttributeCell.swift in Sources */,
 				37F93C4321D28C8A007CBE78 /* ViewDescription.swift in Sources */,
 				37F7159B21D2EC060055F233 /* RenderingTreeBuilder.swift in Sources */,
+				37FB8F0921DCD57400BCA9CD /* ObjectInspectionManager.swift in Sources */,
 				37F93C4721D299EF007CBE78 /* LayoutInspector.swift in Sources */,
+				37FB8F1021DCE3F500BCA9CD /* Segue.swift in Sources */,
 				37F7159721D2E3820055F233 /* HierarchyBuilder.swift in Sources */,
 				37FB8F0721DCC3B700BCA9CD /* SceneViewManagerInterfaces.swift in Sources */,
 				37F989EE21DBA94F00BC7483 /* DebugNode.swift in Sources */,
