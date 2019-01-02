@@ -33,6 +33,8 @@
 		37F93C7221D2B6E6007CBE78 /* 4_65x18_.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C7121D2B6E6007CBE78 /* 4_65x18_.png */; };
 		37F989EC21DB87F200BC7483 /* LayoutInspectorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F989EB21DB87F200BC7483 /* LayoutInspectorAssets.xcassets */; };
 		37F989EE21DBA94F00BC7483 /* DebugNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F989ED21DBA94F00BC7483 /* DebugNode.swift */; };
+		37FB8F0521DCBF3400BCA9CD /* SceneViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F0421DCBF3400BCA9CD /* SceneViewManager.swift */; };
+		37FB8F0721DCC3B700BCA9CD /* SceneViewManagerInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F0621DCC3B700BCA9CD /* SceneViewManagerInterfaces.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		37F93C7121D2B6E6007CBE78 /* 4_65x18_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_65x18_.png; sourceTree = "<group>"; };
 		37F989EB21DB87F200BC7483 /* LayoutInspectorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LayoutInspectorAssets.xcassets; sourceTree = "<group>"; };
 		37F989ED21DBA94F00BC7483 /* DebugNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugNode.swift; sourceTree = "<group>"; };
+		37FB8F0421DCBF3400BCA9CD /* SceneViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewManager.swift; sourceTree = "<group>"; };
+		37FB8F0621DCC3B700BCA9CD /* SceneViewManagerInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewManagerInterfaces.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				37F93C4C21D2A129007CBE78 /* LayoutInspectorViewController.swift */,
+				37FB8F0621DCC3B700BCA9CD /* SceneViewManagerInterfaces.swift */,
+				37FB8F0421DCBF3400BCA9CD /* SceneViewManager.swift */,
 				37F93C4E21D2A1FD007CBE78 /* LayoutInspectorPresenter.swift */,
 				37F7159821D2E9AA0055F233 /* RenderingView.swift */,
 				37F7159A21D2EC060055F233 /* RenderingTreeBuilder.swift */,
@@ -300,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37F93C4F21D2A1FD007CBE78 /* LayoutInspectorPresenter.swift in Sources */,
+				37FB8F0521DCBF3400BCA9CD /* SceneViewManager.swift in Sources */,
 				37F7159D21D2ED3A0055F233 /* Constants.swift in Sources */,
 				37F93C2421D28B41007CBE78 /* ViewController.swift in Sources */,
 				37F93C2221D28B41007CBE78 /* AppDelegate.swift in Sources */,
@@ -310,6 +317,7 @@
 				37F7159B21D2EC060055F233 /* RenderingTreeBuilder.swift in Sources */,
 				37F93C4721D299EF007CBE78 /* LayoutInspector.swift in Sources */,
 				37F7159721D2E3820055F233 /* HierarchyBuilder.swift in Sources */,
+				37FB8F0721DCC3B700BCA9CD /* SceneViewManagerInterfaces.swift in Sources */,
 				37F989EE21DBA94F00BC7483 /* DebugNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

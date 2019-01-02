@@ -9,72 +9,32 @@
 import UIKit
 import SceneKit
 
-fileprivate enum CameraParameters {
-    static let orthographicScale = 4.0
-    static let zNear = 0.0
-    static let zFar = 100.0
-}
-
 class LayoutInspectorViewController: UIViewController {
+    // Props
     var output: LayoutInspectorViewOutput?
-    
-    @IBOutlet private weak var sceneView: SCNView!
+    private var sceneViewManager: SceneViewManagerProtocol!
     private var tapGestureRecognizer: UITapGestureRecognizer {
         return UITapGestureRecognizer.init(target: self, action: #selector(handleTap(_:)))
     }
-    private var selectedNode: DebugNode?
+    
+    // Outlets
+    @IBOutlet private weak var sceneView: SCNView!
+     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        sceneViewManager = SceneViewManager(sceneView: sceneView)
+        sceneViewManager.delegate = self
     }
-    
     
     // MARK: - Private API
     private func configure() {
-        configureSceneView()
         configureGestures()
     }
     
-    private func configureSceneView() {
-        sceneView.allowsCameraControl = true
-        sceneView.scene = SCNScene()
-        sceneView.scene?.background.contents = UIColor.sceneBackground
-        sceneView.pointOfView = createCameraNode()
-        resetPointOfViewToDefaults(sceneView.pointOfView)
-        sceneView.delegate = self
-    }
-    
     private func configureGestures() {
-        view.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    private func createCameraNode() -> SCNNode {
-        let camera = SCNCamera()
-        camera.usesOrthographicProjection = true
-        camera.zNear = CameraParameters.zNear
-        camera.zFar = CameraParameters.zFar
-        let cameraNode = SCNNode()
-        cameraNode.camera = camera
-        return cameraNode
-    }
-    
-    private func resetPointOfViewToDefaults(_ cameraNode: SCNNode?) {
-        sceneView.pointOfView?.position = SCNVector3(0, 0, 10)
-        sceneView.pointOfView?.eulerAngles = SCNVector3()
-        sceneView.pointOfView?.camera?.orthographicScale = CameraParameters.orthographicScale
-    }
-    
-    private func setSelectedNode(_ newSelectedNode: DebugNode) {
-        if selectedNode != nil, selectedNode != newSelectedNode {
-            selectedNode?.isSelected = false
-        }
-        
-        newSelectedNode.isSelected = !newSelectedNode.isSelected
-        selectedNode = newSelectedNode
-        
-        if selectedNode?.isSelected == false {
-            selectedNode = nil
-        }
+        sceneView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     //MARK: - Actions
@@ -83,15 +43,11 @@ class LayoutInspectorViewController: UIViewController {
     }
     
     @IBAction func resetCameraPositionAction(_ sender: Any) {
-        resetPointOfViewToDefaults(sceneView.pointOfView)
+        sceneViewManager.resetPointOfViewToDefaults()
     }
     
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
-        let location: CGPoint = sender.location(in: view)
-        let hits = sceneView.hitTest(location, options: nil)
-        if let tappedNode = hits.first?.node as? DebugNode {
-            setSelectedNode(tappedNode)
-        }
+        sceneViewManager.handleTap(sender)
     }
 }
 
@@ -109,10 +65,9 @@ extension LayoutInspectorViewController: LayoutInspectorViewInput {
     }
 }
 
-
-extension LayoutInspectorViewController: SCNSceneRendererDelegate {
-    func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) {
-            print(sceneView.pointOfView?.eulerAngles)
+extension LayoutInspectorViewController: SceneViewManagerDelegate {
+    func selectedViewMetadataDidUpdate(_ metadata: ViewMetadataProtocol?) {
+        print(metadata?.className)
     }
-
 }
+
