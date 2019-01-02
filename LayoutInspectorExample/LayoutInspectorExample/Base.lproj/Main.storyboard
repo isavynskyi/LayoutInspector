@@ -61,7 +61,7 @@
                                     <constraint firstItem="0nM-Yb-Tl6" firstAttribute="centerX" secondItem="jZf-de-uBu" secondAttribute="centerX" id="zpj-07-i7t"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aW7-3J-Y2B">
+                            <view alpha="0.98699999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aW7-3J-Y2B">
                                 <rect key="frame" x="67.5" y="374.5" width="240" height="90"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNe-Hl-IXO">

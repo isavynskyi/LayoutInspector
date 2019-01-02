@@ -16,6 +16,7 @@ class LayoutInspectorViewController: UIViewController {
     private var tapGestureRecognizer: UITapGestureRecognizer {
         return UITapGestureRecognizer.init(target: self, action: #selector(handleTap(_:)))
     }
+    private var objectInspectionWidget: ObjectInspectionManagerProtocol?
     
     // Outlets
     @IBOutlet private weak var sceneView: SCNView!
@@ -26,6 +27,17 @@ class LayoutInspectorViewController: UIViewController {
         configure()
         sceneViewManager = SceneViewManager(sceneView: sceneView)
         sceneViewManager.delegate = self
+        performSegue(withIdentifier: Segue.toObjectInspection.rawValue, sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let segueCase = Segue(rawValue: segue.identifier)
+        switch segueCase {
+        case .toObjectInspection:
+            objectInspectionWidget = segue.destination as? ObjectInspectionManagerProtocol
+        default: return
+        }
     }
     
     // MARK: - Private API
@@ -67,7 +79,6 @@ extension LayoutInspectorViewController: LayoutInspectorViewInput {
 
 extension LayoutInspectorViewController: SceneViewManagerDelegate {
     func selectedViewMetadataDidUpdate(_ metadata: ViewMetadataProtocol?) {
-        print(metadata?.className)
+        objectInspectionWidget?.renderViewMetadata(metadata)
     }
 }
-
