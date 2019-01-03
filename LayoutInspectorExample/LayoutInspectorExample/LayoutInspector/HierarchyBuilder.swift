@@ -31,21 +31,27 @@ private extension HierarchyBuilderImpl {
         
         // don't capture visible subviews for current view snapshot
         temporaryHiddenViews.forEach { $0.isHidden = true }
-        let isTransparent = view.backgroundColor == .clear
+        let isTransparent: Bool
+        if view.isKind(of: UIImageView.self) || view.isKind(of: UILabel.self) || view.isKind(of: UITextView.self) {
+            isTransparent = false
+        } else if view.backgroundColor == .clear || view.alpha == 0 || view.backgroundColor?.alphaValue == 0 || view.backgroundColor == nil {
+            isTransparent = true
+        } else {
+            isTransparent = false
+        }
+
         let image = isTransparent ? nil : view.asImage()
 
         // hidden subviews rollback
         temporaryHiddenViews.forEach {$0.isHidden = false}
         
-        String(describing: view)
-        
-        class_getSuperclass(view.superclass)
         let descriptor = ViewDescription(frame: view.frame,
                                          snapshot: image,
                                          subviews: children,
                                          parentSize: view.superview?.frame.size,
                                          center: view.center,
                                          isHidden: view.isHidden,
+                                         isTransparent: isTransparent,
                                          className: String(describing: type(of: view)),
                                          isUserInteractionEnabled: view.isUserInteractionEnabled,
                                          alpha: Float(view.alpha),

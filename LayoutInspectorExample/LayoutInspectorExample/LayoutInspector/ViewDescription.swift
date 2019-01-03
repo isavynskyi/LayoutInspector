@@ -32,9 +32,7 @@ class ViewDescription: ViewDescriptionProtocol {
     public var parentSize: CGSize?
     public var center: CGPoint
     public var isHidden: Bool
-    public var isTransparent: Bool {
-        return snapshot == nil
-    }
+    public var isTransparent: Bool
     var className: String
     var isUserInteractionEnabled: Bool
     var alpha: Float
@@ -49,6 +47,7 @@ class ViewDescription: ViewDescriptionProtocol {
          parentSize: CGSize?,
          center: CGPoint,
          isHidden: Bool,
+         isTransparent: Bool,
          className: String,
          isUserInteractionEnabled: Bool,
          alpha: Float,
@@ -62,6 +61,7 @@ class ViewDescription: ViewDescriptionProtocol {
         self.parentSize = parentSize
         self.center = center
         self.isHidden = isHidden
+        self.isTransparent = isTransparent
         self.className = className
         self.isUserInteractionEnabled = isUserInteractionEnabled
         self.alpha = alpha

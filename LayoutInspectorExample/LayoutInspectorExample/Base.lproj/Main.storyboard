@@ -137,9 +137,21 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ir0-Lm-onc">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                                        <subviews>
+                                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCx-4d-RSb">
+                                                <rect key="frame" x="80" y="5" width="40" height="40"/>
+                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="fCx-4d-RSb" secondAttribute="height" multiplier="1:1" id="Ter-rP-e2U"/>
+                                                    <constraint firstAttribute="width" constant="40" id="u2C-Zk-Wbm"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="fCx-4d-RSb" secondAttribute="trailing" id="L8X-cy-ZaI"/>
                                             <constraint firstAttribute="height" constant="50" id="V1V-yy-t5b"/>
+                                            <constraint firstItem="fCx-4d-RSb" firstAttribute="centerY" secondItem="Ir0-Lm-onc" secondAttribute="centerY" id="b3v-AF-EVd"/>
                                             <constraint firstAttribute="width" constant="120" id="dZt-g2-ih6"/>
                                         </constraints>
                                     </view>
@@ -152,7 +164,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="w9M-5w-IZy" firstAttribute="centerX" secondItem="ofp-CY-QTc" secondAttribute="centerX" id="JBk-VD-8bM"/>
                                     <constraint firstItem="Ir0-Lm-onc" firstAttribute="leading" secondItem="ofp-CY-QTc" secondAttribute="leading" id="KU5-1S-0IK"/>
