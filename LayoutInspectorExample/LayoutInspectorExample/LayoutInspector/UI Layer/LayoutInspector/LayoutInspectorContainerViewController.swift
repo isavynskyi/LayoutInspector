@@ -1,5 +1,5 @@
 //
-//  LayoutInspectorViewController.swift
+//  LayoutInspectorContainerViewController.swift
 //  LayoutInspectorExample
 //
 //  Created by Igor Savynskyi on 12/25/18.
@@ -9,9 +9,10 @@
 import UIKit
 import SceneKit
 
-class LayoutInspectorViewController: UIViewController {
+class LayoutInspectorContainerViewController: UIViewController {
     // Props
     var output: LayoutInspectorViewOutput?
+    private var menuWidget: MenuWidgetProtocol?
     private var sceneWidget: SceneWidgetProtocol?
     private var objectInspectionWidget: AttributesManagerProtocol?
     
@@ -24,6 +25,9 @@ class LayoutInspectorViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let segueCase = Segue(rawValue: segue.identifier)
         switch segueCase {
+        case .toMenuWidgetViewControler:
+            menuWidget = segue.destination as? MenuWidgetProtocol
+            menuWidget?.delegate = self
         case .toObjectAttributes:
             objectInspectionWidget = segue.destination as? AttributesManagerProtocol
         case .toSceneWidgetViewController:
@@ -36,21 +40,13 @@ class LayoutInspectorViewController: UIViewController {
     
     // MARK: - Private API
     private func loadWidgets() {
+        performSegue(withIdentifier: Segue.toMenuWidgetViewControler.rawValue, sender: self)
         performSegue(withIdentifier: Segue.toObjectAttributes.rawValue, sender: self)
         performSegue(withIdentifier: Segue.toSceneWidgetViewController.rawValue, sender: self)
     }
-
-    //MARK: - Actions
-    @IBAction private func closeAction(_ sender: Any) {
-        output?.didCloseAction()
-    }
-    
-    @IBAction func resetCameraPositionAction(_ sender: Any) {
-        sceneWidget?.resetPointOfViewToDefaults()
-    }
 }
 
-extension LayoutInspectorViewController: LayoutInspectorViewInput {
+extension LayoutInspectorContainerViewController: LayoutInspectorViewInput {
     func rootView() -> UIView {
         return view
     }
@@ -64,8 +60,19 @@ extension LayoutInspectorViewController: LayoutInspectorViewInput {
     }
 }
 
-extension LayoutInspectorViewController: SceneViewManagerDelegate {
+extension LayoutInspectorContainerViewController: SceneViewManagerDelegate {
     func selectedViewMetadataDidUpdate(_ metadata: ViewMetadataProtocol?) {
         objectInspectionWidget?.renderViewMetadata(metadata)
     }
 }
+
+extension LayoutInspectorContainerViewController: MenuWidgetDelegate {
+    func didCloseAction() {
+        output?.didCloseAction()
+    }
+    
+    func didResetCameraPositionAction() {
+        sceneWidget?.resetPointOfViewToDefaults()
+    }
+}
+

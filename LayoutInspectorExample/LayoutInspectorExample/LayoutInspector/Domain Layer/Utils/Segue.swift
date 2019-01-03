@@ -10,6 +10,7 @@ import Foundation
 
 enum Segue: String {
     case unnamed
+    case toMenuWidgetViewControler
     case toObjectAttributes
     case toSceneWidgetViewController
 }
@@ -19,6 +20,7 @@ extension Segue: RawRepresentable {
 
     init(rawValue: RawValue?) {
         switch rawValue {
+        case "toMenuWidgetViewControler": self = .toMenuWidgetViewControler
         case "toObjectAttributes": self = .toObjectAttributes
         case "toSceneWidgetViewController": self = .toSceneWidgetViewController
         default: self = .unnamed
@@ -27,6 +29,7 @@ extension Segue: RawRepresentable {
 
     var rawValue: RawValue {
         switch self {
+        case .toMenuWidgetViewControler: return "toMenuWidgetViewControler"
         case .toObjectAttributes: return "toObjectAttributes"
         case .toSceneWidgetViewController: return "toSceneWidgetViewController"
         case .unnamed: return ""
