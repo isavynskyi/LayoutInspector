@@ -45,6 +45,7 @@
 		37FB8F1A21DD683F00BCA9CD /* UtilsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F1921DD683F00BCA9CD /* UtilsProtocols.swift */; };
 		37FB8F1C21DD68D100BCA9CD /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F1B21DD68D100BCA9CD /* UIFont+Extension.swift */; };
 		37FB8F1E21DD7B6000BCA9CD /* ObjectInspectionManagerInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F1D21DD7B6000BCA9CD /* ObjectInspectionManagerInterfaces.swift */; };
+		37FB8F2021DE47D900BCA9CD /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F1F21DE47D900BCA9CD /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		37FB8F1921DD683F00BCA9CD /* UtilsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsProtocols.swift; sourceTree = "<group>"; };
 		37FB8F1B21DD68D100BCA9CD /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		37FB8F1D21DD7B6000BCA9CD /* ObjectInspectionManagerInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectInspectionManagerInterfaces.swift; sourceTree = "<group>"; };
+		37FB8F1F21DE47D900BCA9CD /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 				37FB8F1921DD683F00BCA9CD /* UtilsProtocols.swift */,
 				37FB8F1721DD65C100BCA9CD /* UIColor+Extension.swift */,
 				37FB8F1B21DD68D100BCA9CD /* UIFont+Extension.swift */,
+				37FB8F1F21DE47D900BCA9CD /* String+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				37FB8F1C21DD68D100BCA9CD /* UIFont+Extension.swift in Sources */,
 				37F7159D21D2ED3A0055F233 /* Constants.swift in Sources */,
 				37F93C2421D28B41007CBE78 /* ViewController.swift in Sources */,
+				37FB8F2021DE47D900BCA9CD /* String+Extension.swift in Sources */,
 				37F93C2221D28B41007CBE78 /* AppDelegate.swift in Sources */,
 				37FB8F1621DD605B00BCA9CD /* UICollectionView+Extention.swift in Sources */,
 				37F7159921D2E9AA0055F233 /* RenderingView.swift in Sources */,
