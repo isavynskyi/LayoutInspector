@@ -1,5 +1,5 @@
 //
-//  ObjectInspectionWidget.swift
+//  ObjectAttributesManager.swift
 //  LayoutInspectorExample
 //
 //  Created by Igor Savynskyi on 1/2/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ObjectInspectionManager: NSObject, ObjectInspectionManagerProtocol {
+class ObjectAttributesManager: NSObject, AttributesManagerProtocol {
     private var collectionView: UICollectionView
     private var currentItem: ViewMetadataProtocol? {
         didSet { dataSource = generateDataSource(from: currentItem) }
@@ -30,13 +30,13 @@ class ObjectInspectionManager: NSObject, ObjectInspectionManagerProtocol {
 }
 
 // MARK: - Nested types
-private extension ObjectInspectionManager {
+private extension ObjectAttributesManager {
     struct LayoutConstants {
         static let collectionItemHeight: CGFloat = 44.0
     }
 }
 
-extension ObjectInspectionManager: UICollectionViewDataSource {
+extension ObjectAttributesManager: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataSource.count
     }
@@ -64,7 +64,7 @@ extension ObjectInspectionManager: UICollectionViewDataSource {
     
 }
 
-extension ObjectInspectionManager: UICollectionViewDelegateFlowLayout {
+extension ObjectAttributesManager: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let sourceItem = dataSource[indexPath.row]
         let width: CGFloat
@@ -79,7 +79,7 @@ extension ObjectInspectionManager: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: - Private API
-private extension ObjectInspectionManager {
+private extension ObjectAttributesManager {
     func generateDataSource(from metadata: ViewMetadataProtocol?) -> [AttributeViewModel] {
         guard let metadata = metadata else { return [] }
         

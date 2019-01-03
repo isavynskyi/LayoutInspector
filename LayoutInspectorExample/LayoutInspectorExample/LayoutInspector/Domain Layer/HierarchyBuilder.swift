@@ -12,11 +12,7 @@ protocol HierarchyBuilder {
     func snapshotHierarchy() -> ViewDescriptionProtocol
 }
 
-class HierarchyBuilderImpl {
-    private var count = 0       // TODO: - remove
-}
-
-extension HierarchyBuilderImpl: HierarchyBuilder {
+class HierarchyBuilderImpl: HierarchyBuilder {
     func snapshotHierarchy() -> ViewDescriptionProtocol {
         return buildHierarchy(view: UIApplication.shared.windows.first!)
     }
@@ -39,9 +35,9 @@ private extension HierarchyBuilderImpl {
         } else {
             isTransparent = false
         }
-
+        
         let image = isTransparent ? nil : view.asImage()
-
+        
         // hidden subviews rollback
         temporaryHiddenViews.forEach {$0.isHidden = false}
         
@@ -58,21 +54,6 @@ private extension HierarchyBuilderImpl {
                                          backgroundColor: view.backgroundColor,
                                          tint: view.tintColor,
                                          clipToBounds: view.clipsToBounds)
-        
-        // TODO: - remove if needed
-        count += 1
-        if let image = image {
-            storeImage(image, name: String(count))
-            print( "\(count): dframe = \(view.frame.width), \(view.frame.height), \(view.frame.origin)")
-        }
         return descriptor
-    }
-    
-    // MARK: - Private API
-    func storeImage(_ image:UIImage, name: String) {
-        let documentsPathURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        print(documentsPathURL)
-        let writePath = documentsPathURL?.appendingPathComponent(name)
-        try? image.pngData()?.write(to: writePath!)
     }
 }

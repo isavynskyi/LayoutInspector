@@ -16,14 +16,6 @@ extension UIView {
             layer.render(in: rendererContext.cgContext)
         }
     }
+    
 }
 
-// TODO: - remove
-extension UIView {
-    /**
-     Wrapper for useful debugging description of view hierarchy
-     */
-    var recursiveDescription: NSString {
-        return value(forKey: "recursiveDescription") as! NSString
-    }
-}

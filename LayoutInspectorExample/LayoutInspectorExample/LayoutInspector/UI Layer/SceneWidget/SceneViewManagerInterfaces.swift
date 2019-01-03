@@ -8,7 +8,7 @@
 
 import SceneKit
 
-protocol SceneViewManagerProtocol {
+protocol SceneViewManagerProtocol: NodesManagementProtocol {
     var sceneView: SCNView { get }
     var delegate: SceneViewManagerDelegate? { get set}
     func resetPointOfViewToDefaults()

@@ -5,10 +5,8 @@ protocol LayoutInspectorViewOutput {
     func didCloseAction()
 }
 
-protocol LayoutInspectorViewInput: NSObjectProtocol {
+protocol LayoutInspectorViewInput: NSObjectProtocol, NodesManagementProtocol {
     func rootView() -> UIView
-    func addNodeToScene(_ node: SCNNode)
-    func removeNode(_ node: SCNNode)
 }
 
 class LayoutInspectorPresenter {

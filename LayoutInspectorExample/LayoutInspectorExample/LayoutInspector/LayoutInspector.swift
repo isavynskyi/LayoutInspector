@@ -21,6 +21,7 @@ public class LayoutInspector {
         let viewDescriptionTree = hierarchyBuilder.snapshotHierarchy()
         presenter.showInspectorView(for: viewDescriptionTree)
     }
+    
 }
 
 
@@ -46,4 +47,5 @@ private extension LayoutInspector {
         let viewController: LayoutInspectorViewController = storyboard.instantiateViewController(withIdentifier: "LayoutInspectorViewController") as! LayoutInspectorViewController
         return viewController
     }
+    
 }

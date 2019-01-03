@@ -18,9 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NGx-4d-3i9">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMs-bP-gnr" userLabel="SceneWidgetContainerView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                            </sceneKitView>
+                                <connections>
+                                    <segue destination="Hc1-Zp-gN3" kind="embed" identifier="toSceneWidgetViewController" id="Rp2-4e-42Y"/>
+                                </connections>
+                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Se-Mh-vhs">
                                 <rect key="frame" x="35" y="36" width="37" height="30"/>
                                 <state key="normal" title="close"/>
@@ -37,13 +40,13 @@
                                     <action selector="resetCameraPositionAction:" destination="tHq-Ag-i7Y" eventType="touchUpInside" id="Qrr-oe-9wt"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyA-Aq-pJh">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyA-Aq-pJh" userLabel="ObjectInspectionWidgetContainerView">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="fU4-iH-dFA"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="7Ra-Fd-6gG" kind="embed" identifier="toObjectInspection" id="apM-kE-6Tu"/>
+                                    <segue destination="7Ra-Fd-6gG" kind="embed" identifier="toObjectAttributes" id="apM-kE-6Tu"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykq-dg-iII">
@@ -55,35 +58,32 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="NGx-4d-3i9" firstAttribute="leading" secondItem="AqF-aB-iw6" secondAttribute="leading" id="4IB-4m-Caq"/>
+                            <constraint firstItem="JMs-bP-gnr" firstAttribute="leading" secondItem="v03-Ls-WcO" secondAttribute="leading" id="1nL-UR-4Wl"/>
                             <constraint firstAttribute="bottom" secondItem="OyA-Aq-pJh" secondAttribute="bottom" id="9BA-u5-n1j"/>
                             <constraint firstItem="4Se-Mh-vhs" firstAttribute="leading" secondItem="AqF-aB-iw6" secondAttribute="leading" constant="35" id="BC2-V7-iTE"/>
-                            <constraint firstItem="OyA-Aq-pJh" firstAttribute="top" secondItem="NGx-4d-3i9" secondAttribute="bottom" id="DVf-X8-LSA"/>
-                            <constraint firstItem="NGx-4d-3i9" firstAttribute="top" secondItem="v03-Ls-WcO" secondAttribute="top" id="EaM-N4-FJ8"/>
                             <constraint firstAttribute="trailing" secondItem="OyA-Aq-pJh" secondAttribute="trailing" id="LxD-Dx-6KT"/>
                             <constraint firstItem="ykq-dg-iII" firstAttribute="top" secondItem="OyA-Aq-pJh" secondAttribute="top" id="QcE-7K-dIg"/>
                             <constraint firstItem="4Se-Mh-vhs" firstAttribute="top" secondItem="AqF-aB-iw6" secondAttribute="top" constant="16" id="c2s-QH-KGQ"/>
                             <constraint firstItem="ZXR-WR-Nss" firstAttribute="centerX" secondItem="AqF-aB-iw6" secondAttribute="centerX" id="dlF-K3-iTV"/>
-                            <constraint firstItem="AqF-aB-iw6" firstAttribute="trailing" secondItem="NGx-4d-3i9" secondAttribute="trailing" id="s3F-Pf-1RD"/>
+                            <constraint firstAttribute="trailing" secondItem="JMs-bP-gnr" secondAttribute="trailing" id="ekM-qR-NvZ"/>
                             <constraint firstItem="ykq-dg-iII" firstAttribute="leading" secondItem="OyA-Aq-pJh" secondAttribute="leading" id="uMH-hH-aO3"/>
+                            <constraint firstItem="JMs-bP-gnr" firstAttribute="top" secondItem="v03-Ls-WcO" secondAttribute="top" id="ugR-b8-eSw"/>
                             <constraint firstItem="OyA-Aq-pJh" firstAttribute="leading" secondItem="v03-Ls-WcO" secondAttribute="leading" id="xK8-Iz-q3r"/>
                             <constraint firstItem="ZXR-WR-Nss" firstAttribute="top" secondItem="AqF-aB-iw6" secondAttribute="top" constant="16" id="xYU-68-IT4"/>
                             <constraint firstItem="ykq-dg-iII" firstAttribute="trailing" secondItem="OyA-Aq-pJh" secondAttribute="trailing" id="xna-gb-56b"/>
+                            <constraint firstItem="OyA-Aq-pJh" firstAttribute="top" secondItem="JMs-bP-gnr" secondAttribute="bottom" id="z3y-1L-was"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AqF-aB-iw6"/>
                     </view>
-                    <connections>
-                        <outlet property="sceneView" destination="NGx-4d-3i9" id="ecR-Jn-yFC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BzK-me-j0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="120.8" y="22.938530734632685"/>
         </scene>
-        <!--Object Inspection View Controller-->
+        <!--Attributes Widget View Controller-->
         <scene sceneID="Mmb-RQ-dhA">
             <objects>
-                <viewController id="7Ra-Fd-6gG" customClass="ObjectInspectionViewController" customModule="LayoutInspectorExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Ra-Fd-6gG" customClass="AttributesWidgetViewController" customModule="LayoutInspectorExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tBq-Ud-VoE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,6 +234,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPw-Fe-TmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="120.8" y="456.97151424287858"/>
+        </scene>
+        <!--Scene Widget View Controller-->
+        <scene sceneID="yMk-y2-RAe">
+            <objects>
+                <viewController id="Hc1-Zp-gN3" customClass="SceneWidgetViewController" customModule="LayoutInspectorExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="88b-bk-p8J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NGx-4d-3i9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </sceneKitView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NGx-4d-3i9" secondAttribute="trailing" id="DCA-6Z-iRm"/>
+                            <constraint firstAttribute="bottom" secondItem="NGx-4d-3i9" secondAttribute="bottom" id="K0q-ks-eRj"/>
+                            <constraint firstItem="NGx-4d-3i9" firstAttribute="top" secondItem="88b-bk-p8J" secondAttribute="top" id="WUK-AF-n15"/>
+                            <constraint firstItem="NGx-4d-3i9" firstAttribute="leading" secondItem="88b-bk-p8J" secondAttribute="leading" id="brB-aZ-S24"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="NGx-4d-3i9" id="Tfx-9g-BSg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYO-wf-zcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="23"/>
         </scene>
     </scenes>
 </document>

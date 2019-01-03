@@ -38,6 +38,14 @@ class SceneViewManager: SceneViewManagerProtocol {
             setSelectedNode(tappedNode)
         }
     }
+    
+    func addNodeToScene(_ node: SCNNode) {
+        sceneView.scene?.rootNode.addChildNode(node)
+    }
+    
+    func removeNode(_ node: SCNNode) {
+        node.removeFromParentNode()
+    }
 }
 
 // MARK: - Private API

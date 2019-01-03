@@ -12,54 +12,41 @@ import SceneKit
 class LayoutInspectorViewController: UIViewController {
     // Props
     var output: LayoutInspectorViewOutput?
-    private var sceneViewManager: SceneViewManagerProtocol!
-    private var tapGestureRecognizer: UITapGestureRecognizer {
-        return UITapGestureRecognizer.init(target: self, action: #selector(handleTap(_:)))
-    }
-    private var objectInspectionWidget: ObjectInspectionManagerProtocol?
+    private var sceneWidget: SceneWidgetProtocol?
+    private var objectInspectionWidget: AttributesManagerProtocol?
     
-    // Outlets
-    @IBOutlet private weak var sceneView: SCNView!
-     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
-        sceneViewManager = SceneViewManager(sceneView: sceneView)
-        sceneViewManager.delegate = self
-        performSegue(withIdentifier: Segue.toObjectInspection.rawValue, sender: self)
+        loadWidgets()
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let segueCase = Segue(rawValue: segue.identifier)
         switch segueCase {
-        case .toObjectInspection:
-            objectInspectionWidget = segue.destination as? ObjectInspectionManagerProtocol
-        default: return
+        case .toObjectAttributes:
+            objectInspectionWidget = segue.destination as? AttributesManagerProtocol
+        case .toSceneWidgetViewController:
+            sceneWidget = segue.destination as? SceneWidgetProtocol
+            sceneWidget?.delegate = self
+        case .unnamed:
+            return
         }
     }
     
     // MARK: - Private API
-    private func configure() {
-        configureGestures()
+    private func loadWidgets() {
+        performSegue(withIdentifier: Segue.toObjectAttributes.rawValue, sender: self)
+        performSegue(withIdentifier: Segue.toSceneWidgetViewController.rawValue, sender: self)
     }
-    
-    private func configureGestures() {
-        sceneView.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
+
     //MARK: - Actions
     @IBAction private func closeAction(_ sender: Any) {
         output?.didCloseAction()
     }
     
     @IBAction func resetCameraPositionAction(_ sender: Any) {
-        sceneViewManager.resetPointOfViewToDefaults()
-    }
-    
-    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
-        sceneViewManager.handleTap(sender)
+        sceneWidget?.resetPointOfViewToDefaults()
     }
 }
 
@@ -69,11 +56,11 @@ extension LayoutInspectorViewController: LayoutInspectorViewInput {
     }
     
     func addNodeToScene(_ node: SCNNode) {
-        sceneView.scene?.rootNode.addChildNode(node)
+        sceneWidget?.addNodeToScene(node)
     }
     
     func removeNode(_ node: SCNNode) {
-        node.removeFromParentNode()
+        sceneWidget?.removeNode(node)
     }
 }
 
