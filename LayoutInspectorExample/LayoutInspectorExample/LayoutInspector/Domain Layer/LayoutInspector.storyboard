@@ -63,7 +63,6 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="AqF-aB-iw6" firstAttribute="bottom" secondItem="JMs-bP-gnr" secondAttribute="bottom" id="5ne-Pj-MWh"/>
                             <constraint firstAttribute="bottom" secondItem="OyA-Aq-pJh" secondAttribute="bottom" id="9BA-u5-n1j"/>
                             <constraint firstItem="wzZ-OA-kus" firstAttribute="top" secondItem="AqF-aB-iw6" secondAttribute="top" id="Dbd-m8-0se"/>
                             <constraint firstItem="OyA-Aq-pJh" firstAttribute="leading" secondItem="JMs-bP-gnr" secondAttribute="trailing" id="G30-38-CgP"/>
@@ -82,6 +81,7 @@
                             <constraint firstItem="JMs-bP-gnr" firstAttribute="leading" secondItem="AqF-aB-iw6" secondAttribute="leading" id="oVg-Go-gPG"/>
                             <constraint firstItem="ykq-dg-iII" firstAttribute="leading" secondItem="OyA-Aq-pJh" secondAttribute="leading" id="uMH-hH-aO3"/>
                             <constraint firstItem="JMs-bP-gnr" firstAttribute="top" secondItem="v03-Ls-WcO" secondAttribute="top" id="ugR-b8-eSw"/>
+                            <constraint firstAttribute="bottom" secondItem="JMs-bP-gnr" secondAttribute="bottom" id="vil-V4-cWa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AqF-aB-iw6"/>
                     </view>
