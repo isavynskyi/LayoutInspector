@@ -22,7 +22,7 @@ pod 'LayoutInspector'
 
 ## Author
 
-Igor, i.savinskiy@mobidev.biz
+Ihor, wadedunk08@gmail.com
 
 ## License
 

@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## LayoutInspector
 
-Copyright (c) 2019 Igor <i.savinskiy@mobidev.biz>
+Copyright (c) 2019 Ihor Savynskyi <wadedunk08@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
