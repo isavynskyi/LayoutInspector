@@ -8,7 +8,20 @@
 
 import SceneKit
 
+protocol LayoutInspectorPresenterDelegate: NSObjectProtocol {
+    func didFinishLayoutInspection()
+}
+
+protocol LayoutInspectorViewOutput {
+    func didCloseAction()
+}
+
+protocol LayoutInspectorViewInput: NSObjectProtocol, NodesManagementProtocol {
+    func rootView() -> UIView
+}
+
 protocol NodesManagementProtocol {
     func addNodeToScene(_ node: SCNNode)
     func removeNode(_ node: SCNNode)
 }
+

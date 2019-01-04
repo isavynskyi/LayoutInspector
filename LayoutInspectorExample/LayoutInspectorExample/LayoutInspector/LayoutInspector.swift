@@ -13,14 +13,14 @@ public enum TriggerType {
     case screenshot
 }
 
-public class LayoutInspector {
+public class LayoutInspector: NSObject {
     static let shared = LayoutInspector()
-    private init() {}
+    private override init() {}
 
     private var triggerType: TriggerType = .custom
     private var viewController: LayoutInspectorContainerViewController?
     lazy private var hierarchyBuilder: HierarchyBuilder = {return HierarchyBuilderImpl()}()
-    lazy private var presenter: LayoutInspectorPresenter = {return makeLayoutInspectorPresenter()}()
+    private var presenter: LayoutInspectorPresenter?
 }
 
 //MARK: - Public API
@@ -28,7 +28,8 @@ public extension LayoutInspector {
     @objc func showLayout() {
         #if DEBUG
         let viewDescriptionTree = hierarchyBuilder.snapshotHierarchy()
-        presenter.showInspectorView(for: viewDescriptionTree)
+        presenter = makeLayoutInspectorPresenter()
+        presenter?.showInspectorView(for: viewDescriptionTree)
         #endif
     }
     
@@ -62,7 +63,7 @@ private extension LayoutInspector {
 // MARK: - Presenter
 private extension LayoutInspector {
     func makeLayoutInspectorPresenter() -> LayoutInspectorPresenter {
-        let view = layoutInspectorPresenterView()
+        let view = makeLayoutInspectorContainerView()
         viewController = view
         
         // TODO: - fix, trigger
@@ -72,12 +73,20 @@ private extension LayoutInspector {
         let presenter = LayoutInspectorPresenter()
         view.output = presenter
         presenter.view = view
+        presenter.delegate = self
         return presenter
     }
     
-    func layoutInspectorPresenterView() -> LayoutInspectorContainerViewController {
+    func makeLayoutInspectorContainerView() -> LayoutInspectorContainerViewController {
         let storyboard = UIStoryboard(name: "LayoutInspector", bundle: nil)
         let viewController: LayoutInspectorContainerViewController = storyboard.instantiateViewController(withIdentifier: "LayoutInspectorContainerViewController") as! LayoutInspectorContainerViewController
         return viewController
+    }
+}
+
+extension LayoutInspector: LayoutInspectorPresenterDelegate {
+    func didFinishLayoutInspection() {
+        viewController = nil
+        presenter = nil
     }
 }

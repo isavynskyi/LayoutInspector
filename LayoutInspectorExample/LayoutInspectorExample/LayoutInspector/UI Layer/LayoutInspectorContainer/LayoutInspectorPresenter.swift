@@ -1,17 +1,11 @@
 import UIKit
 import SceneKit
 
-protocol LayoutInspectorViewOutput {
-    func didCloseAction()
-}
-
-protocol LayoutInspectorViewInput: NSObjectProtocol, NodesManagementProtocol {
-    func rootView() -> UIView
-}
-
 class LayoutInspectorPresenter {
     weak var view: LayoutInspectorViewInput?
-    var wrapperNode = SCNNode()
+    weak var delegate: LayoutInspectorPresenterDelegate?
+    
+    private var wrapperNode = SCNNode()
     private lazy var renderingTreeBuilder: RenderingTreeBuilderProtocol = {
        return RenderingTreeBuilder()
     }()
@@ -44,5 +38,6 @@ extension LayoutInspectorPresenter: LayoutInspectorViewOutput {
         wrapperNode.childNodes.forEach { $0.removeFromParentNode() }
         let rootView = view?.rootView()
         rootView?.removeFromSuperview()
+        delegate?.didFinishLayoutInspection()
     }
 }

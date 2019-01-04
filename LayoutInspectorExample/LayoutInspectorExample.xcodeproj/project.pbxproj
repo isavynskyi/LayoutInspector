@@ -189,7 +189,7 @@
 		37F93C4B21D2A104007CBE78 /* UI Layer */ = {
 			isa = PBXGroup;
 			children = (
-				37FB8F0B21DCD87D00BCA9CD /* LayoutInspector */,
+				37FB8F0B21DCD87D00BCA9CD /* LayoutInspectorContainer */,
 				37FB8F2B21DEABFB00BCA9CD /* MenuWidget */,
 				37FB8F2321DE9FD500BCA9CD /* SceneWidget */,
 				37FB8F0A21DCD86000BCA9CD /* AttributesWidget */,
@@ -233,7 +233,7 @@
 			path = AttributesWidget;
 			sourceTree = "<group>";
 		};
-		37FB8F0B21DCD87D00BCA9CD /* LayoutInspector */ = {
+		37FB8F0B21DCD87D00BCA9CD /* LayoutInspectorContainer */ = {
 			isa = PBXGroup;
 			children = (
 				37FB8F2821DEA58900BCA9CD /* LayoutInspectorInterfaces.swift */,
@@ -243,7 +243,7 @@
 				37F7159A21D2EC060055F233 /* RenderingTreeBuilder.swift */,
 				37F989ED21DBA94F00BC7483 /* DebugNode.swift */,
 			);
-			path = LayoutInspector;
+			path = LayoutInspectorContainer;
 			sourceTree = "<group>";
 		};
 		37FB8F0E21DCE3E200BCA9CD /* Utils */ = {
