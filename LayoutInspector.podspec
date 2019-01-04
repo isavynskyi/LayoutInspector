@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = 'LayoutInspector module'
 
   s.description      = <<-DESC
-LayoutInspector allows to debug view layers on iOS devices. It allows to get common information about each visible object and to inspect layers in 3D mode
+LayoutInspector is a tool for debugging layers on iOS devices. It allows to get common information about each visible view and to inspect layers in 3D mode
                        DESC
 
   s.homepage         = 'https://github.com/isavynskyi/LayoutInspector'
