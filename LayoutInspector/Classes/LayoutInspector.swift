@@ -32,6 +32,7 @@ public final class LayoutInspector: NSObject {
     private var viewController: LayoutInspectorContainerViewController?
     private var hierarchyBuilder: HierarchyBuilderProtocol = HierarchyBuilder()
     private var presenter: LayoutInspectorPresenter?
+    private var isInspecting = false
 }
 
 //MARK: - Public API
@@ -43,9 +44,10 @@ public extension LayoutInspector {
      */
     @objc func showLayout() {
         #if DEBUG
-        guard let viewDescriptionTree = hierarchyBuilder.captureHierarchy() else { return }
+        guard let viewDescriptionTree = hierarchyBuilder.captureHierarchy(), isInspecting == false else { return }
         presenter = makeLayoutInspectorPresenter()
         presenter?.showInspectorView(for: viewDescriptionTree)
+        isInspecting = true
         #endif
     }
     
@@ -111,5 +113,6 @@ extension LayoutInspector: LayoutInspectorPresenterDelegate {
     func didFinishLayoutInspection() {
         viewController = nil
         presenter = nil
+        isInspecting = false
     }
 }
