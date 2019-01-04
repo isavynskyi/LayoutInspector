@@ -2,8 +2,8 @@
   "name": "LayoutInspector",
   "version": "0.1.0",
   "summary": "LayoutInspector module",
-  "description": "LayoutInspector allows to debug view layers on iOS devices. It allows to get common information about each visible object and to inspect layers in 3D mode",
-  "homepage": "https://github.com/Igor/LayoutInspector",
+  "description": "LayoutInspector is a tool for debugging layers on iOS devices. It allows to get common information about each visible view and to inspect layers in 3D mode",
+  "homepage": "https://github.com/isavynskyi/LayoutInspector",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,12 +12,12 @@
     "Ihor Savynskyi": "wadedunk08@gmail.com"
   },
   "source": {
-    "git": "https://github.com/Igor/LayoutInspector.git",
+    "git": "https://github.com/isavynskyi/LayoutInspector.git",
     "tag": "0.1.0"
   },
   "social_media_url": "https://twitter.com/iWadedunk",
   "platforms": {
-    "ios": "11.0"
+    "ios": "10.0"
   },
   "source_files": "LayoutInspector/**/*.{h,m,swift}",
   "resources": [
