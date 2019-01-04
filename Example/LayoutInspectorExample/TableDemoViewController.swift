@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  TableDemoViewController.swift
 //  LayoutInspectorExample
 //
 //  Created by Igor Savynskyi on 1/5/19.
@@ -9,7 +9,7 @@
 import UIKit
 import LayoutInspector
 
-class TableViewController: UITableViewController {
+class TableDemoViewController: UITableViewController {
     
     @IBAction private func inspectAction(_ sender: Any) {
         LayoutInspector.shared.showLayout()

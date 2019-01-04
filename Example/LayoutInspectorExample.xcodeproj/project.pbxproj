@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		371988C421E0151700639FDC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371988C321E0151700639FDC /* TableViewController.swift */; };
+		371988C421E0151700639FDC /* TableDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371988C321E0151700639FDC /* TableDemoViewController.swift */; };
 		37F93C2221D28B41007CBE78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F93C2121D28B41007CBE78 /* AppDelegate.swift */; };
-		37F93C2421D28B41007CBE78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F93C2321D28B41007CBE78 /* ViewController.swift */; };
+		37F93C2421D28B41007CBE78 /* ControlsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F93C2321D28B41007CBE78 /* ControlsDemoViewController.swift */; };
 		37F93C2721D28B41007CBE78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C2521D28B41007CBE78 /* Main.storyboard */; };
 		37F93C2921D28B42007CBE78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C2821D28B42007CBE78 /* Assets.xcassets */; };
 		37F93C2C21D28B42007CBE78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C2A21D28B42007CBE78 /* LaunchScreen.storyboard */; };
@@ -30,10 +30,10 @@
 
 /* Begin PBXFileReference section */
 		111D962F3B6CE405F10D747D /* Pods-LayoutInspectorExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LayoutInspectorExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-LayoutInspectorExample/Pods-LayoutInspectorExample.release.xcconfig"; sourceTree = "<group>"; };
-		371988C321E0151700639FDC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		371988C321E0151700639FDC /* TableDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDemoViewController.swift; sourceTree = "<group>"; };
 		37F93C1E21D28B41007CBE78 /* LayoutInspectorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutInspectorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F93C2121D28B41007CBE78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		37F93C2321D28B41007CBE78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37F93C2321D28B41007CBE78 /* ControlsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsDemoViewController.swift; sourceTree = "<group>"; };
 		37F93C2621D28B41007CBE78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37F93C2821D28B42007CBE78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37F93C2B21D28B42007CBE78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,8 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				37F93C2121D28B41007CBE78 /* AppDelegate.swift */,
-				37F93C2321D28B41007CBE78 /* ViewController.swift */,
-				371988C321E0151700639FDC /* TableViewController.swift */,
+				37F93C2321D28B41007CBE78 /* ControlsDemoViewController.swift */,
+				371988C321E0151700639FDC /* TableDemoViewController.swift */,
 				37F93C2521D28B41007CBE78 /* Main.storyboard */,
 				37F93C2821D28B42007CBE78 /* Assets.xcassets */,
 				37F93C2A21D28B42007CBE78 /* LaunchScreen.storyboard */,
@@ -292,8 +292,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37F93C2421D28B41007CBE78 /* ViewController.swift in Sources */,
-				371988C421E0151700639FDC /* TableViewController.swift in Sources */,
+				37F93C2421D28B41007CBE78 /* ControlsDemoViewController.swift in Sources */,
+				371988C421E0151700639FDC /* TableDemoViewController.swift in Sources */,
 				37F93C2221D28B41007CBE78 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
