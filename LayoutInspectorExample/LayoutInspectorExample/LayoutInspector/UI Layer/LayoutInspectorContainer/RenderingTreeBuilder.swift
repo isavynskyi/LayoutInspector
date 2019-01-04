@@ -13,13 +13,13 @@ protocol RenderingTreeBuilderProtocol {
 }
 
 fileprivate struct SceneConstants {
-    static let pointsInSceneKitMeter = 100.0
-    static let layerStep = 0.3
+    static let pointsInSceneKitMeter: Float = 100.0
+    static let layerStep: Float = 0.3
 }
 
 class RenderingTreeBuilder: RenderingTreeBuilderProtocol {
     func build(from viewDescription: ViewDescriptionProtocol) -> RenderingViewProtocol {
-        let renderingSubviews = viewDescription.subviews?.compactMap {build(from: $0)}
+        let renderingSubviews = viewDescription.subviews?.compactMap { build(from: $0) }
         var viewNode: SCNNode?
         
         // skip nodes for hidden views
@@ -31,7 +31,9 @@ class RenderingTreeBuilder: RenderingTreeBuilderProtocol {
                 viewNode?.addChildNode(node)
             })
         }
-        return RenderingView(viewNode: viewNode, viewDescription: viewDescription, subviews: renderingSubviews)
+        return RenderingView(viewNode: viewNode,
+                             viewDescription: viewDescription,
+                             subviews: renderingSubviews)
     }
 }
 
@@ -48,9 +50,11 @@ private extension RenderingTreeBuilder {
         let plane = SCNPlane(width: viewDescription.frame.size.width/CGFloat(SceneConstants.pointsInSceneKitMeter),
                              height: viewDescription.frame.size.height/CGFloat(SceneConstants.pointsInSceneKitMeter))
         if viewDescription.isTransparent {
-            plane.firstMaterial?.diffuse.contents = UIImage(named: "transparent_view_image")
+            plane.firstMaterial?.diffuse.contents = UIImage(named: "transparent_view_image",
+                                                            in: Bundle.layoutInspectorBundle,
+                                                            compatibleWith: nil)
         } else {
-            plane.firstMaterial?.diffuse.contents = viewDescription.snapshot
+            plane.firstMaterial?.diffuse.contents = viewDescription.snapshotImage
         }
         plane.firstMaterial?.isDoubleSided = true
         return plane
@@ -71,9 +75,9 @@ func adjustNodePositionToSceneKitCoordinateSystem(_ node: SCNNode?, with viewDes
     let viewCenter = viewDescription.center
     let translatedX = -parentSize.width/2.0 + viewCenter.x
     let translatedY = parentSize.height/2.0 - viewCenter.y
-    node.position = SCNVector3Make(Float(translatedX)/Float(SceneConstants.pointsInSceneKitMeter),
-                                   Float(translatedY)/Float(SceneConstants.pointsInSceneKitMeter),
-                                   Float(SceneConstants.layerStep))
+    node.position = SCNVector3Make(Float(translatedX)/SceneConstants.pointsInSceneKitMeter,
+                                   Float(translatedY)/SceneConstants.pointsInSceneKitMeter,
+                                   SceneConstants.layerStep)
     }
 }
 

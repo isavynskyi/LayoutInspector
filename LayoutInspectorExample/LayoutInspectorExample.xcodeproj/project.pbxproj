@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3774B32D21DF7AF500D6491C /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774B32C21DF7AF500D6491C /* Bundle+Extension.swift */; };
+		3774B32F21DF87BD00D6491C /* ViewMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774B32E21DF87BD00D6491C /* ViewMetadata.swift */; };
 		37F7159721D2E3820055F233 /* HierarchyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7159621D2E3820055F233 /* HierarchyBuilder.swift */; };
 		37F7159921D2E9AA0055F233 /* RenderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7159821D2E9AA0055F233 /* RenderingView.swift */; };
 		37F7159B21D2EC060055F233 /* RenderingTreeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7159A21D2EC060055F233 /* RenderingTreeBuilder.swift */; };
@@ -49,7 +50,7 @@
 		37FB8F2221DE5C5D00BCA9CD /* AttributeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F2121DE5C5D00BCA9CD /* AttributeViewModel.swift */; };
 		37FB8F2521DE9FFF00BCA9CD /* SceneWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F2421DE9FFF00BCA9CD /* SceneWidgetViewController.swift */; };
 		37FB8F2721DEA28D00BCA9CD /* SceneWidgetInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F2621DEA28D00BCA9CD /* SceneWidgetInterfaces.swift */; };
-		37FB8F2921DEA58900BCA9CD /* LayoutInspectorInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F2821DEA58900BCA9CD /* LayoutInspectorInterfaces.swift */; };
+		37FB8F2921DEA58900BCA9CD /* LayoutInspectorContainerInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F2821DEA58900BCA9CD /* LayoutInspectorContainerInterfaces.swift */; };
 		37FB8F2D21DEAC1F00BCA9CD /* MenuWidgetInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F2C21DEAC1F00BCA9CD /* MenuWidgetInterfaces.swift */; };
 		37FB8F2F21DEAC3700BCA9CD /* MenuWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8F2E21DEAC3700BCA9CD /* MenuWidgetViewController.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		3774B32C21DF7AF500D6491C /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		3774B32E21DF87BD00D6491C /* ViewMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMetadata.swift; sourceTree = "<group>"; };
 		37F7159621D2E3820055F233 /* HierarchyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchyBuilder.swift; sourceTree = "<group>"; };
 		37F7159821D2E9AA0055F233 /* RenderingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderingView.swift; sourceTree = "<group>"; };
 		37F7159A21D2EC060055F233 /* RenderingTreeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderingTreeBuilder.swift; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 		37FB8F2121DE5C5D00BCA9CD /* AttributeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeViewModel.swift; sourceTree = "<group>"; };
 		37FB8F2421DE9FFF00BCA9CD /* SceneWidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneWidgetViewController.swift; sourceTree = "<group>"; };
 		37FB8F2621DEA28D00BCA9CD /* SceneWidgetInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneWidgetInterfaces.swift; sourceTree = "<group>"; };
-		37FB8F2821DEA58900BCA9CD /* LayoutInspectorInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutInspectorInterfaces.swift; sourceTree = "<group>"; };
+		37FB8F2821DEA58900BCA9CD /* LayoutInspectorContainerInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutInspectorContainerInterfaces.swift; sourceTree = "<group>"; };
 		37FB8F2C21DEAC1F00BCA9CD /* MenuWidgetInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuWidgetInterfaces.swift; sourceTree = "<group>"; };
 		37FB8F2E21DEAC3700BCA9CD /* MenuWidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuWidgetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,12 +238,13 @@
 		37FB8F0B21DCD87D00BCA9CD /* LayoutInspectorContainer */ = {
 			isa = PBXGroup;
 			children = (
-				37FB8F2821DEA58900BCA9CD /* LayoutInspectorInterfaces.swift */,
+				37FB8F2821DEA58900BCA9CD /* LayoutInspectorContainerInterfaces.swift */,
 				37F93C4C21D2A129007CBE78 /* LayoutInspectorContainerViewController.swift */,
 				37F93C4E21D2A1FD007CBE78 /* LayoutInspectorPresenter.swift */,
 				37F7159821D2E9AA0055F233 /* RenderingView.swift */,
 				37F7159A21D2EC060055F233 /* RenderingTreeBuilder.swift */,
 				37F989ED21DBA94F00BC7483 /* DebugNode.swift */,
+				3774B32E21DF87BD00D6491C /* ViewMetadata.swift */,
 			);
 			path = LayoutInspectorContainer;
 			sourceTree = "<group>";
@@ -249,9 +252,9 @@
 		37FB8F0E21DCE3E200BCA9CD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				37FB8F1921DD683F00BCA9CD /* UtilsProtocols.swift */,
 				37FB8F0F21DCE3F500BCA9CD /* Segue.swift */,
 				37FB8F1521DD605B00BCA9CD /* UICollectionView+Extention.swift */,
-				37FB8F1921DD683F00BCA9CD /* UtilsProtocols.swift */,
 				37F93C4421D28D5E007CBE78 /* UIView+Extension.swift */,
 				37FB8F1721DD65C100BCA9CD /* UIColor+Extension.swift */,
 				37FB8F1B21DD68D100BCA9CD /* UIFont+Extension.swift */,
@@ -413,10 +416,11 @@
 				37FB8F0521DCBF3400BCA9CD /* SceneViewManager.swift in Sources */,
 				37FB8F1C21DD68D100BCA9CD /* UIFont+Extension.swift in Sources */,
 				37F93C2421D28B41007CBE78 /* ViewController.swift in Sources */,
+				3774B32F21DF87BD00D6491C /* ViewMetadata.swift in Sources */,
 				37FB8F2021DE47D900BCA9CD /* String+Extension.swift in Sources */,
 				37F93C2221D28B41007CBE78 /* AppDelegate.swift in Sources */,
 				37FB8F1621DD605B00BCA9CD /* UICollectionView+Extention.swift in Sources */,
-				37FB8F2921DEA58900BCA9CD /* LayoutInspectorInterfaces.swift in Sources */,
+				37FB8F2921DEA58900BCA9CD /* LayoutInspectorContainerInterfaces.swift in Sources */,
 				37F7159921D2E9AA0055F233 /* RenderingView.swift in Sources */,
 				37F93C4D21D2A129007CBE78 /* LayoutInspectorContainerViewController.swift in Sources */,
 				37FB8F1E21DD7B6000BCA9CD /* AttributesManagerInterfaces.swift in Sources */,

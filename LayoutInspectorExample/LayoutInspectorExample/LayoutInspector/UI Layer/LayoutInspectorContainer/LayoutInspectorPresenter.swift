@@ -1,3 +1,11 @@
+//
+//  LayoutInspectorContainerViewController.swift
+//  LayoutInspectorExample
+//
+//  Created by Igor Savynskyi on 12/28/18.
+//  Copyright © 2018 Igor Savynskyi. All rights reserved.
+//
+
 import UIKit
 import SceneKit
 
@@ -18,8 +26,8 @@ class LayoutInspectorPresenter {
 
 private extension LayoutInspectorPresenter {
     func showView() {
-        let appWindow = UIApplication.shared.keyWindow! as UIWindow
-        guard let rootView = view?.rootView() else {return}
+        guard let appWindow = UIApplication.shared.keyWindow,
+            let rootView = view?.rootView() else { return }
         appWindow.addSubview(rootView)
     }
     

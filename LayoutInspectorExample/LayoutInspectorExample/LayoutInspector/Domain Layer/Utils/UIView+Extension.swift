@@ -6,7 +6,6 @@
 //  Copyright © 2018 Igor Savynskyi. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIView {
@@ -16,6 +15,5 @@ extension UIView {
             layer.render(in: rendererContext.cgContext)
         }
     }
-    
 }
 

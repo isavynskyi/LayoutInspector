@@ -1,5 +1,5 @@
 //
-//  LayoutInspectorInterfaces.swift
+//  LayoutInspectorContainerInterfaces.swift
 //  LayoutInspectorExample
 //
 //  Created by Igor Savynskyi on 1/3/19.

@@ -40,6 +40,6 @@ private extension TextAttributeCell {
     }
     
     struct Styleguide {
-        static let font: UIFont = .appH5
+        static let font: UIFont = .appH3
     }
 }

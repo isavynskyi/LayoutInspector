@@ -11,7 +11,7 @@ import UIKit
 
 protocol ViewDescriptionProtocol {
     var frame: CGRect { get }
-    var snapshot: UIImage? { get }
+    var snapshotImage: UIImage? { get }
     var subviews: [ViewDescriptionProtocol]? { get }
     var parentSize: CGSize? { get }
     var center: CGPoint { get }
@@ -27,7 +27,7 @@ protocol ViewDescriptionProtocol {
 
 class ViewDescription: ViewDescriptionProtocol {
     let frame: CGRect
-    let snapshot: UIImage?
+    let snapshotImage: UIImage?
     let subviews: [ViewDescriptionProtocol]?
     let parentSize: CGSize?
     let center: CGPoint
@@ -56,7 +56,7 @@ class ViewDescription: ViewDescriptionProtocol {
          clipToBounds: Bool)
     {
         self.frame = frame
-        self.snapshot = snapshot
+        self.snapshotImage = snapshot
         self.subviews = subviews
         self.parentSize = parentSize
         self.center = center
