@@ -11,7 +11,6 @@
 		37F7159721D2E3820055F233 /* HierarchyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7159621D2E3820055F233 /* HierarchyBuilder.swift */; };
 		37F7159921D2E9AA0055F233 /* RenderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7159821D2E9AA0055F233 /* RenderingView.swift */; };
 		37F7159B21D2EC060055F233 /* RenderingTreeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7159A21D2EC060055F233 /* RenderingTreeBuilder.swift */; };
-		37F7159D21D2ED3A0055F233 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7159C21D2ED3A0055F233 /* Constants.swift */; };
 		37F93C2221D28B41007CBE78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F93C2121D28B41007CBE78 /* AppDelegate.swift */; };
 		37F93C2421D28B41007CBE78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F93C2321D28B41007CBE78 /* ViewController.swift */; };
 		37F93C2721D28B41007CBE78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C2521D28B41007CBE78 /* Main.storyboard */; };
@@ -70,7 +69,6 @@
 		37F7159621D2E3820055F233 /* HierarchyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchyBuilder.swift; sourceTree = "<group>"; };
 		37F7159821D2E9AA0055F233 /* RenderingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderingView.swift; sourceTree = "<group>"; };
 		37F7159A21D2EC060055F233 /* RenderingTreeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderingTreeBuilder.swift; sourceTree = "<group>"; };
-		37F7159C21D2ED3A0055F233 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		37F93C1E21D28B41007CBE78 /* LayoutInspectorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutInspectorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F93C2121D28B41007CBE78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37F93C2321D28B41007CBE78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 		37FB8F0E21DCE3E200BCA9CD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				37F7159C21D2ED3A0055F233 /* Constants.swift */,
 				37FB8F0F21DCE3F500BCA9CD /* Segue.swift */,
 				37FB8F1521DD605B00BCA9CD /* UICollectionView+Extention.swift */,
 				37FB8F1921DD683F00BCA9CD /* UtilsProtocols.swift */,
@@ -415,7 +412,6 @@
 				37FB8F2721DEA28D00BCA9CD /* SceneWidgetInterfaces.swift in Sources */,
 				37FB8F0521DCBF3400BCA9CD /* SceneViewManager.swift in Sources */,
 				37FB8F1C21DD68D100BCA9CD /* UIFont+Extension.swift in Sources */,
-				37F7159D21D2ED3A0055F233 /* Constants.swift in Sources */,
 				37F93C2421D28B41007CBE78 /* ViewController.swift in Sources */,
 				37FB8F2021DE47D900BCA9CD /* String+Extension.swift in Sources */,
 				37F93C2221D28B41007CBE78 /* AppDelegate.swift in Sources */,

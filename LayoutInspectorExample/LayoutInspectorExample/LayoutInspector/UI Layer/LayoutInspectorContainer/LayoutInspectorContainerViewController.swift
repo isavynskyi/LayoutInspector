@@ -24,7 +24,8 @@ class LayoutInspectorContainerViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let segueCase = Segue(rawValue: segue.identifier)
+        guard let identifier = segue.identifier, let segueCase = Segue(rawValue: identifier) else { return }
+        
         switch segueCase {
         case .toMenuWidgetViewControler:
             menuWidget = segue.destination as? MenuWidgetProtocol
@@ -34,8 +35,6 @@ class LayoutInspectorContainerViewController: UIViewController {
         case .toSceneWidgetViewController:
             sceneWidget = segue.destination as? SceneWidgetProtocol
             sceneWidget?.delegate = self
-        case .unnamed:
-            return
         }
     }
     

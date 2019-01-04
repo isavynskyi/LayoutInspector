@@ -12,6 +12,11 @@ protocol RenderingTreeBuilderProtocol {
     func build(from: ViewDescriptionProtocol) -> RenderingViewProtocol
 }
 
+fileprivate struct SceneConstants {
+    static let pointsInSceneKitMeter = 100.0
+    static let layerStep = 0.3
+}
+
 class RenderingTreeBuilder: RenderingTreeBuilderProtocol {
     func build(from viewDescription: ViewDescriptionProtocol) -> RenderingViewProtocol {
         let renderingSubviews = viewDescription.subviews?.compactMap {build(from: $0)}
@@ -40,8 +45,8 @@ private extension RenderingTreeBuilder {
     }
     
     func plane(for viewDescription: ViewDescriptionProtocol) -> SCNPlane {
-        let plane = SCNPlane(width: viewDescription.frame.size.width/CGFloat(Constants.pointsInSceneKitMeter),
-                             height: viewDescription.frame.size.height/CGFloat(Constants.pointsInSceneKitMeter))
+        let plane = SCNPlane(width: viewDescription.frame.size.width/CGFloat(SceneConstants.pointsInSceneKitMeter),
+                             height: viewDescription.frame.size.height/CGFloat(SceneConstants.pointsInSceneKitMeter))
         if viewDescription.isTransparent {
             plane.firstMaterial?.diffuse.contents = UIImage(named: "transparent_view_image")
         } else {
@@ -66,9 +71,9 @@ func adjustNodePositionToSceneKitCoordinateSystem(_ node: SCNNode?, with viewDes
     let viewCenter = viewDescription.center
     let translatedX = -parentSize.width/2.0 + viewCenter.x
     let translatedY = parentSize.height/2.0 - viewCenter.y
-    node.position = SCNVector3Make(Float(translatedX)/Float(Constants.pointsInSceneKitMeter),
-                                   Float(translatedY)/Float(Constants.pointsInSceneKitMeter),
-                                   Float(Constants.layerStep))
+    node.position = SCNVector3Make(Float(translatedX)/Float(SceneConstants.pointsInSceneKitMeter),
+                                   Float(translatedY)/Float(SceneConstants.pointsInSceneKitMeter),
+                                   Float(SceneConstants.layerStep))
     }
 }
 

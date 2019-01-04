@@ -6,33 +6,8 @@
 //  Copyright © 2019 Ihor Savynskyi. All rights reserved.
 //
 
-import Foundation
-
 enum Segue: String {
-    case unnamed
-    case toMenuWidgetViewControler
-    case toAttributesWidgetViewController
-    case toSceneWidgetViewController
-}
-
-extension Segue: RawRepresentable {
-    typealias RawValue = String
-
-    init(rawValue: RawValue?) {
-        switch rawValue {
-        case "toMenuWidgetViewControler": self = .toMenuWidgetViewControler
-        case "toAttributesWidgetViewController": self = .toAttributesWidgetViewController
-        case "toSceneWidgetViewController": self = .toSceneWidgetViewController
-        default: self = .unnamed
-        }
-    }
-
-    var rawValue: RawValue {
-        switch self {
-        case .toMenuWidgetViewControler: return "toMenuWidgetViewControler"
-        case .toAttributesWidgetViewController: return "toAttributesWidgetViewController"
-        case .toSceneWidgetViewController: return "toSceneWidgetViewController"
-        case .unnamed: return ""
-        }
-    }
+    case toMenuWidgetViewControler = "toMenuWidgetViewControler"
+    case toAttributesWidgetViewController = "toAttributesWidgetViewController"
+    case toSceneWidgetViewController = "toSceneWidgetViewController"
 }
