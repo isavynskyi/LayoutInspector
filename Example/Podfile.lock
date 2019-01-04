@@ -1,0 +1,16 @@
+PODS:
+  - LayoutInspector (0.1.0)
+
+DEPENDENCIES:
+  - LayoutInspector (from `../`)
+
+EXTERNAL SOURCES:
+  LayoutInspector:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LayoutInspector: b42b90d4d966f15d02cb342a1125b0316f2e951a
+
+PODFILE CHECKSUM: 002534f5b33bbe0e9cf06b46e94ff1bd2fbd46c9
+
+COCOAPODS: 1.5.3

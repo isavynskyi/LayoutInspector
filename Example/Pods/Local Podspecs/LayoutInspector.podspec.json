@@ -1,0 +1,27 @@
+{
+  "name": "LayoutInspector",
+  "version": "0.1.0",
+  "summary": "A short description of LayoutInspector.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Igor/LayoutInspector",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Igor": "i.savinskiy@mobidev.biz"
+  },
+  "source": {
+    "git": "https://github.com/Igor/LayoutInspector.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source_files": "LayoutInspector/**/*.{h,m,swift}",
+  "resources": [
+    "LayoutInspector/**/*.xib",
+    "LayoutInspector/**/*.xcassets",
+    "LayoutInspector/**/*.storyboard"
+  ]
+}

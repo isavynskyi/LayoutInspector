@@ -25,7 +25,7 @@ public enum TriggerType {
 */
 public final class LayoutInspector: NSObject {
     /// Returns the singleton instance of an `LayoutInspector`.
-    static let shared = LayoutInspector()
+    public static let shared = LayoutInspector()
     private override init() {}
 
     private var triggerType: TriggerType = .custom

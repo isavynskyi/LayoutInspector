@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LayoutInspector
 
 class ViewController: UIViewController {
     
