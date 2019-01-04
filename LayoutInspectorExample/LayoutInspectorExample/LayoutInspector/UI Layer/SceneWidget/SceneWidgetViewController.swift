@@ -11,7 +11,7 @@ import SceneKit
 
 class SceneWidgetViewController: UIViewController {
     weak var delegate: SceneViewManagerDelegate?
-    private var sceneViewManager: SceneViewManagerProtocol!
+    private var sceneViewManager: SceneViewManagerProtocol?
     private var tapGestureRecognizer: UITapGestureRecognizer {
         return UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
     }
@@ -21,22 +21,22 @@ class SceneWidgetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneViewManager = SceneViewManager(sceneView: sceneView)
-        sceneViewManager.delegate = self
+        sceneViewManager?.delegate = self
         configure()
     }
 }
 
 extension SceneWidgetViewController: SceneWidgetProtocol {
     func resetPointOfViewToDefaults() {
-        sceneViewManager.resetPointOfViewToDefaults()
+        sceneViewManager?.resetPointOfViewToDefaults()
     }
     
     func addNodeToScene(_ node: SCNNode) {
-        sceneViewManager.addNodeToScene(node)
+        sceneViewManager?.addNodeToScene(node)
     }
     
     func removeNode(_ node: SCNNode) {
-        sceneViewManager.removeNode(node)
+        sceneViewManager?.removeNode(node)
     }
 }
 
@@ -51,7 +51,7 @@ private extension SceneWidgetViewController {
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        sceneViewManager.handleTap(sender)
+        sceneViewManager?.handleTap(sender)
     }
 }
 
