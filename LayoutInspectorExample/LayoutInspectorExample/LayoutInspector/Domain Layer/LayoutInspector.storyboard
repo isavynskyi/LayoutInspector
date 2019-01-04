@@ -282,21 +282,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="evB-cE-DUD">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="evB-cE-DUD">
                                 <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkH-Kq-Q7p">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkH-Kq-Q7p">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="44"/>
-                                        <state key="normal" title="x">
+                                        <state key="normal" image="closeIcon">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="closeAction:" destination="1oT-PV-P9C" eventType="touchUpInside" id="9Z3-ps-xM0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYo-2w-B3N">
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYo-2w-B3N">
                                         <rect key="frame" x="35" y="0.0" width="35" height="44"/>
-                                        <state key="normal" title="=">
+                                        <state key="normal" image="resetIcon">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -313,10 +313,18 @@
                             <constraint firstAttribute="trailing" secondItem="evB-cE-DUD" secondAttribute="trailing" id="uMb-iJ-Kpa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="closeButton" destination="SkH-Kq-Q7p" id="n75-fg-BbN"/>
+                        <outlet property="resetButton" destination="TYo-2w-B3N" id="MtB-vc-hzb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ATG-Gp-wQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-205" y="457"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="closeIcon" width="16.319999694824219" height="16.319999694824219"/>
+        <image name="resetIcon" width="15.75" height="15.75"/>
+    </resources>
 </document>

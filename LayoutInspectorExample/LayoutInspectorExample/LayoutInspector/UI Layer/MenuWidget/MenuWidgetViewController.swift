@@ -10,6 +10,8 @@ import UIKit
 
 class MenuWidgetViewController: UIViewController, MenuWidgetProtocol {
     weak var delegate: MenuWidgetDelegate?
+    @IBOutlet private weak var closeButton: UIButton!
+    @IBOutlet private weak var resetButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,8 @@ class MenuWidgetViewController: UIViewController, MenuWidgetProtocol {
 extension MenuWidgetViewController: Themeable {
     func configureStyles() {
         view.backgroundColor = .sceneBackground
+        closeButton.tintColor = .appLight
+        resetButton.tintColor = .appLight
     }
 }
     
