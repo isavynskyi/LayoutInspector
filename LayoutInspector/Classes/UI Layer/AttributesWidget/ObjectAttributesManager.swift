@@ -53,7 +53,7 @@ extension ObjectAttributesManager: UICollectionViewDataSource {
         case .color(let colorValue):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorAttributeCell.reuseIdentifier, for: indexPath) as! ColorAttributeCell
             cell.titleLabel.text = sourceItem.title
-            cell.colorView.backgroundColor = colorValue
+            cell.renderColorAttribute(colorValue)
             cell.valueLabel.text = sourceItem.valueStringRepresentation
             return cell
         }

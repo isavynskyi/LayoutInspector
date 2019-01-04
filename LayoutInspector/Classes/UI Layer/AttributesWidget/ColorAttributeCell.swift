@@ -9,8 +9,9 @@
 import UIKit
 
 class ColorAttributeCell: TextAttributeCell {
-    @IBOutlet weak var colorView: UIView!
-
+    @IBOutlet private weak var colorView: UIView!
+    @IBOutlet private weak var checkeredPatternImageView: UIImageView!
+    
     static func calculateEstimatedHeight(title: String, value: String?, cellWidth: CGFloat) -> CGFloat {
         let contentWidthConstraint = cellWidth - Layout.contentInsets.left - Layout.contentInsets.right
         let titleHeight = title.height(withConstrainedWidth: contentWidthConstraint, font: Styleguide.font)
@@ -18,11 +19,21 @@ class ColorAttributeCell: TextAttributeCell {
         return titleHeight + valueHeight + Layout.contentInsets.top + Layout.contentInsets.bottom
     }
     
+    func renderColorAttribute(_ color: UIColor?) {
+        colorView.backgroundColor = color
+        
+        let colorAlpha = Float(color?.alphaValue ?? 0)
+        checkeredPatternImageView.isHidden = (colorAlpha == 0.0 || colorAlpha == 1.0)
+    }
+    
     // MARK: - Private API
     private func configureColorView() {
         colorView.layer.cornerRadius = colorView.bounds.height/2.0
         colorView.layer.borderWidth = 1.0
         colorView.layer.borderColor = UIColor.appLight.cgColor
+        
+        checkeredPatternImageView.layer.cornerRadius = checkeredPatternImageView.bounds.height/2.0
+        checkeredPatternImageView.layer.masksToBounds = true
     }
 }
 

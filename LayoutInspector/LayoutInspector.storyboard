@@ -13,7 +13,7 @@
         <!--Layout Inspector Container View Controller-->
         <scene sceneID="IiV-rA-gg3">
             <objects>
-                <viewController storyboardIdentifier="LayoutInspectorContainerViewController" id="tHq-Ag-i7Y" customClass="LayoutInspectorContainerViewController" customModule="LayoutInspectorExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LayoutInspectorContainerViewController" id="tHq-Ag-i7Y" customClass="LayoutInspectorContainerViewController" customModule="LayoutInspector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v03-Ls-WcO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,7 +93,7 @@
         <!--Attributes Widget View Controller-->
         <scene sceneID="Mmb-RQ-dhA">
             <objects>
-                <viewController id="7Ra-Fd-6gG" customClass="AttributesWidgetViewController" customModule="LayoutInspectorExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Ra-Fd-6gG" customClass="AttributesWidgetViewController" customModule="LayoutInspector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tBq-Ud-VoE">
                         <rect key="frame" x="0.0" y="0.0" width="82" height="606"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,7 +108,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TextAttributeCell" id="eLZ-Fm-agu" customClass="TextAttributeCell" customModule="LayoutInspectorExample" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TextAttributeCell" id="eLZ-Fm-agu" customClass="TextAttributeCell" customModule="LayoutInspector" customModuleProvider="target">
                                         <rect key="frame" x="-3" y="0.0" width="88" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -156,7 +156,7 @@
                                             <outlet property="valueLabel" destination="zjl-EW-QcY" id="vHt-Qy-E8H"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorAttributeCell" id="ned-1O-twh" customClass="ColorAttributeCell" customModule="LayoutInspectorExample" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorAttributeCell" id="ned-1O-twh" customClass="ColorAttributeCell" customModule="LayoutInspector" customModuleProvider="target">
                                         <rect key="frame" x="-3" y="44" width="88" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -175,6 +175,9 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UlN-sg-z6w">
                                                             <rect key="frame" x="0.0" y="20.5" width="78" height="15.5"/>
                                                             <subviews>
+                                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkeredPattern" translatesAutoresizingMaskIntoConstraints="NO" id="oIz-pA-nTt">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                                </imageView>
                                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAE-Aa-z6w">
                                                                     <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,10 +196,14 @@
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="SAE-Aa-z6w" firstAttribute="leading" secondItem="UlN-sg-z6w" secondAttribute="leading" id="2eA-T7-nXd"/>
+                                                                <constraint firstItem="oIz-pA-nTt" firstAttribute="width" secondItem="SAE-Aa-z6w" secondAttribute="width" id="BSQ-lz-NQ7"/>
                                                                 <constraint firstAttribute="trailing" secondItem="cRC-uE-Cd9" secondAttribute="trailing" id="FqM-8h-iUi"/>
+                                                                <constraint firstItem="oIz-pA-nTt" firstAttribute="centerX" secondItem="SAE-Aa-z6w" secondAttribute="centerX" id="LBR-mM-IFf"/>
                                                                 <constraint firstItem="SAE-Aa-z6w" firstAttribute="centerY" secondItem="UlN-sg-z6w" secondAttribute="centerY" id="MUR-OL-yGr"/>
+                                                                <constraint firstItem="oIz-pA-nTt" firstAttribute="height" secondItem="SAE-Aa-z6w" secondAttribute="height" id="eSY-Tl-oLp"/>
                                                                 <constraint firstItem="cRC-uE-Cd9" firstAttribute="centerY" secondItem="UlN-sg-z6w" secondAttribute="centerY" id="rjp-sH-2BD"/>
                                                                 <constraint firstItem="cRC-uE-Cd9" firstAttribute="leading" secondItem="SAE-Aa-z6w" secondAttribute="trailing" constant="8" id="spM-nS-dH9"/>
+                                                                <constraint firstItem="oIz-pA-nTt" firstAttribute="centerY" secondItem="SAE-Aa-z6w" secondAttribute="centerY" id="zDz-Il-6FZ"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -220,6 +227,7 @@
                                             <constraint firstItem="eHW-yX-TfK" firstAttribute="top" secondItem="ned-1O-twh" secondAttribute="top" constant="4" id="wBT-fq-yEE"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="checkeredPatternImageView" destination="oIz-pA-nTt" id="RNl-IA-7Y0"/>
                                             <outlet property="colorView" destination="SAE-Aa-z6w" id="Xww-Gf-42E"/>
                                             <outlet property="titleLabel" destination="5qG-ZF-7yz" id="SaV-Id-LIH"/>
                                             <outlet property="trailingSeparator" destination="p8w-v6-1cq" id="Rjr-hR-eyA"/>
@@ -248,7 +256,7 @@
         <!--Scene Widget View Controller-->
         <scene sceneID="yMk-y2-RAe">
             <objects>
-                <viewController id="Hc1-Zp-gN3" customClass="SceneWidgetViewController" customModule="LayoutInspectorExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Hc1-Zp-gN3" customClass="SceneWidgetViewController" customModule="LayoutInspector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="88b-bk-p8J">
                         <rect key="frame" x="0.0" y="0.0" width="293" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -276,7 +284,7 @@
         <!--Menu Widget View Controller-->
         <scene sceneID="VMf-3S-nu2">
             <objects>
-                <viewController id="1oT-PV-P9C" customClass="MenuWidgetViewController" customModule="LayoutInspectorExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1oT-PV-P9C" customClass="MenuWidgetViewController" customModule="LayoutInspector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MgS-V2-GSU">
                         <rect key="frame" x="0.0" y="0.0" width="82" height="41"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -326,6 +334,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkeredPattern" width="224" height="222.5"/>
         <image name="closeIcon" width="16.319999694824219" height="16.319999694824219"/>
         <image name="resetIcon" width="15.75" height="15.75"/>
     </resources>

@@ -352,9 +352,7 @@
                             <outlet property="delegate" destination="coi-Ui-IRU" id="t8S-eC-a9a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Table view" id="QBo-ZW-T2A">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="c4Q-VW-CHe"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Table view" id="QBo-ZW-T2A"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93q-pv-165" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
