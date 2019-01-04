@@ -30,7 +30,6 @@ class MenuWidgetViewController: UIViewController, MenuWidgetProtocol {
 
 extension MenuWidgetViewController: Themeable {
     func configureStyles() {
-        view.backgroundColor = .sceneBackground
         closeButton.tintColor = .appLight
         resetButton.tintColor = .appLight
     }

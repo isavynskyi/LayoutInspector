@@ -10,13 +10,13 @@ import UIKit
 import SceneKit
 
 class SceneWidgetViewController: UIViewController {
+    weak var delegate: SceneViewManagerDelegate?
     private var sceneViewManager: SceneViewManagerProtocol!
     private var tapGestureRecognizer: UITapGestureRecognizer {
         return UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
     }
 
     @IBOutlet private weak var sceneView: SCNView!
-    weak var delegate: SceneViewManagerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

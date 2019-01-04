@@ -9,7 +9,6 @@
 import SceneKit
 
 protocol SceneViewManagerProtocol: NodesManagementProtocol {
-    var sceneView: SCNView { get }
     var delegate: SceneViewManagerDelegate? { get set}
     func resetPointOfViewToDefaults()
     func handleTap(_ sender: UITapGestureRecognizer)

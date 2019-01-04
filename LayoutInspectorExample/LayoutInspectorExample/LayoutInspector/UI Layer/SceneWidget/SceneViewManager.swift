@@ -15,9 +15,9 @@ fileprivate enum CameraParameters {
 }
 
 class SceneViewManager: SceneViewManagerProtocol {
-    let sceneView: SCNView
     weak var delegate: SceneViewManagerDelegate?
     
+    private let sceneView: SCNView
     private var selectedNode: DebugNode?
 
     init(sceneView: SCNView) {
@@ -68,19 +68,14 @@ private extension SceneViewManager {
         return cameraNode
     }
     
-    private func setSelectedNode(_ newSelectedNode: DebugNode) {
-        // reset currently selected node if needed
-        if selectedNode != nil, selectedNode != newSelectedNode {
-            selectedNode?.isSelected = false
-        }
-        
+    func setSelectedNode(_ newSelectedNode: DebugNode) {
         newSelectedNode.isSelected = !newSelectedNode.isSelected
         if selectedNode == newSelectedNode {
             selectedNode = nil
         } else {
+            selectedNode?.isSelected = false
             selectedNode = newSelectedNode
         }
         delegate?.selectedViewMetadataDidUpdate(selectedNode?.metadata)
     }
-
 }
