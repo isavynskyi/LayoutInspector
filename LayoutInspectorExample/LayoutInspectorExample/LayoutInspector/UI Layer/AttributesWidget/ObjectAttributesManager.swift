@@ -31,7 +31,7 @@ class ObjectAttributesManager: NSObject, AttributesManagerProtocol {
 
 // MARK: - Nested types
 private extension ObjectAttributesManager {
-    struct LayoutConstants {
+    enum LayoutConstants {
         static let collectionItemWidth: CGFloat = 82.0
     }
 }

@@ -11,7 +11,6 @@ import UIKit
 class TextAttributeCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
-    
     @IBOutlet private weak var trailingSeparator: UIView!
     
     static func estimatedHeight(title: String, value: String?, cellWidth: CGFloat) -> CGFloat {
@@ -30,11 +29,11 @@ class TextAttributeCell: UICollectionViewCell {
 
 // MARK: - Nested types
 private extension TextAttributeCell {
-    struct Layout {
+    enum Layout {
         static let contentInsets = UIEdgeInsets(top: 4, left: 6, bottom: 4, right: 4)
     }
     
-    struct Styleguide {
+    enum Styleguide {
         static let font: UIFont = .appH3
     }
 }

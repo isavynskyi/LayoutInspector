@@ -10,18 +10,16 @@ import UIKit
 
 class AttributesWidgetViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
-    private var objectInspectionManager: AttributesManagerProtocol!
+    private var attributesManager: AttributesManagerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        objectInspectionManager = ObjectAttributesManager(collectionView: collectionView)
-        view.backgroundColor = .sceneBackground
+        attributesManager = ObjectAttributesManager(collectionView: collectionView)
     }
-
 }
 
 extension AttributesWidgetViewController: AttributesManagerProtocol {
     func renderViewMetadata(_ metadata: ViewMetadataProtocol?) {
-        objectInspectionManager.renderViewMetadata(metadata)
+        attributesManager?.renderViewMetadata(metadata)
     }
 }

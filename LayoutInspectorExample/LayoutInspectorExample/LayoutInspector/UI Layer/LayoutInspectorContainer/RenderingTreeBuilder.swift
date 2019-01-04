@@ -12,7 +12,7 @@ protocol RenderingTreeBuilderProtocol {
     func build(from: ViewDescriptionProtocol) -> RenderingViewProtocol
 }
 
-fileprivate struct SceneConstants {
+fileprivate enum SceneConstants {
     static let pointsInSceneKitMeter: Float = 100.0
     static let layerStep: Float = 0.3
 }

@@ -17,12 +17,6 @@ class ColorAttributeCell: TextAttributeCell {
         let valueHeight = value?.height(withConstrainedWidth: contentWidthConstraint - Layout.valueLabelXPos, font: Styleguide.font) ?? 0
         return titleHeight + valueHeight + Layout.contentInsets.top + Layout.contentInsets.bottom
     }
-
-    // MARK: - Lifecycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        configureColorView()
-    }
     
     // MARK: - Private API
     private func configureColorView() {
@@ -33,7 +27,7 @@ class ColorAttributeCell: TextAttributeCell {
 }
 
 // MARK: - Nested types
-private extension TextAttributeCell {
+private extension ColorAttributeCell {
     struct Layout {
         static let contentInsets = UIEdgeInsets(top: 4, left: 6, bottom: 4, right: 4)
         static let valueLabelXPos: CGFloat = 24.0
@@ -43,3 +37,12 @@ private extension TextAttributeCell {
         static let font: UIFont = .appH3
     }
 }
+
+// MARK: - Themeable
+extension ColorAttributeCell  {
+    override func configureStyles() {
+        super.configureStyles()
+        configureColorView()
+    }
+}
+

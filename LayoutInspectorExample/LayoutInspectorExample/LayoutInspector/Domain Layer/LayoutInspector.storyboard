@@ -98,7 +98,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="82" height="606"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gWD-H6-Ybx">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gWD-H6-Ybx">
                                 <rect key="frame" x="0.0" y="0.0" width="82" height="606"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gZH-RN-OA9">
@@ -229,7 +229,6 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gWD-H6-Ybx" firstAttribute="top" secondItem="tBq-Ud-VoE" secondAttribute="top" id="T8w-YC-54L"/>
                             <constraint firstAttribute="trailing" secondItem="gWD-H6-Ybx" secondAttribute="trailing" id="TXj-my-Z7f"/>

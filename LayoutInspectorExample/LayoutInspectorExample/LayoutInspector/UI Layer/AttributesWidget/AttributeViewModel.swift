@@ -8,14 +8,14 @@
 
 import UIKit
 
-enum AttributeType {
+enum AttributeValue {
     case text(String?)
     case color(UIColor?)
 }
 
 struct AttributeViewModel {
     let title: String
-    let value: AttributeType
+    let value: AttributeValue
     
     var valueStringRepresentation: String? {
         switch value {
@@ -31,7 +31,7 @@ struct AttributeViewModel {
         case nil:
             return "<nil color>"
         case UIColor.clear:
-            return "White:0 Alpha:0"
+            return "White:0\nAlpha:0"
         case let customColor?:
             return "R:\(String(format: "%.2f", customColor.redValue))\nG:\(String(format: "%.2f", customColor.greenValue))\nB:\(String(format: "%.2f", customColor.blueValue))\nA:\(String(format: "%.2f", customColor.alphaValue))"
         default:

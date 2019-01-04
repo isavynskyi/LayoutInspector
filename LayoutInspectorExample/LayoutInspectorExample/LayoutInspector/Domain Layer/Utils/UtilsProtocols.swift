@@ -6,6 +6,8 @@
 //  Copyright © 2019 Ihor Savynskyi. All rights reserved.
 //
 
-protocol Themeable {
+import Foundation
+
+@objc protocol Themeable {
     func configureStyles()
 }
