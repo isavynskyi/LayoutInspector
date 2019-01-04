@@ -8,25 +8,46 @@
 
 import UIKit
 
-protocol HierarchyBuilder {
-    func snapshotHierarchy() -> ViewDescriptionProtocol
+protocol HierarchyBuilderProtocol {
+    func captureHierarchy() -> ViewDescriptionProtocol?
 }
 
-class HierarchyBuilderImpl: HierarchyBuilder {
-    func snapshotHierarchy() -> ViewDescriptionProtocol {
-        return buildHierarchy(view: UIApplication.shared.windows.first!)
+class HierarchyBuilder: HierarchyBuilderProtocol {
+    func captureHierarchy() -> ViewDescriptionProtocol? {
+        guard let firstWindow = UIApplication.shared.windows.first else { return nil }
+        return buildHierarchy(view: firstWindow)
     }
 }
 
 // MARK: Private API
-private extension HierarchyBuilderImpl {
-    // TODO: -
+private extension HierarchyBuilder {
     func buildHierarchy(view: UIView) -> ViewDescriptionProtocol {
-        let children = view.subviews.map { buildHierarchy(view: $0)}
-        let temporaryHiddenViews = view.subviews.filter {$0.isHidden == false}
+        let children = view.subviews.map { buildHierarchy(view: $0) }
+        let viewsToHide = view.subviews.filter { $0.isHidden == false }
         
         // don't capture visible subviews for current view snapshot
-        temporaryHiddenViews.forEach { $0.isHidden = true }
+        viewsToHide.forEach { $0.isHidden = true }
+        let isTransparent = isViewTransparent(view)
+        let image = isTransparent ? nil : view.asImage()
+        // hidden subviews rollback
+        viewsToHide.forEach { $0.isHidden = false }
+        
+        return ViewDescription(frame: view.frame,
+                               snapshot: image,
+                               subviews: children,
+                               parentSize: view.superview?.frame.size,
+                               center: view.center,
+                               isHidden: view.isHidden,
+                               isTransparent: isTransparent,
+                               className: String(describing: type(of: view)),
+                               isUserInteractionEnabled: view.isUserInteractionEnabled,
+                               alpha: Float(view.alpha),
+                               backgroundColor: view.backgroundColor,
+                               tint: view.tintColor,
+                               clipToBounds: view.clipsToBounds)
+    }
+    
+    func isViewTransparent(_ view: UIView) -> Bool {
         let isTransparent: Bool
         if view.isKind(of: UIImageView.self) || view.isKind(of: UILabel.self) || view.isKind(of: UITextView.self) {
             isTransparent = false
@@ -35,25 +56,6 @@ private extension HierarchyBuilderImpl {
         } else {
             isTransparent = false
         }
-        
-        let image = isTransparent ? nil : view.asImage()
-        
-        // hidden subviews rollback
-        temporaryHiddenViews.forEach {$0.isHidden = false}
-        
-        let descriptor = ViewDescription(frame: view.frame,
-                                         snapshot: image,
-                                         subviews: children,
-                                         parentSize: view.superview?.frame.size,
-                                         center: view.center,
-                                         isHidden: view.isHidden,
-                                         isTransparent: isTransparent,
-                                         className: String(describing: type(of: view)),
-                                         isUserInteractionEnabled: view.isUserInteractionEnabled,
-                                         alpha: Float(view.alpha),
-                                         backgroundColor: view.backgroundColor,
-                                         tint: view.tintColor,
-                                         clipToBounds: view.clipsToBounds)
-        return descriptor
+        return isTransparent
     }
 }

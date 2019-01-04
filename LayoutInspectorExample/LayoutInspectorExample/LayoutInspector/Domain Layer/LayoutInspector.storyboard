@@ -25,10 +25,10 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzZ-OA-kus" userLabel="MenuWidgetContainerView">
-                                <rect key="frame" x="293" y="20" width="82" height="44"/>
+                                <rect key="frame" x="293" y="20" width="82" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="LUv-ma-cPJ"/>
-                                    <constraint firstAttribute="height" constant="44" id="ZQN-we-gM4"/>
+                                    <constraint firstAttribute="height" constant="41" id="ZQN-we-gM4"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="1oT-PV-P9C" kind="embed" identifier="toMenuWidgetViewControler" id="nO4-uR-MpI"/>
@@ -42,16 +42,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRA-Uf-qHT" userLabel="separator">
-                                <rect key="frame" x="293" y="63" width="82" height="1"/>
+                                <rect key="frame" x="293" y="60" width="82" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="XG5-8D-nVK"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyA-Aq-pJh" userLabel="ObjectInspectionWidgetContainerView">
-                                <rect key="frame" x="293" y="64" width="82" height="603"/>
+                                <rect key="frame" x="293" y="61" width="82" height="606"/>
                                 <connections>
-                                    <segue destination="7Ra-Fd-6gG" kind="embed" identifier="toObjectAttributes" id="apM-kE-6Tu"/>
+                                    <segue destination="7Ra-Fd-6gG" kind="embed" identifier="toAttributesWidgetViewController" id="apM-kE-6Tu"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykq-dg-iII" userLabel="divider">
@@ -95,11 +95,11 @@
             <objects>
                 <viewController id="7Ra-Fd-6gG" customClass="AttributesWidgetViewController" customModule="LayoutInspectorExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tBq-Ud-VoE">
-                        <rect key="frame" x="0.0" y="0.0" width="82" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="82" height="606"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gWD-H6-Ybx">
-                                <rect key="frame" x="0.0" y="0.0" width="82" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="82" height="606"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gZH-RN-OA9">
                                     <size key="itemSize" width="88" height="44"/>
@@ -236,6 +236,7 @@
                             <constraint firstItem="gWD-H6-Ybx" firstAttribute="leading" secondItem="tBq-Ud-VoE" secondAttribute="leading" id="Vpb-NN-3kR"/>
                             <constraint firstAttribute="bottom" secondItem="gWD-H6-Ybx" secondAttribute="bottom" id="upw-rJ-enR"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="mqt-fx-nFn"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="gWD-H6-Ybx" id="zbs-Xi-5Fa"/>
@@ -243,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPw-Fe-TmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="350" y="806"/>
+            <point key="canvasLocation" x="696" y="125"/>
         </scene>
         <!--Scene Widget View Controller-->
         <scene sceneID="yMk-y2-RAe">
@@ -263,6 +264,7 @@
                             <constraint firstItem="NGx-4d-3i9" firstAttribute="top" secondItem="88b-bk-p8J" secondAttribute="top" id="WUK-AF-n15"/>
                             <constraint firstItem="NGx-4d-3i9" firstAttribute="leading" secondItem="88b-bk-p8J" secondAttribute="leading" id="brB-aZ-S24"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="mj1-Sv-eNO"/>
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="NGx-4d-3i9" id="Tfx-9g-BSg"/>
@@ -270,21 +272,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYO-wf-zcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="3"/>
+            <point key="canvasLocation" x="55" y="793"/>
         </scene>
         <!--Menu Widget View Controller-->
         <scene sceneID="VMf-3S-nu2">
             <objects>
                 <viewController id="1oT-PV-P9C" customClass="MenuWidgetViewController" customModule="LayoutInspectorExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MgS-V2-GSU">
-                        <rect key="frame" x="0.0" y="0.0" width="82" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="82" height="41"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="evB-cE-DUD">
-                                <rect key="frame" x="0.0" y="0.0" width="82" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="82" height="41"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkH-Kq-Q7p">
-                                        <rect key="frame" x="0.0" y="0.0" width="41" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
+                                        <inset key="imageEdgeInsets" minX="14" minY="14" maxX="14" maxY="14"/>
                                         <state key="normal" image="closeIcon">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -293,7 +296,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYo-2w-B3N">
-                                        <rect key="frame" x="41" y="0.0" width="41" height="44"/>
+                                        <rect key="frame" x="41" y="0.0" width="41" height="41"/>
+                                        <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                                         <state key="normal" image="resetIcon">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -310,6 +314,7 @@
                             <constraint firstItem="evB-cE-DUD" firstAttribute="leading" secondItem="MgS-V2-GSU" secondAttribute="leading" id="SXb-AB-Ep8"/>
                             <constraint firstAttribute="trailing" secondItem="evB-cE-DUD" secondAttribute="trailing" id="uMb-iJ-Kpa"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="bnW-w4-8cJ"/>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="SkH-Kq-Q7p" id="n75-fg-BbN"/>
@@ -318,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ATG-Gp-wQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="165" y="554"/>
+            <point key="canvasLocation" x="696" y="-226"/>
         </scene>
     </scenes>
     <resources>

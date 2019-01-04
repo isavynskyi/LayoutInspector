@@ -29,7 +29,7 @@ class LayoutInspectorContainerViewController: UIViewController {
         case .toMenuWidgetViewControler:
             menuWidget = segue.destination as? MenuWidgetProtocol
             menuWidget?.delegate = self
-        case .toObjectAttributes:
+        case .toAttributesWidgetViewController:
             objectInspectionWidget = segue.destination as? AttributesManagerProtocol
         case .toSceneWidgetViewController:
             sceneWidget = segue.destination as? SceneWidgetProtocol
@@ -42,7 +42,7 @@ class LayoutInspectorContainerViewController: UIViewController {
     // MARK: - Private API
     private func loadWidgets() {
         performSegue(withIdentifier: Segue.toMenuWidgetViewControler.rawValue, sender: self)
-        performSegue(withIdentifier: Segue.toObjectAttributes.rawValue, sender: self)
+        performSegue(withIdentifier: Segue.toAttributesWidgetViewController.rawValue, sender: self)
         performSegue(withIdentifier: Segue.toSceneWidgetViewController.rawValue, sender: self)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3774B32D21DF7AF500D6491C /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774B32C21DF7AF500D6491C /* Bundle+Extension.swift */; };
 		37F7159721D2E3820055F233 /* HierarchyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7159621D2E3820055F233 /* HierarchyBuilder.swift */; };
 		37F7159921D2E9AA0055F233 /* RenderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7159821D2E9AA0055F233 /* RenderingView.swift */; };
 		37F7159B21D2EC060055F233 /* RenderingTreeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7159A21D2EC060055F233 /* RenderingTreeBuilder.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3774B32C21DF7AF500D6491C /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		37F7159621D2E3820055F233 /* HierarchyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchyBuilder.swift; sourceTree = "<group>"; };
 		37F7159821D2E9AA0055F233 /* RenderingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderingView.swift; sourceTree = "<group>"; };
 		37F7159A21D2EC060055F233 /* RenderingTreeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderingTreeBuilder.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				37FB8F1721DD65C100BCA9CD /* UIColor+Extension.swift */,
 				37FB8F1B21DD68D100BCA9CD /* UIFont+Extension.swift */,
 				37FB8F1F21DE47D900BCA9CD /* String+Extension.swift */,
+				3774B32C21DF7AF500D6491C /* Bundle+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				37FB8F2F21DEAC3700BCA9CD /* MenuWidgetViewController.swift in Sources */,
 				37FB8F1421DD5F8E00BCA9CD /* ColorAttributeCell.swift in Sources */,
 				37F93C4321D28C8A007CBE78 /* ViewDescription.swift in Sources */,
+				3774B32D21DF7AF500D6491C /* Bundle+Extension.swift in Sources */,
 				37FB8F2521DE9FFF00BCA9CD /* SceneWidgetViewController.swift in Sources */,
 				37F7159B21D2EC060055F233 /* RenderingTreeBuilder.swift in Sources */,
 				37FB8F0921DCD57400BCA9CD /* ObjectAttributesManager.swift in Sources */,

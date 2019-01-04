@@ -53,18 +53,21 @@ private extension RenderingTreeBuilder {
     
     
 /**
-  SceneKit axis    SceneKit center
-  |y              |           |
-  |               |     *(0,0)|
-  |____x          |___________|
+  SceneKit axes    SceneKit node center
+  |y                 ___________
+  |                 |           |
+  |____x            |     *(0,0)|
+z/                  |___________|
+  
+Point (0,0) is top left in UIKit whereas in SceneKit it is center
 */
- func adjustNodePositionToSceneKitCoordinateSystem(_ node: SCNNode?, with viewDescription: ViewDescriptionProtocol) {
-    // TODO:   node.width instead of sourceViewFrame/CGFloat(Constants.pointsInSceneKitMeter)
+func adjustNodePositionToSceneKitCoordinateSystem(_ node: SCNNode?, with viewDescription: ViewDescriptionProtocol) {
     guard let parentSize = viewDescription.parentSize, let node = node else { return }
     let viewCenter = viewDescription.center
-    
-    node.position = SCNVector3Make(Float((-parentSize.width/2.0 + viewCenter.x))/Float(Constants.pointsInSceneKitMeter),
-                                   Float((parentSize.height/2.0 - viewCenter.y))/Float(Constants.pointsInSceneKitMeter),
+    let translatedX = -parentSize.width/2.0 + viewCenter.x
+    let translatedY = parentSize.height/2.0 - viewCenter.y
+    node.position = SCNVector3Make(Float(translatedX)/Float(Constants.pointsInSceneKitMeter),
+                                   Float(translatedY)/Float(Constants.pointsInSceneKitMeter),
                                    Float(Constants.layerStep))
     }
 }

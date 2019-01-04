@@ -8,34 +8,54 @@
 
 import UIKit
 
+/// Type of trigger used to fire layout inspection
 public enum TriggerType {
+    /// Fire manually by calling func LayoutInspector.shared.showLayout()
     case custom
+    
+    /// Fire automatically whenever screenshot is taken
     case screenshot
 }
 
-public class LayoutInspector: NSObject {
+/**
+ The `LayoutInspector` is designed to be single communication point for the entire LayoutInspector module
+ 
+ - Important:
+ Layout inspection shown only in DEBUG build configuration
+*/
+public final class LayoutInspector: NSObject {
+    /// Returns the singleton instance of an `LayoutInspector`.
     static let shared = LayoutInspector()
     private override init() {}
 
     private var triggerType: TriggerType = .custom
     private var viewController: LayoutInspectorContainerViewController?
-    lazy private var hierarchyBuilder: HierarchyBuilder = {return HierarchyBuilderImpl()}()
+    private var hierarchyBuilder: HierarchyBuilderProtocol = HierarchyBuilder()
     private var presenter: LayoutInspectorPresenter?
 }
 
 //MARK: - Public API
 public extension LayoutInspector {
+    /**
+     Call this start layout debugging
+     - Important:
+     Layout inspection shown only in DEBUG build configuration
+     */
     @objc func showLayout() {
         #if DEBUG
-        let viewDescriptionTree = hierarchyBuilder.snapshotHierarchy()
+        guard let viewDescriptionTree = hierarchyBuilder.captureHierarchy() else { return }
         presenter = makeLayoutInspectorPresenter()
         presenter?.showInspectorView(for: viewDescriptionTree)
         #endif
     }
     
+    /**
+     Call this function to specify preffered layout inspection trigger type
+     - parameter trigger: The desired trigger type enum case
+     */
     func setTriggerType(_ trigger: TriggerType) {
-        triggerType = trigger
         unsubscribe()
+        triggerType = trigger
         subscribeForCurrentTrigger()
     }
 }
@@ -45,7 +65,10 @@ private extension LayoutInspector {
     func subscribeForCurrentTrigger() {
         switch triggerType {
         case .screenshot:
-            NotificationCenter.default.addObserver(self, selector: #selector(showLayout), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(showLayout),
+                                                   name: UIApplication.userDidTakeScreenshotNotification,
+                                                   object: nil)
         case .custom: return
         }
     }
@@ -53,20 +76,20 @@ private extension LayoutInspector {
     func unsubscribe() {
         switch triggerType {
         case .screenshot:
-            NotificationCenter.default.removeObserver(self)
+            NotificationCenter.default.removeObserver(self,
+                                                      name: UIApplication.userDidTakeScreenshotNotification,
+                                                      object: nil)
         case .custom: return
         }
     }
 }
 
 
-// MARK: - Presenter
+// MARK: - Container Module Configuration
 private extension LayoutInspector {
     func makeLayoutInspectorPresenter() -> LayoutInspectorPresenter {
         let view = makeLayoutInspectorContainerView()
         viewController = view
-        
-        // TODO: - fix, trigger
         view.loadView()
         view.viewDidLoad()
         
@@ -78,7 +101,7 @@ private extension LayoutInspector {
     }
     
     func makeLayoutInspectorContainerView() -> LayoutInspectorContainerViewController {
-        let storyboard = UIStoryboard(name: "LayoutInspector", bundle: nil)
+        let storyboard = UIStoryboard(name: "LayoutInspector", bundle: Bundle.layoutInspectorBundle)
         let viewController: LayoutInspectorContainerViewController = storyboard.instantiateViewController(withIdentifier: "LayoutInspectorContainerViewController") as! LayoutInspectorContainerViewController
         return viewController
     }

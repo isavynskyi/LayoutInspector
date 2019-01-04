@@ -12,7 +12,7 @@ import UIKit
 protocol ViewDescriptionProtocol {
     var frame: CGRect { get }
     var snapshot: UIImage? { get }
-    var subviews: [ViewDescriptionProtocol]? { get set }
+    var subviews: [ViewDescriptionProtocol]? { get }
     var parentSize: CGSize? { get }
     var center: CGPoint { get }
     var isHidden: Bool { get }
@@ -26,19 +26,19 @@ protocol ViewDescriptionProtocol {
 }
 
 class ViewDescription: ViewDescriptionProtocol {
-    public let frame: CGRect
-    public let snapshot: UIImage?
-    public var subviews: [ViewDescriptionProtocol]?
-    public var parentSize: CGSize?
-    public var center: CGPoint
-    public var isHidden: Bool
-    public var isTransparent: Bool
-    var className: String
-    var isUserInteractionEnabled: Bool
-    var alpha: Float
-    var backgroundColor: UIColor?
-    var tint: UIColor?
-    var clipToBounds: Bool
+    let frame: CGRect
+    let snapshot: UIImage?
+    let subviews: [ViewDescriptionProtocol]?
+    let parentSize: CGSize?
+    let center: CGPoint
+    let isHidden: Bool
+    let isTransparent: Bool
+    let className: String
+    let isUserInteractionEnabled: Bool
+    let alpha: Float
+    let backgroundColor: UIColor?
+    let tint: UIColor?
+    let clipToBounds: Bool
 
     // MARK: - Init
     init(frame: CGRect,
