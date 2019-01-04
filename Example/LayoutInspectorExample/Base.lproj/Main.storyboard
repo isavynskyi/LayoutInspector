@@ -13,7 +13,7 @@
         <!--Table view-->
         <scene sceneID="wao-Zh-u3H">
             <objects>
-                <tableViewController id="coi-Ui-IRU" sceneMemberID="viewController">
+                <tableViewController id="coi-Ui-IRU" customClass="TableViewController" customModule="LayoutInspectorExample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lo9-iY-Brv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -344,6 +344,36 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cgM-k9-QZl">
+                                        <rect key="frame" x="0.0" y="506" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cgM-k9-QZl" id="Eec-WP-XQw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLb-nW-Nco">
+                                                    <rect key="frame" x="137.5" y="10" width="100" height="30"/>
+                                                    <color key="backgroundColor" red="0.96862745100000003" green="0.61960784310000006" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="VKm-rf-ofx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Inspect">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="inspectAction:" destination="coi-Ui-IRU" eventType="touchUpInside" id="k7X-74-VDl"/>
+                                                        <action selector="inspectLayoutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Adq-J9-USh"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qLb-nW-Nco" firstAttribute="centerY" secondItem="Eec-WP-XQw" secondAttribute="centerY" id="Zlo-C0-RSz"/>
+                                                <constraint firstItem="qLb-nW-Nco" firstAttribute="centerX" secondItem="Eec-WP-XQw" secondAttribute="centerX" id="isS-d1-s48"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -515,12 +545,15 @@
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRO-f6-wkd">
                                 <rect key="frame" x="137.5" y="572" width="100" height="30"/>
-                                <color key="backgroundColor" red="0.1529411765" green="0.59215686270000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.61960784313725492" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="etA-Fe-GJv"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Inspect"/>
+                                <state key="normal" title="Inspect">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="inspectLayoutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CWE-Y3-BnY"/>
                                 </connections>
