@@ -9,5 +9,5 @@
 import UIKit
 
 extension UIFont {
-    static let appH5 = UIFont.systemFont(ofSize: 11)
+    static let appH5 = UIFont.systemFont(ofSize: 12)
 }

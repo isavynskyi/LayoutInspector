@@ -20,6 +20,7 @@ class LayoutInspectorContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadWidgets()
+        configureStyles()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -73,6 +74,12 @@ extension LayoutInspectorContainerViewController: MenuWidgetDelegate {
     
     func didResetCameraPositionAction() {
         sceneWidget?.resetPointOfViewToDefaults()
+    }
+}
+
+extension LayoutInspectorContainerViewController: Themeable {
+    func configureStyles() {
+        view.backgroundColor = .sceneBackground
     }
 }
 

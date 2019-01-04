@@ -11,10 +11,11 @@ import UIKit
 class ColorAttributeCell: TextAttributeCell {
     @IBOutlet weak var colorView: UIView!
 
-    static func calculateEstimatedWidth(title: String, value: String?) -> CGFloat {
-        let titleWidth = title.width(withConstrainedHeight: Styleguide.font.lineHeight, font: Styleguide.font)
-        let valueWidth = value?.width(withConstrainedHeight: Styleguide.font.lineHeight, font: Styleguide.font) ?? 0
-        return max(titleWidth, valueWidth + CGFloat(Layout.valueLabelXPos)) + CGFloat(Layout.contentLeftPadding) + CGFloat(Layout.contentRightPadding)
+    static func calculateEstimatedHeight(title: String, value: String?, cellWidth: CGFloat) -> CGFloat {
+        let contentWidthConstraint = cellWidth - Layout.contentInsets.left - Layout.contentInsets.right
+        let titleHeight = title.height(withConstrainedWidth: contentWidthConstraint, font: Styleguide.font)
+        let valueHeight = value?.height(withConstrainedWidth: contentWidthConstraint - Layout.valueLabelXPos, font: Styleguide.font) ?? 0
+        return titleHeight + valueHeight + Layout.contentInsets.top + Layout.contentInsets.bottom
     }
 
     // MARK: - Lifecycle
@@ -34,9 +35,8 @@ class ColorAttributeCell: TextAttributeCell {
 // MARK: - Nested types
 private extension TextAttributeCell {
     struct Layout {
-        static let contentLeftPadding = 4.0
-        static let contentRightPadding = 4.0
-        static let valueLabelXPos = 24.0
+        static let contentInsets = UIEdgeInsets(top: 4, left: 6, bottom: 4, right: 4)
+        static let valueLabelXPos: CGFloat = 24.0
     }
     
     struct Styleguide {

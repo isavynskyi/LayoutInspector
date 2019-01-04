@@ -32,7 +32,7 @@ class ObjectAttributesManager: NSObject, AttributesManagerProtocol {
 // MARK: - Nested types
 private extension ObjectAttributesManager {
     struct LayoutConstants {
-        static let collectionItemHeight: CGFloat = 44.0
+        static let collectionItemWidth: CGFloat = 82.0
     }
 }
 
@@ -43,21 +43,18 @@ extension ObjectAttributesManager: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let sourceItem = dataSource[indexPath.row]
-        let isLastItem = indexPath.item == dataSource.count - 1
         
         switch sourceItem.value {
         case .text(_):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TextAttributeCell.reuseIdentifier, for: indexPath) as! TextAttributeCell
             cell.titleLabel.text = sourceItem.title
             cell.valueLabel.text = sourceItem.valueStringRepresentation
-            cell.showTrailingSeparator(show: !isLastItem)
             return cell
         case .color(let colorValue):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorAttributeCell.reuseIdentifier, for: indexPath) as! ColorAttributeCell
             cell.titleLabel.text = sourceItem.title
             cell.colorView.backgroundColor = colorValue
             cell.valueLabel.text = sourceItem.valueStringRepresentation
-            cell.showTrailingSeparator(show: !isLastItem)
             return cell
         }
     }
@@ -67,14 +64,18 @@ extension ObjectAttributesManager: UICollectionViewDataSource {
 extension ObjectAttributesManager: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let sourceItem = dataSource[indexPath.row]
-        let width: CGFloat
+        let height: CGFloat
         switch sourceItem.value {
         case .text(_):
-            width = TextAttributeCell.estimatedWidth(title: sourceItem.title, value: sourceItem.valueStringRepresentation)
+            height = TextAttributeCell.estimatedHeight(title: sourceItem.title,
+                                                       value: sourceItem.valueStringRepresentation,
+                                                       cellWidth: LayoutConstants.collectionItemWidth)
         case .color(_):
-            width = ColorAttributeCell.calculateEstimatedWidth(title: sourceItem.title, value: sourceItem.valueStringRepresentation)
+            height = ColorAttributeCell.calculateEstimatedHeight(title: sourceItem.title,
+                                                                 value: sourceItem.valueStringRepresentation,
+                                                                 cellWidth: LayoutConstants.collectionItemWidth)
         }
-        return CGSize(width: width, height: LayoutConstants.collectionItemHeight)
+        return CGSize(width: LayoutConstants.collectionItemWidth, height: height)
     }
 }
 

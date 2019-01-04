@@ -12,13 +12,11 @@ import SceneKit
 class SceneWidgetViewController: UIViewController {
     private var sceneViewManager: SceneViewManagerProtocol!
     private var tapGestureRecognizer: UITapGestureRecognizer {
-        return UITapGestureRecognizer.init(target: self, action: #selector(handleTap(_:)))
+        return UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
     }
 
     @IBOutlet private weak var sceneView: SCNView!
     weak var delegate: SceneViewManagerDelegate?
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +24,6 @@ class SceneWidgetViewController: UIViewController {
         sceneViewManager.delegate = self
         configure()
     }
-    
 }
 
 extension SceneWidgetViewController: SceneWidgetProtocol {
@@ -41,7 +38,6 @@ extension SceneWidgetViewController: SceneWidgetProtocol {
     func removeNode(_ node: SCNNode) {
         sceneViewManager.removeNode(node)
     }
-    
 }
 
 // MARK: - Private API

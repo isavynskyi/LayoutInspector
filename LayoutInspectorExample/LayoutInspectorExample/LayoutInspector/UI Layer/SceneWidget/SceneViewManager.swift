@@ -9,7 +9,7 @@
 import SceneKit
 
 fileprivate enum CameraParameters {
-    static let orthographicScale = 4.0
+    static let orthographicScale = 5.0
     static let zNear = 0.0
     static let zFar = 100.0
 }

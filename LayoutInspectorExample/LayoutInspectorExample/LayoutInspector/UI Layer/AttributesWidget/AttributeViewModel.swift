@@ -33,7 +33,7 @@ struct AttributeViewModel {
         case UIColor.clear:
             return "White:0 Alpha:0"
         case let customColor?:
-            return "R:\(String(format: "%.2f", customColor.redValue)) G:\(String(format: "%.2f", customColor.greenValue)) B:\(String(format: "%.2f", customColor.blueValue)) A:\(String(format: "%.2f", customColor.alphaValue))"
+            return "R:\(String(format: "%.2f", customColor.redValue))\nG:\(String(format: "%.2f", customColor.greenValue))\nB:\(String(format: "%.2f", customColor.blueValue))\nA:\(String(format: "%.2f", customColor.alphaValue))"
         default:
             return "unknown color"
         }

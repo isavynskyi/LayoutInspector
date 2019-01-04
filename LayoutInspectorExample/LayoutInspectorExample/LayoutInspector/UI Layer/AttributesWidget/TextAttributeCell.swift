@@ -8,20 +8,17 @@
 
 import UIKit
 
-protocol SeparatorPresentable {
-    func showTrailingSeparator(show: Bool)
-}
-
 class TextAttributeCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     
     @IBOutlet private weak var trailingSeparator: UIView!
     
-    static func estimatedWidth(title: String, value: String?) -> CGFloat {
-        let titleWidth = title.width(withConstrainedHeight: Styleguide.font.lineHeight, font: Styleguide.font)
-        let valueWidth = value?.width(withConstrainedHeight: Styleguide.font.lineHeight, font: Styleguide.font)
-        return max(titleWidth, valueWidth ?? 0) + CGFloat(Layout.contentLeftPadding) + CGFloat(Layout.contentRightPadding)
+    static func estimatedHeight(title: String, value: String?, cellWidth: CGFloat) -> CGFloat {
+        let contentWidthConstraint = cellWidth - Layout.contentInsets.left - Layout.contentInsets.right
+        let titleHeight = title.height(withConstrainedWidth: contentWidthConstraint, font: Styleguide.font)
+        let valueHeight = value?.height(withConstrainedWidth: contentWidthConstraint, font: Styleguide.font) ?? 0
+        return titleHeight + valueHeight + Layout.contentInsets.top + Layout.contentInsets.bottom
     }
     
     // MARK: - Lifecycle
@@ -34,8 +31,7 @@ class TextAttributeCell: UICollectionViewCell {
 // MARK: - Nested types
 private extension TextAttributeCell {
     struct Layout {
-        static let contentLeftPadding = 4.0
-        static let contentRightPadding = 4.0
+        static let contentInsets = UIEdgeInsets(top: 4, left: 6, bottom: 4, right: 4)
     }
     
     struct Styleguide {
@@ -52,11 +48,3 @@ extension TextAttributeCell: Themeable {
         trailingSeparator.backgroundColor = .secondaryLightColor
     }
 }
-
-extension TextAttributeCell: SeparatorPresentable {
-    func showTrailingSeparator(show: Bool) {
-        trailingSeparator.isHidden = !show
-    }
-}
-
-
