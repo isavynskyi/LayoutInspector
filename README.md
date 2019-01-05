@@ -13,6 +13,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+- Layout inspection could be triggered only if app is running under DEBUG build configuration, so it won't affect any other kind of the app builds (RELEASE etc)
+
 ## Installation
 
 LayoutInspector is available through [CocoaPods](https://cocoapods.org). To install
