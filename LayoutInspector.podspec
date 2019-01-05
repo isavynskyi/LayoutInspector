@@ -14,7 +14,7 @@ LayoutInspector is a tool for debugging layers on iOS devices. It allows to get 
   s.social_media_url = 'https://twitter.com/iWadedunk'
 
   s.ios.deployment_target = '10.0'
-
+  s.swift_version = '4.2'
   s.source_files = 'LayoutInspector/**/*.{h,m,swift}'
   s.resources    = [
 	  "LayoutInspector/**/*.xib",
