@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 Ihor Savynskyi,\
 wadedunk08@gmail.com\
 [Twitter](https://twitter.com/iWadedunk) \
-[LinkedIn](https://www.linkedin.com/in/isavynskyi/) \
+[LinkedIn](https://www.linkedin.com/in/isavynskyi/)
 
 
 ## License
