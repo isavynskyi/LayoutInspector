@@ -20,7 +20,7 @@ it, simply add the following line to your Podfile:
 pod 'LayoutInspector'
 ```
 
-Specify how you want to trigger layout inspection: calling it by your own (set .custom trigger type) or automatically when taking device screenshot (set .screenshot trigger type)
+Specify how you want to trigger layout inspection: calling it by your own (set **.custom** trigger type) or automatically when taking device screenshot (set **.screenshot** trigger type)
 ```
 import LayoutInspector
 
