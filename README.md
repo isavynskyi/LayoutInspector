@@ -22,14 +22,14 @@ pod 'LayoutInspector'
 
 Specify how you want to trigger layout inspection: calling it by your own (set .custom trigger type) or automatically when taking device screenshot (set .screenshot trigger type)
 ```
-LayoutInspector
+import LayoutInspector
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         LayoutInspector.shared.setTriggerType(.screenshot)
-   import     return true
+        return true
     }
 }
 
