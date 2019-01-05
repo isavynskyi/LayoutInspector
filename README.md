@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/LayoutInspector.svg?style=flat)](https://cocoapods.org/pods/LayoutInspector)
 [![Platform](https://img.shields.io/cocoapods/p/LayoutInspector.svg?style=flat)](https://cocoapods.org/pods/LayoutInspector)
 
+<a href="https://github.com/isavynskyi/LayoutInspector/blob/master/LayoutInspector_demo.gif"><img src="https://github.com/isavynskyi/LayoutInspector/blob/master/LayoutInspector_demo.gif" title="LayoutInspector demo"/></a>
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
