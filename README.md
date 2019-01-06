@@ -1,6 +1,6 @@
 # LayoutInspector
 
-[![CI Status](https://img.shields.io/travis/Igor/LayoutInspector.svg?style=flat)](https://travis-ci.org/Igor/LayoutInspector)
+[![CI Status](https://img.shields.io/travis/Igor/LayoutInspector.svg?style=flat)](https://travis-ci.org/isavynskyi/LayoutInspector)
 [![Version](https://img.shields.io/cocoapods/v/LayoutInspector.svg?style=flat)](https://cocoapods.org/pods/LayoutInspector)
 [![License](https://img.shields.io/cocoapods/l/LayoutInspector.svg?style=flat)](https://cocoapods.org/pods/LayoutInspector)
 [![Platform](https://img.shields.io/cocoapods/p/LayoutInspector.svg?style=flat)](https://cocoapods.org/pods/LayoutInspector)
