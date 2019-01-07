@@ -41,10 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ## Author
 
-Ihor Savynskyi,\
-wadedunk08@gmail.com\
-[Twitter](https://twitter.com/iWadedunk) \
-[LinkedIn](https://www.linkedin.com/in/isavynskyi/)
+Ihor Savynskyi\
+✉️ wadedunk08@gmail.com\
+🌎 [Twitter](https://twitter.com/iWadedunk), [LinkedIn](https://www.linkedin.com/in/isavynskyi/)
 
 
 ## License
