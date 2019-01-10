@@ -10,7 +10,7 @@
 ## Features
 
 - [x] Inspect layouts directly on iOS devices
-- [x] Inspection could be triggered only if app is running under DEBUG build configuration, so it won't affect any other kind of the app builds (i.e. RELEASE)
+- [x] Inspection could be triggered only if app is running under `DEBUG` build configuration, so it won't affect any other kind of the app builds (i.e. `RELEASE`)
 - [x] Objective-C compatible
 - [x] Works on all devices with iOS 10.0+
 
@@ -26,14 +26,14 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-LayoutInspector is available through [CocoaPods](https://cocoapods.org). To install
+`LayoutInspector` is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'LayoutInspector'
 ```
 
-Specify how you want to trigger layout inspection: calling it by your own (set **.custom** trigger type) or automatically when taking device screenshot (set **.screenshot** trigger type)
+Specify how you want to trigger layout inspection: calling it by your own (set `.custom` trigger type) or automatically when taking device screenshot (set `.screenshot` trigger type)
 
 **Swift**
 ```
@@ -63,6 +63,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 @end
 ```
+
+## Changelog
+
+| Version  | Description |
+| ------------- | ------------- |
+| `0.2.0`  | Objective-C compatibility |
+| `0.1.1`  | Fixed Lint warnings |
+| `0.1.0`  | Intitial version  |
 
 ## Author
 
