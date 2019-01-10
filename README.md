@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 | ------------- | ------------- |
 | `0.2.0`  | Objective-C compatibility |
 | `0.1.1`  | Fixed Lint warnings |
-| `0.1.0`  | Intitial version  |
+| `0.1.0`  | Initial version  |
 
 ## Author
 
