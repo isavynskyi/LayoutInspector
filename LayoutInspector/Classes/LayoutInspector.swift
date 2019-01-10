@@ -9,7 +9,7 @@
 import UIKit
 
 /// Type of trigger used to fire layout inspection
-public enum TriggerType {
+@objc public enum TriggerType: Int {
     /// Fire manually by calling func LayoutInspector.shared.showLayout()
     case custom
     
@@ -22,12 +22,12 @@ public enum TriggerType {
  
  - Important:
  Layout inspection shown only in DEBUG build configuration
-*/
-public final class LayoutInspector: NSObject {
+ */
+@objc public final class LayoutInspector: NSObject {
     /// Returns the singleton instance of an `LayoutInspector`.
-    public static let shared = LayoutInspector()
+    @objc public static let shared = LayoutInspector()
     private override init() {}
-
+    
     private var triggerType: TriggerType = .custom
     private var viewController: LayoutInspectorContainerViewController?
     private var hierarchyBuilder: HierarchyBuilderProtocol = HierarchyBuilder()
@@ -55,7 +55,7 @@ public extension LayoutInspector {
      Call this function to specify preffered layout inspection trigger type
      - parameter trigger: The desired trigger type enum case
      */
-    func setTriggerType(_ trigger: TriggerType) {
+    @objc func setTriggerType(_ trigger: TriggerType) {
         unsubscribe()
         triggerType = trigger
         subscribeForCurrentTrigger()
