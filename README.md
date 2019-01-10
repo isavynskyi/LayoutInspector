@@ -29,7 +29,7 @@ Specify how you want to trigger layout inspection: calling it by your own (set *
 **Swift**
 ```
 import LayoutInspector
-...
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
