@@ -33,7 +33,9 @@ it, simply add the following line to your Podfile:
 pod 'LayoutInspector'
 ```
 
-Layout inspection could be trigger: 
+## Usage
+
+**Layout inspection could be trigger:**
 - manually whenever you want (on some actions, events, notifications etc) 
 ```
 LayoutInspector.shared.showLayout()
