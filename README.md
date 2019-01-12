@@ -43,7 +43,7 @@ import LayoutInspector
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        LayoutInspector.shared.setTriggerType(.screenshot)
+        LayoutInspector.shared.setAutoTrigger(.screenshot)
         return true
     }
 }
@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[LayoutInspector shared] setTriggerType:TriggerTypeScreenshot];
+    [[LayoutInspector shared] setAutoTrigger:AutoTriggerScreenshot];
     return YES;
 }
 

@@ -8,12 +8,11 @@
 
 import UIKit
 
-/// Type of trigger used to fire layout inspection
-@objc public enum TriggerType: Int {
-    /// Fire manually by calling func LayoutInspector.shared.showLayout()
-    case custom
+/// Type of trigger used to fire layout inspection automatically
+@objc public enum AutoTrigger: Int {
+    case none
     
-    /// Fire automatically whenever screenshot is taken
+    /// Fire automatically when device screenshot is taken
     case screenshot
 }
 
@@ -28,7 +27,7 @@ import UIKit
     @objc public static let shared = LayoutInspector()
     private override init() {}
     
-    private var triggerType: TriggerType = .custom
+    private var currentAutoTrigger: AutoTrigger = .none
     private var viewController: LayoutInspectorContainerViewController?
     private var hierarchyBuilder: HierarchyBuilderProtocol = HierarchyBuilder()
     private var presenter: LayoutInspectorPresenter?
@@ -38,11 +37,35 @@ import UIKit
 //MARK: - Public API
 public extension LayoutInspector {
     /**
-     Call this start layout debugging
+     Call this to fire layout inspection manually
      - Important:
      Layout inspection shown only in DEBUG build configuration
      */
     @objc func showLayout() {
+        startLayoutInspection()
+    }
+    
+    /**
+     Specifies automatical trigger to start layout inspection
+     - parameter trigger: The desired trigger type
+     */
+    @objc func setAutoTrigger(_ trigger: AutoTrigger) {
+        guard currentAutoTrigger != trigger else { return }
+        
+        unsubscribeFromTrigger(currentAutoTrigger)
+        currentAutoTrigger = trigger
+        subscribeForTrigger(currentAutoTrigger)
+    }
+}
+
+//MARK: - Private API
+private extension LayoutInspector {
+    /**
+     Starts layout inspection
+     - Important:
+     Layout inspection shown only in DEBUG build configuration
+     */
+    @objc func startLayoutInspection() {
         #if DEBUG
         guard let viewDescriptionTree = hierarchyBuilder.captureHierarchy(), isInspecting == false else { return }
         presenter = makeLayoutInspectorPresenter()
@@ -51,37 +74,24 @@ public extension LayoutInspector {
         #endif
     }
     
-    /**
-     Call this function to specify preffered layout inspection trigger type
-     - parameter trigger: The desired trigger type enum case
-     */
-    @objc func setTriggerType(_ trigger: TriggerType) {
-        unsubscribe()
-        triggerType = trigger
-        subscribeForCurrentTrigger()
-    }
-}
-
-//MARK: - Private API
-private extension LayoutInspector {
-    func subscribeForCurrentTrigger() {
-        switch triggerType {
+    func subscribeForTrigger(_ trigger: AutoTrigger) {
+        switch trigger {
         case .screenshot:
             NotificationCenter.default.addObserver(self,
-                                                   selector: #selector(showLayout),
+                                                   selector: #selector(startLayoutInspection),
                                                    name: UIApplication.userDidTakeScreenshotNotification,
                                                    object: nil)
-        case .custom: return
+        case .none: return
         }
     }
     
-    func unsubscribe() {
-        switch triggerType {
+    func unsubscribeFromTrigger(_ trigger: AutoTrigger) {
+        switch trigger {
         case .screenshot:
             NotificationCenter.default.removeObserver(self,
                                                       name: UIApplication.userDidTakeScreenshotNotification,
                                                       object: nil)
-        case .custom: return
+        case .none: return
         }
     }
 }
