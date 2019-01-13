@@ -33,7 +33,19 @@ it, simply add the following line to your Podfile:
 pod 'LayoutInspector'
 ```
 
-Specify how you want to trigger layout inspection: calling it by your own (set `.custom` trigger type) or automatically when taking device screenshot (set `.screenshot` trigger type)
+## Usage
+
+**Layout inspection could be trigger:**
+- manually whenever you want (on some actions, events, notifications etc) 
+```
+LayoutInspector.shared.showLayout()
+```
+
+- automatically when taking app screenshot
+```
+LayoutInspector.shared.setAutoTrigger(.screenshot)
+```
+
 
 **Swift**
 ```
@@ -43,7 +55,7 @@ import LayoutInspector
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        LayoutInspector.shared.setTriggerType(.screenshot)
+        LayoutInspector.shared.setAutoTrigger(.screenshot)
         return true
     }
 }
@@ -57,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[LayoutInspector shared] setTriggerType:TriggerTypeScreenshot];
+    [[LayoutInspector shared] setAutoTrigger:AutoTriggerScreenshot];
     return YES;
 }
 
