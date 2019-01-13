@@ -21,7 +21,7 @@ protocol LayoutInspectorViewInput: NSObjectProtocol, NodesManagementProtocol {
 }
 
 protocol NodesManagementProtocol {
-    func addNodeToScene(_ node: SCNNode)
+    func addNode(_ node: SCNNode)
     func removeNode(_ node: SCNNode)
 }
 

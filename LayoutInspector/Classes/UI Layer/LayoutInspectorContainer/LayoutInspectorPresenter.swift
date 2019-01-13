@@ -35,7 +35,7 @@ private extension LayoutInspectorPresenter {
         let renderingTree = renderingTreeBuilder.build(from: viewDescription)
         if let rootNode = renderingTree.viewNode {
             wrapperNode.addChildNode(rootNode)
-            view?.addNodeToScene(wrapperNode)
+            view?.addNode(wrapperNode)
         }
     }
 }

@@ -13,6 +13,13 @@ enum AttributeValue {
     case color(UIColor?)
 }
 
+enum ColorRepresentationPattern {
+    static let nilColor = "<nil color>"
+    static let clear = "White:0\nAlpha:0"
+    static let regularColorFormat = "R:%.2f\nG:%.2f\nB:%.2f\nA:%.2f"
+    static let unknown = "unknown color"
+}
+
 struct AttributeViewModel {
     let title: String
     let value: AttributeValue
@@ -29,13 +36,17 @@ struct AttributeViewModel {
     func valueStringFor(_ color: UIColor?) -> String {
         switch color {
         case nil:
-            return "<nil color>"
+            return ColorRepresentationPattern.nilColor
         case UIColor.clear:
-            return "White:0\nAlpha:0"
+            return ColorRepresentationPattern.clear
         case let customColor?:
-            return "R:\(String(format: "%.2f", customColor.redValue))\nG:\(String(format: "%.2f", customColor.greenValue))\nB:\(String(format: "%.2f", customColor.blueValue))\nA:\(String(format: "%.2f", customColor.alphaValue))"
+            return String(format: ColorRepresentationPattern.regularColorFormat,
+                          customColor.redValue,
+                          customColor.greenValue,
+                          customColor.blueValue,
+                          customColor.alphaValue)
         default:
-            return "unknown color"
+            return ColorRepresentationPattern.unknown
         }
     }
 }
