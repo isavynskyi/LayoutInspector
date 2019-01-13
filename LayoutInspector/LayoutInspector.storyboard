@@ -62,6 +62,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <accessibility key="accessibilityConfiguration" identifier="LayoutInspectorContainerView"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="OyA-Aq-pJh" secondAttribute="bottom" id="9BA-u5-n1j"/>
                             <constraint firstItem="wzZ-OA-kus" firstAttribute="top" secondItem="AqF-aB-iw6" secondAttribute="top" id="Dbd-m8-0se"/>
@@ -294,6 +295,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkH-Kq-Q7p">
                                         <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="close"/>
                                         <inset key="imageEdgeInsets" minX="14" minY="14" maxX="14" maxY="14"/>
                                         <state key="normal" image="closeIcon">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
