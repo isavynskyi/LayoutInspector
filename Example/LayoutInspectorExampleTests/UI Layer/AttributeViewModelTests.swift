@@ -44,7 +44,7 @@ class AttributeViewModelTests: XCTestCase {
                                     color.greenValue,
                                     color.blueValue,
                                     color.alphaValue)
-x        XCTAssert(representationString == expectedString, "Wrong representation for custom color")
+        XCTAssert(representationString == expectedString, "Wrong representation for custom color")
     }
     
     func testRepresentationStringForCustomText() {
