@@ -24,7 +24,7 @@ private extension DebugNode {
     }
     
     func highlight() {
-        setFirstMaterialTransparency(0.5)
+        setFirstMaterialTransparency(Constants.selectedStateTransparency)
         
         let (min, max) = boundingBox
         let topLeft = SCNVector3Make(min.x, max.y, 0)
@@ -44,7 +44,7 @@ private extension DebugNode {
     }
     
     func unhighlight() {
-        setFirstMaterialTransparency(1.0)
+        setFirstMaterialTransparency(Constants.deselectedStateTransparency)
 
         let highlightningNodes = childNodes.filter { $0.name == selectionBorderNodeName}
         highlightningNodes.forEach { $0.removeFromParentNode() }
@@ -69,8 +69,16 @@ private extension DebugNode {
         return SCNGeometry(sources: [source], elements: [element])
     }
 
-    func setFirstMaterialTransparency(_ value: Float) {
+    func setFirstMaterialTransparency(_ value: CGFloat) {
         geometry?.firstMaterial?.transparency = CGFloat(value)
     }
     
+}
+
+// MARK: - Nested types
+extension DebugNode {
+    enum Constants {
+        static let selectedStateTransparency: CGFloat = 0.5
+        static let deselectedStateTransparency: CGFloat = 1.0
+    }
 }
