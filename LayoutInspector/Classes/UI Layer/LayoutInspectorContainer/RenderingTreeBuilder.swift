@@ -53,7 +53,7 @@ private extension RenderingTreeBuilder {
             plane.firstMaterial?.diffuse.contents = UIImage(named: "transparent_view_image",
                                                             in: Bundle.layoutInspectorBundle,
                                                             compatibleWith: nil)
-        } else {
+        } else if viewDescription.snapshotImage?.size != CGSize.zero {
             plane.firstMaterial?.diffuse.contents = viewDescription.snapshotImage
         }
         plane.firstMaterial?.isDoubleSided = true
