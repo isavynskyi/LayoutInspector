@@ -100,23 +100,17 @@ private extension LayoutInspector {
 // MARK: - Container Module Configuration
 private extension LayoutInspector {
     func makeLayoutInspectorPresenter() -> LayoutInspectorPresenter {
-        let view = makeLayoutInspectorContainerView()
-        viewController = view
-        view.loadView()
-        view.viewDidLoad()
+        viewController = ViewControllerFactory.createLayoutInspectorContainerViewController()
+        viewController?.loadView()
+        viewController?.viewDidLoad()
         
         let presenter = LayoutInspectorPresenter()
-        view.output = presenter
-        presenter.view = view
+        viewController?.output = presenter
+        presenter.view = viewController
         presenter.delegate = self
         return presenter
     }
-    
-    func makeLayoutInspectorContainerView() -> LayoutInspectorContainerViewController {
-        let storyboard = UIStoryboard(name: "LayoutInspector", bundle: Bundle.layoutInspectorBundle)
-        let viewController: LayoutInspectorContainerViewController = storyboard.instantiateViewController(withIdentifier: "LayoutInspectorContainerViewController") as! LayoutInspectorContainerViewController
-        return viewController
-    }
+
 }
 
 extension LayoutInspector: LayoutInspectorPresenterDelegate {
