@@ -31,8 +31,8 @@ extension SceneWidgetViewController: SceneWidgetProtocol {
         sceneViewManager?.resetPointOfViewToDefaults()
     }
     
-    func addNodeToScene(_ node: SCNNode) {
-        sceneViewManager?.addNodeToScene(node)
+    func addNode(_ node: SCNNode) {
+        sceneViewManager?.addNode(node)
     }
     
     func removeNode(_ node: SCNNode) {

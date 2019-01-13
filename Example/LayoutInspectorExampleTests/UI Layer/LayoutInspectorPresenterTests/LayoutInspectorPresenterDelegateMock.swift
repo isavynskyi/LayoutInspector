@@ -10,9 +10,9 @@ import Foundation
 @testable import LayoutInspector
 
 class LayoutInspectorPresenterDelegateMock: NSObject, LayoutInspectorPresenterDelegate {
-    var didFinishLayoutInspectionCalledCount = 0
+    private(set) var didFinishLayoutInspectionCallsCounter = 0
     
     func didFinishLayoutInspection() {
-        didFinishLayoutInspectionCalledCount += 1
+        didFinishLayoutInspectionCallsCounter += 1
     }
 }

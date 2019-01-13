@@ -51,8 +51,8 @@ extension LayoutInspectorContainerViewController: LayoutInspectorViewInput {
         return view
     }
     
-    func addNodeToScene(_ node: SCNNode) {
-        sceneWidget?.addNodeToScene(node)
+    func addNode(_ node: SCNNode) {
+        sceneWidget?.addNode(node)
     }
     
     func removeNode(_ node: SCNNode) {

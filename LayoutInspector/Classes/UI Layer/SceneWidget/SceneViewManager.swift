@@ -39,7 +39,7 @@ class SceneViewManager: SceneViewManagerProtocol {
         }
     }
     
-    func addNodeToScene(_ node: SCNNode) {
+    func addNode(_ node: SCNNode) {
         sceneView.scene?.rootNode.addChildNode(node)
     }
     

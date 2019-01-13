@@ -10,9 +10,9 @@ import Foundation
 @testable import LayoutInspector
 
 class LayoutInspectorViewOutputMock: LayoutInspectorViewOutput {
-    var didCloseCalledCount = 0
+    private(set) var didCloseActionCallsCounter = 0
     
     func didCloseAction() {
-        didCloseCalledCount += 1
+        didCloseActionCallsCounter += 1
     }
 }

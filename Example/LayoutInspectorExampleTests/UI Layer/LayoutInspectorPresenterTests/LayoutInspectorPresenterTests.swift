@@ -16,9 +16,10 @@ class LayoutInspectorPresenterTests: XCTestCase {
         let presenteUnderTest = LayoutInspectorPresenter()
         let mockDelegate = LayoutInspectorPresenterDelegateMock()
         presenteUnderTest.delegate = mockDelegate
-        // when, then
-        XCTAssert(mockDelegate.didFinishLayoutInspectionCalledCount == 0)
+        let initialDidFinishLayoutInspectionCallsCount = mockDelegate.didFinishLayoutInspectionCallsCounter
+        // when
         presenteUnderTest.didCloseAction()
-        XCTAssert(mockDelegate.didFinishLayoutInspectionCalledCount == 1, "Didn't propagate close action to delegate")
+        // then
+        XCTAssert(mockDelegate.didFinishLayoutInspectionCallsCounter == initialDidFinishLayoutInspectionCallsCount + 1, "Didn't propagate close action to delegate")
     }
 }

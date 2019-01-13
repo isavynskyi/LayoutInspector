@@ -314,10 +314,10 @@
 		B1718ECE7300EE5DA2807ABD085D3B4F /* SceneWidget */ = {
 			isa = PBXGroup;
 			children = (
-				60611A62496A97D58C10850E9E31F4DD /* SceneViewManager.swift */,
-				814155AD8C796530507558E01F46E5FB /* SceneViewManagerInterfaces.swift */,
 				0C3AB053BF9E856FC5A96BFEF6989FB7 /* SceneWidgetInterfaces.swift */,
 				8EC88888BEB3FB9A5FA740D7E70E696A /* SceneWidgetViewController.swift */,
+				60611A62496A97D58C10850E9E31F4DD /* SceneViewManager.swift */,
+				814155AD8C796530507558E01F46E5FB /* SceneViewManagerInterfaces.swift */,
 			);
 			path = SceneWidget;
 			sourceTree = "<group>";

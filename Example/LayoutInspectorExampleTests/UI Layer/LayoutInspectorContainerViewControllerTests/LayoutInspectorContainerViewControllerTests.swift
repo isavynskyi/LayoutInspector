@@ -25,9 +25,10 @@ class LayoutInspectorContainerViewControllerTests: XCTestCase {
         // givel
         let mockOutput = LayoutInspectorViewOutputMock()
         vcUnderTest?.output = mockOutput
-        // when, then
-        XCTAssert(mockOutput.didCloseCalledCount == 0)
+        let initialDidCloseActionCallsCount = mockOutput.didCloseActionCallsCounter
+        // when
         vcUnderTest?.didCloseAction()
-        XCTAssert(mockOutput.didCloseCalledCount == 1, "Didn't propagate close action to output")
+        // when
+        XCTAssert(mockOutput.didCloseActionCallsCounter == initialDidCloseActionCallsCount + 1, "Didn't propagate close action to output")
     }
 }
