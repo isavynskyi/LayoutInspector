@@ -13,6 +13,8 @@
 		3793D11421EA1A160045AD29 /* HierarchyBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D11321EA1A160045AD29 /* HierarchyBuilderTests.swift */; };
 		37F29E8D21EB5D5000421B97 /* LayoutInspectorContainerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F29E8C21EB5D5000421B97 /* LayoutInspectorContainerViewControllerTests.swift */; };
 		37F29E9121EB5F5F00421B97 /* LayoutInspectorViewOutputMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F29E9021EB5F5F00421B97 /* LayoutInspectorViewOutputMock.swift */; };
+		37F29E9521EB63F200421B97 /* LayoutInspectorPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F29E9421EB63F200421B97 /* LayoutInspectorPresenterTests.swift */; };
+		37F29E9721EB645A00421B97 /* LayoutInspectorPresenterDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F29E9621EB645A00421B97 /* LayoutInspectorPresenterDelegateMock.swift */; };
 		37F93C2221D28B41007CBE78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F93C2121D28B41007CBE78 /* AppDelegate.swift */; };
 		37F93C2421D28B41007CBE78 /* ControlsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F93C2321D28B41007CBE78 /* ControlsDemoViewController.swift */; };
 		37F93C2721D28B41007CBE78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C2521D28B41007CBE78 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		3793D11321EA1A160045AD29 /* HierarchyBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchyBuilderTests.swift; sourceTree = "<group>"; };
 		37F29E8C21EB5D5000421B97 /* LayoutInspectorContainerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutInspectorContainerViewControllerTests.swift; sourceTree = "<group>"; };
 		37F29E9021EB5F5F00421B97 /* LayoutInspectorViewOutputMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutInspectorViewOutputMock.swift; sourceTree = "<group>"; };
+		37F29E9421EB63F200421B97 /* LayoutInspectorPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutInspectorPresenterTests.swift; sourceTree = "<group>"; };
+		37F29E9621EB645A00421B97 /* LayoutInspectorPresenterDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutInspectorPresenterDelegateMock.swift; sourceTree = "<group>"; };
 		37F93C1E21D28B41007CBE78 /* LayoutInspectorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutInspectorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F93C2121D28B41007CBE78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37F93C2321D28B41007CBE78 /* ControlsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsDemoViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 			children = (
 				3725F37521EB49780018C5DD /* AttributeViewModelTests.swift */,
 				37F29E9221EB635E00421B97 /* LayoutInspectorContainerViewControllerTests */,
+				37F29E9321EB63C700421B97 /* LayoutInspectorPresenterTests */,
 			);
 			path = "UI Layer";
 			sourceTree = "<group>";
@@ -108,6 +113,15 @@
 				37F29E9021EB5F5F00421B97 /* LayoutInspectorViewOutputMock.swift */,
 			);
 			path = LayoutInspectorContainerViewControllerTests;
+			sourceTree = "<group>";
+		};
+		37F29E9321EB63C700421B97 /* LayoutInspectorPresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				37F29E9421EB63F200421B97 /* LayoutInspectorPresenterTests.swift */,
+				37F29E9621EB645A00421B97 /* LayoutInspectorPresenterDelegateMock.swift */,
+			);
+			path = LayoutInspectorPresenterTests;
 			sourceTree = "<group>";
 		};
 		37F93C1521D28B41007CBE78 = {
@@ -346,8 +360,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F29E9721EB645A00421B97 /* LayoutInspectorPresenterDelegateMock.swift in Sources */,
 				3793D11021EA133A0045AD29 /* LayoutInspectorFacadeTests.swift in Sources */,
 				3793D11421EA1A160045AD29 /* HierarchyBuilderTests.swift in Sources */,
+				37F29E9521EB63F200421B97 /* LayoutInspectorPresenterTests.swift in Sources */,
 				37F29E8D21EB5D5000421B97 /* LayoutInspectorContainerViewControllerTests.swift in Sources */,
 				3725F37621EB49780018C5DD /* AttributeViewModelTests.swift in Sources */,
 				37F29E9121EB5F5F00421B97 /* LayoutInspectorViewOutputMock.swift in Sources */,

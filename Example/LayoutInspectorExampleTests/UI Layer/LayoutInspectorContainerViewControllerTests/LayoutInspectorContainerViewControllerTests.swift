@@ -23,12 +23,11 @@ class LayoutInspectorContainerViewControllerTests: XCTestCase {
 
     func testInteractionWithOutput() {
         // givel
-        let output = LayoutInspectorViewOutputMock()
-        vcUnderTest?.output = output
+        let mockOutput = LayoutInspectorViewOutputMock()
+        vcUnderTest?.output = mockOutput
         // when, then
-        XCTAssert(output.didCloseCalledCount == 0)
+        XCTAssert(mockOutput.didCloseCalledCount == 0)
         vcUnderTest?.didCloseAction()
-        XCTAssert(output.didCloseCalledCount == 1, "Didn't propagate close action to output")
+        XCTAssert(mockOutput.didCloseCalledCount == 1, "Didn't propagate close action to output")
     }
-
 }
