@@ -4,6 +4,7 @@
 
 osx_image: xcode10.1
 language: objective-c
+xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X
 # cache: cocoapods
 # podfile: Example/Podfile
 # before_install:
