@@ -2,9 +2,10 @@
 # * https://www.objc.io/issues/6-build-tools/travis-ci/
 # * https://github.com/supermarin/xcpretty#usage
 
+
+language: swift
 osx_image: xcode10.1
-language: objective-c
-xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X
+xcode_sdk: iphonesimulator12.1
 # cache: cocoapods
 # podfile: Example/Podfile
 # before_install:
