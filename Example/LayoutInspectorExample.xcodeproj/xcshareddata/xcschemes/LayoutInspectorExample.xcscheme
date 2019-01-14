@@ -32,7 +32,7 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CCDECB7A35ED56E1934090279B2ACA8F"
+            BlueprintIdentifier = "AFB08DB91F04354A94A17DDA3F323848"
             BuildableName = "LayoutInspector.framework"
             BlueprintName = "LayoutInspector"
             ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -48,6 +48,18 @@
                BlueprintIdentifier = "37F93C3121D28B43007CBE78"
                BuildableName = "LayoutInspectorExampleTests.xctest"
                BlueprintName = "LayoutInspectorExampleTests"
+               ReferencedContainer = "container:LayoutInspectorExample.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "37F87BEC21EBAA5600C0BF7B"
+               BuildableName = "LayoutInspectorExampleUITests.xctest"
+               BlueprintName = "LayoutInspectorExampleUITests"
                ReferencedContainer = "container:LayoutInspectorExample.xcodeproj">
             </BuildableReference>
          </TestableReference>

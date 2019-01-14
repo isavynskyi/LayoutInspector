@@ -7,7 +7,12 @@ target 'LayoutInspectorExample' do
 
   target 'LayoutInspectorExampleTests' do
     inherit! :search_paths
-    # Pods for testing
+  end
+
+ target 'LayoutInspectorExampleUITests' do
+    inherit! :search_paths
   end
 
 end
+
+
