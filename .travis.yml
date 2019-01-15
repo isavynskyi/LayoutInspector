@@ -2,7 +2,7 @@ language: objective-c
 osx_image: xcode10.1
 cache: cocoapods
 xcode_workspace: Example/LayoutInspectorExample.xcworkspace
-xcode_scheme: -scheme LayoutInspectorExample
+xcode_scheme: LayoutInspectorExample
 xcode_sdk: iphonesimulator12.1
 podfile: Example/Podfile
 before_install:
