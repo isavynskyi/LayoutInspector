@@ -1,13 +1,14 @@
 language: objective-c
 osx_image: xcode10.1
-cache: cocoapods
 xcode_workspace: Example/LayoutInspectorExample.xcworkspace
-xcode_scheme: LayoutInspectorExample
 xcode_sdk: iphonesimulator12.1
+
+cache: cocoapods
 podfile: Example/Podfile
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example
+
 script:
-- set -o pipefail && xcodebuild -UseModernBuildSystem=NO test | xcpretty
+- set -o pipefail && xcodebuild -scheme LayoutInspectorExample -UseModernBuildSystem=NO test | xcpretty
 - pod lib lint
