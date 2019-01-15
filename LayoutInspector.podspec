@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'LayoutInspector'
-  s.version          = '0.2.0'
+  s.version          = '1.0.0'
   s.summary          = 'LayoutInspector module'
 
   s.description      = <<-DESC

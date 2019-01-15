@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[LayoutInspector shared] setAutoTrigger:AutoTriggerScreenshot];
+    [LayoutInspector.shared setAutoTrigger:AutoTriggerScreenshot];
     return YES;
 }
 
@@ -80,6 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 | Version  | Description |
 | ------------- | ------------- |
+| `1.0.0`  | Test coverage |
 | `0.2.0`  | Objective-C compatibility |
 | `0.1.1`  | Fixed Lint warnings |
 | `0.1.0`  | Initial version  |
