@@ -1,14 +1,13 @@
-# references:
-# * https://www.objc.io/issues/6-build-tools/travis-ci/
-# * https://github.com/supermarin/xcpretty#usage
-
-osx_image: xcode10.1
 language: objective-c
+osx_image: xcode10.1
 cache: cocoapods
+xcode_workspace: Example/LayoutInspectorExample.xcworkspace
+xcode_scheme: -scheme LayoutInspectorExample
+xcode_sdk: iphonesimulator12.1
 podfile: Example/Podfile
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild -workspace Example/LayoutInspectorExample.xcworkspace -scheme LayoutInspectorExample -sdk iphonesimulator12.1 -destination "platform=iOS Simulator,OS=12.1,name=iPhone Xs Max" -UseModernBuildSystem=NO test | xcpretty --test --color; test ${PIPESTATUS[0]} -eq 0
+- set -o pipefail && xcodebuild | xcpretty
 - pod lib lint
