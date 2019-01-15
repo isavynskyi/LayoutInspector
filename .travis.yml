@@ -1,6 +1,5 @@
 language: objective-c
 osx_image: xcode10.1
-xcode_workspace: Example/LayoutInspectorExample.xcworkspace
 xcode_sdk: iphonesimulator12.1
 
 cache: cocoapods
@@ -10,5 +9,5 @@ before_install:
 - pod install --project-directory=Example
 
 script:
-- set -o pipefail && xcodebuild -scheme LayoutInspectorExample -UseModernBuildSystem=NO test | xcpretty
+- set -o pipefail && xcodebuild -workspace Example/LayoutInspectorExample.xcworkspace -scheme LayoutInspectorExample -UseModernBuildSystem=NO test | xcpretty
 - pod lib lint
