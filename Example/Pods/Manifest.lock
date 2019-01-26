@@ -1,5 +1,5 @@
 PODS:
-  - LayoutInspector (0.2.0)
+  - LayoutInspector (1.0.0)
 
 DEPENDENCIES:
   - LayoutInspector (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LayoutInspector: 975949f8713760699176a46d22cf9403805a807f
+  LayoutInspector: d4e7ae0f092e02225b9edb7ccd4064741ccdda05
 
 PODFILE CHECKSUM: d637705ce3321490bd99e6fb5f40e42a480bea53
 
