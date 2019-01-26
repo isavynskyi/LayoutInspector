@@ -80,10 +80,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 | Version  | Description |
 | ------------- | ------------- |
-| `1.0.0`  | Test coverage |
-| `0.2.0`  | Objective-C compatibility |
-| `0.1.1`  | Fixed Lint warnings |
-| `0.1.0`  | Initial version  |
+| `1.0.0`  | Release: test coverage added|
+| `0.2.0`  | Pre-release: Objective-C compatibility |
+| `0.1.1`  | Pre-release: fixed Lint warnings |
+| `0.1.0`  | Pre-release: initial version  |
 
 ## Author
 
