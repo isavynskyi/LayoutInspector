@@ -37,12 +37,12 @@ pod 'LayoutInspector'
 
 **Layout inspection could be trigger:**
 - manually whenever you want (on some actions, events, notifications etc) 
-```
+```swift
 LayoutInspector.shared.showLayout()
 ```
 
 - automatically when taking app screenshot
-```
+```swift
 LayoutInspector.shared.setAutoTrigger(.screenshot)
 ```
 
