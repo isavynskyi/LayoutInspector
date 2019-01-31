@@ -48,7 +48,7 @@ LayoutInspector.shared.setAutoTrigger(.screenshot)
 
 
 **Swift**
-```
+```swift
 import LayoutInspector
 
 @UIApplicationMain
@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 **Objective-C**
-```
+```obj-c
 @import LayoutInspector;
 
 @implementation AppDelegate
