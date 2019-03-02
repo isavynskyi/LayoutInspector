@@ -8,5 +8,5 @@ before_install:
 - pod install --project-directory=Example
 
 script:
-- set -o pipefail && xcodebuild -workspace Example/LayoutInspectorExample.xcworkspace -scheme LayoutInspectorExample -sdk iphonesimulator -destination "platform=iOS Simulator,OS=12.1,name=iPhone Xs Max" -UseModernBuildSystem=NO test | xcpretty
+- set -o pipefail && xcodebuild -workspace Example/LayoutInspectorExample.xcworkspace -scheme LayoutInspectorExample -sdk iphonesimulator -destination "platform=iOS Simulator,OS=12.1,name=iPhone Xs Max" -UseModernBuildSystem=NO test |
 - pod lib lint
