@@ -579,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0EB497925AB70A369B3C5D40 /* Pods-LayoutInspectorExampleUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56E9A934VJ;
 				INFOPLIST_FILE = LayoutInspectorExampleUITests/Info.plist;
@@ -599,6 +600,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA870D846F8DE8FE73CD0FEB /* Pods-LayoutInspectorExampleUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56E9A934VJ;
 				INFOPLIST_FILE = LayoutInspectorExampleUITests/Info.plist;
