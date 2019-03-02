@@ -60,8 +60,8 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AFB08DB91F04354A94A17DDA3F323848"
-            BuildableName = "LayoutInspector.framework"
+            BlueprintIdentifier = "A55ECC3EE7D90395C2E15C9027876BB0"
+            BuildableName = "libLayoutInspector.a"
             BlueprintName = "LayoutInspector"
             ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
