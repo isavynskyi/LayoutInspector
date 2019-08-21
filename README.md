@@ -12,7 +12,7 @@
 - [x] Inspect layouts directly on iOS devices
 - [x] Inspection could be triggered only if app is running under `DEBUG` build configuration, so it won't affect any other kind of the app builds (i.e. `RELEASE`)
 - [x] Objective-C compatible
-- [x] Works on all devices with iOS 10.0+
+- [x] Works on all devices with iOS 11.0+
 
 ## Example
 
@@ -20,9 +20,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-- iOS 10.0+ / macOS 10.12+ / tvOS 10.0+ / watchOS 3.0+
-- Xcode 10.1+
-- Swift 4.2+
+- iOS 11.0 and higher
+- Xcode 10.3 and higher
+- Swift 5.0 and higher
 
 ## Installation
 
@@ -80,6 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 | Version  | Description |
 | ------------- | ------------- |
+| `1.1.0`  | Release: Swift version upgraded to 5.0|
 | `1.0.0`  | Release: test coverage added|
 | `0.2.0`  | Pre-release: Objective-C compatibility |
 | `0.1.1`  | Pre-release: fixed Lint warnings |
