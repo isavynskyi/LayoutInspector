@@ -10,5 +10,7 @@
 - [ ] UI tests added
 - [ ] Tests pass locally
 
-or
-- [ ] Doesn't require any testing activities
+Pod version update
+- [ ] Major 
+- [ ] Minor 
+- [ ] Patch 
