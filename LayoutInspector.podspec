@@ -13,7 +13,7 @@ LayoutInspector is a tool for debugging layers on iOS devices. It allows to get 
   s.source           = { :git => 'https://github.com/isavynskyi/LayoutInspector.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/iWadedunk'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
   s.swift_version = '5.0'
   s.source_files = 'LayoutInspector/**/*.{h,m,swift}'
   s.resources    = [
