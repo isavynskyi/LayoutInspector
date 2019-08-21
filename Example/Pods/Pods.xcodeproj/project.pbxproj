@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -82,11 +82,11 @@
 		1E794AB02248F135D4DF29AB2070B3DB /* ViewDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewDescription.swift; sourceTree = "<group>"; };
 		2039AF0A2DD040F57F071D253E573399 /* Pods-LayoutInspectorExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LayoutInspectorExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		239B5F10B17EF2D1843C22087B9DE578 /* Pods-LayoutInspectorExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LayoutInspectorExample-dummy.m"; sourceTree = "<group>"; };
-		25B5AC8596AC15C9C22FC5A99B8FE437 /* libLayoutInspector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libLayoutInspector.a; path = libLayoutInspector.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		25B5AC8596AC15C9C22FC5A99B8FE437 /* libLayoutInspector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLayoutInspector.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D66EFDDBF8B9DC1A8A4E5DE59DEC57A /* SceneViewManagerInterfaces.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SceneViewManagerInterfaces.swift; sourceTree = "<group>"; };
 		2D7DC91B0C181C9F93AC0B49E910E728 /* UtilsProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UtilsProtocols.swift; sourceTree = "<group>"; };
 		2DBB933E175D878BBB978BBFE774D17E /* ObjectAttributesManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ObjectAttributesManager.swift; sourceTree = "<group>"; };
-		353F9E62543D3686939C9E36F083FC7A /* LayoutInspector.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = LayoutInspector.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		353F9E62543D3686939C9E36F083FC7A /* LayoutInspector.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = LayoutInspector.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		359AB05FACA3802C7DE3E57AD1863122 /* AttributesManagerInterfaces.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AttributesManagerInterfaces.swift; sourceTree = "<group>"; };
 		3875985601867D79CC4B3BB7A2D2C846 /* Pods-LayoutInspectorExampleUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LayoutInspectorExampleUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		3D0D4104CF0292B6AB8598844853EE2A /* HierarchyBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HierarchyBuilder.swift; sourceTree = "<group>"; };
@@ -102,21 +102,21 @@
 		61A88FC71259EF6BE08BA3288B204042 /* MenuWidgetViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuWidgetViewController.swift; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		663A6748580ABC444DAD319F8CEFC280 /* DebugNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DebugNode.swift; sourceTree = "<group>"; };
-		6D89E45424F0D885454636922C0769BF /* libPods-LayoutInspectorExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-LayoutInspectorExample.a"; path = "libPods-LayoutInspectorExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D89E45424F0D885454636922C0769BF /* libPods-LayoutInspectorExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LayoutInspectorExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7059B5304EAAA4541545418C031B34DC /* Pods-LayoutInspectorExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LayoutInspectorExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		754DF1A29AF52B089420E587EFBFBDBC /* LayoutInspector-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LayoutInspector-dummy.m"; sourceTree = "<group>"; };
 		7695E34A50BBE6D1EEA509612E42711D /* UICollectionView+Extention.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extention.swift"; sourceTree = "<group>"; };
 		77FC58B159CBADD571F38A02D08157AB /* LayoutInspector.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = LayoutInspector.storyboard; path = LayoutInspector/LayoutInspector.storyboard; sourceTree = "<group>"; };
 		79B26DDA39906746B033DD4BE854BCC8 /* Pods-LayoutInspectorExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LayoutInspectorExample.modulemap"; sourceTree = "<group>"; };
-		7B4A0C035C5A458636C66135E4936620 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7B4A0C035C5A458636C66135E4936620 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		7D52935F5811C958FA2915E627405D04 /* Pods-LayoutInspectorExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LayoutInspectorExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		81D4288491C0098D83DBCC71170CEBB3 /* Pods-LayoutInspectorExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LayoutInspectorExample-resources.sh"; sourceTree = "<group>"; };
 		85EFC75C231ADBF5E2FB6A698BBA1C53 /* Pods-LayoutInspectorExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LayoutInspectorExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86A382B50332F8E1DA198D140FE59DE2 /* Pods-LayoutInspectorExampleTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LayoutInspectorExampleTests-resources.sh"; sourceTree = "<group>"; };
 		87A27F8F189125CE1B31C0B7640CC987 /* SceneViewManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SceneViewManager.swift; sourceTree = "<group>"; };
-		88986968DAA011B23583FC58AC8C6719 /* libPods-LayoutInspectorExampleUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-LayoutInspectorExampleUITests.a"; path = "libPods-LayoutInspectorExampleUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88986968DAA011B23583FC58AC8C6719 /* libPods-LayoutInspectorExampleUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LayoutInspectorExampleUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9294212B0559DA14DF7931B978313C91 /* SceneWidgetViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SceneWidgetViewController.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		979E642F3E45505157A6D586059E1391 /* RenderingTreeBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RenderingTreeBuilder.swift; sourceTree = "<group>"; };
 		9FE24C148B2DAA999413F4D4207DD277 /* Pods-LayoutInspectorExampleTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LayoutInspectorExampleTests-frameworks.sh"; sourceTree = "<group>"; };
 		A003C3D573C6F180EE51816206CCB01B /* ViewMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewMetadata.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		AC78D8C0F1D05ED551923C18D9328A9D /* LayoutInspector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutInspector.swift; path = LayoutInspector/Classes/LayoutInspector.swift; sourceTree = "<group>"; };
 		B9C31F44C8FCAA63EE07B718D64E2710 /* Pods-LayoutInspectorExampleUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LayoutInspectorExampleUITests-frameworks.sh"; sourceTree = "<group>"; };
 		BA0BD09C1CB3B07965898F6043DA0183 /* LayoutInspector-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LayoutInspector-umbrella.h"; path = "../../Headers/Public/LayoutInspector/LayoutInspector-umbrella.h"; sourceTree = "<group>"; };
-		BC38E8E85B203A96B054DB3D0DB9C6EA /* libPods-LayoutInspectorExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-LayoutInspectorExampleTests.a"; path = "libPods-LayoutInspectorExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC38E8E85B203A96B054DB3D0DB9C6EA /* libPods-LayoutInspectorExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LayoutInspectorExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD04A481D3138D412E14AC5CC641FAB2 /* LayoutInspectorContainerInterfaces.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LayoutInspectorContainerInterfaces.swift; sourceTree = "<group>"; };
 		BEE5B7BD19EE7209A94067E96F067E9E /* Pods-LayoutInspectorExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LayoutInspectorExample-frameworks.sh"; sourceTree = "<group>"; };
 		C067CB7EB5563E9D0D97EC33BE54E80D /* LayoutInspectorContainerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LayoutInspectorContainerViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		E333EEFACB79B6856ABAE4B433C2111F /* LayoutInspector.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = LayoutInspector.modulemap; path = ../../Headers/Public/LayoutInspector/LayoutInspector.modulemap; sourceTree = "<group>"; };
 		E3AA4184649F626023246BA5DA78BFFF /* LayoutInspectorAssets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = LayoutInspectorAssets.xcassets; sourceTree = "<group>"; };
 		EAC31B1AB4CCB002C92FC5D104A55AAC /* ViewControllerFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
-		EADA494179F709DFF9849E9D2728BB6F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		EADA494179F709DFF9849E9D2728BB6F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EC808082923A671895861DCC3F8D372F /* Pods-LayoutInspectorExampleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LayoutInspectorExampleTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F24265EE93FF2CFCE121DBA2A15359B5 /* TextAttributeCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextAttributeCell.swift; sourceTree = "<group>"; };
 		F7B57230FB2C4F260F5882978C8A7545 /* Pods-LayoutInspectorExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LayoutInspectorExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,7 +194,6 @@
 				E065D57C1A5F281E2A38D17C2115CDAB /* RenderingView.swift */,
 				A003C3D573C6F180EE51816206CCB01B /* ViewMetadata.swift */,
 			);
-			name = LayoutInspectorContainer;
 			path = LayoutInspectorContainer;
 			sourceTree = "<group>";
 		};
@@ -239,7 +238,6 @@
 				A1F8568722AE88C91023E131298271B1 /* UIView+Extension.swift */,
 				2D7DC91B0C181C9F93AC0B49E910E728 /* UtilsProtocols.swift */,
 			);
-			name = Utils;
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -263,7 +261,6 @@
 				4F0A49D347645C16487EF28D1D80AC23 /* SceneWidgetInterfaces.swift */,
 				9294212B0559DA14DF7931B978313C91 /* SceneWidgetViewController.swift */,
 			);
-			name = SceneWidget;
 			path = SceneWidget;
 			sourceTree = "<group>";
 		};
@@ -345,7 +342,6 @@
 				2DBB933E175D878BBB978BBFE774D17E /* ObjectAttributesManager.swift */,
 				F24265EE93FF2CFCE121DBA2A15359B5 /* TextAttributeCell.swift */,
 			);
-			name = AttributesWidget;
 			path = AttributesWidget;
 			sourceTree = "<group>";
 		};
@@ -388,7 +384,6 @@
 				583F816A840A168CCBE9F83311B3B0C7 /* MenuWidgetInterfaces.swift */,
 				61A88FC71259EF6BE08BA3288B204042 /* MenuWidgetViewController.swift */,
 			);
-			name = MenuWidget;
 			path = MenuWidget;
 			sourceTree = "<group>";
 		};
@@ -538,6 +533,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
@@ -573,7 +569,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/LayoutInspector/LayoutInspector.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/LayoutInspector/LayoutInspector-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-			showEnvVarsInLog = 1;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -771,9 +766,38 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
+		};
+		572C95D43ED6E73AAC23996391BB44C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DA85843F449317D8A742F38396FDBDF /* LayoutInspector.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/LayoutInspector/LayoutInspector-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MODULEMAP_FILE = Headers/Public/LayoutInspector/LayoutInspector.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = LayoutInspector;
+				PRODUCT_NAME = LayoutInspector;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 		58CE816B060A41D32CEC095441D0E3E0 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -829,6 +853,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
@@ -851,34 +876,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		717F351532799C60D43BE30C5AD419CA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DA85843F449317D8A742F38396FDBDF /* LayoutInspector.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/LayoutInspector/LayoutInspector-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MODULEMAP_FILE = Headers/Public/LayoutInspector/LayoutInspector.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = LayoutInspector;
-				PRODUCT_NAME = LayoutInspector;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -931,7 +928,7 @@
 			};
 			name = Release;
 		};
-		CC6339E4F3396C3F9BE35F428F8CD428 /* Debug */ = {
+		BD071CC28F4E169739F3957890EC29A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DA85843F449317D8A742F38396FDBDF /* LayoutInspector.xcconfig */;
 			buildSettings = {
@@ -953,7 +950,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1014,8 +1011,8 @@
 		C3722A4877C3F72AF3A7301299E4E258 /* Build configuration list for PBXNativeTarget "LayoutInspector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC6339E4F3396C3F9BE35F428F8CD428 /* Debug */,
-				717F351532799C60D43BE30C5AD419CA /* Release */,
+				BD071CC28F4E169739F3957890EC29A6 /* Debug */,
+				572C95D43ED6E73AAC23996391BB44C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
