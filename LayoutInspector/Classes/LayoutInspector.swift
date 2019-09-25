@@ -14,6 +14,9 @@ import UIKit
     
     /// Fire automatically when device screenshot is taken
     case screenshot
+	
+    /// Fire automatically when shaking device
+	case shake
 }
 
 /**
@@ -81,6 +84,14 @@ private extension LayoutInspector {
                                                    selector: #selector(startLayoutInspection),
                                                    name: UIApplication.userDidTakeScreenshotNotification,
                                                    object: nil)
+		case .shake:
+			if UIResponder.motionEnded_ShakeIMP == nil {
+				UIResponder.motionEnded_ShakeIMP =
+				class_getMethodImplementation(UIResponder.self, #selector(UIResponder.motionEnded_Shake(_:with:)))
+			}
+			let alterMehtod = class_getInstanceMethod(UIResponder.self, #selector(UIResponder.motionEnded_Shake(_:with:)))!
+			let originMehtod = class_getInstanceMethod(UIResponder.self, #selector(UIResponder.motionEnded(_:with:)))!
+			method_exchangeImplementations(alterMehtod, originMehtod)
         case .none: return
         }
     }
@@ -91,6 +102,12 @@ private extension LayoutInspector {
             NotificationCenter.default.removeObserver(self,
                                                       name: UIApplication.userDidTakeScreenshotNotification,
                                                       object: nil)
+		case .shake:
+			if UIResponder.motionEnded_ShakeIMP == class_getMethodImplementation(UIResponder.self, #selector(UIResponder.motionEnded(_:with:))) {
+				let alterMehtod = class_getInstanceMethod(UIResponder.self, #selector(UIResponder.motionEnded_Shake(_:with:)))!
+				let originMehtod = class_getInstanceMethod(UIResponder.self, #selector(UIResponder.motionEnded(_:with:)))!
+				method_exchangeImplementations(alterMehtod, originMehtod)
+			}
         case .none: return
         }
     }

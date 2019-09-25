@@ -48,6 +48,7 @@
 		E8ED5B6C25560F6D9F5CA1423B2B1F11 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7691F9CD0FDBDB5D6BBE141A409775 /* UIColor+Extension.swift */; };
 		EE22366A7FAB25663E7494BF7FBD7E8D /* LayoutInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC78D8C0F1D05ED551923C18D9328A9D /* LayoutInspector.swift */; };
 		F0596510AED3E39EC80D716F50BEAD10 /* LayoutInspectorContainerInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04A481D3138D412E14AC5CC641FAB2 /* LayoutInspectorContainerInterfaces.swift */; };
+		FF2F4821233B5DAC005BFBE3 /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F4820233B5DAC005BFBE3 /* UIResponder+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		F24265EE93FF2CFCE121DBA2A15359B5 /* TextAttributeCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextAttributeCell.swift; sourceTree = "<group>"; };
 		F7B57230FB2C4F260F5882978C8A7545 /* Pods-LayoutInspectorExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LayoutInspectorExample.debug.xcconfig"; sourceTree = "<group>"; };
 		FB6AF7E0B9C7118C5F24D7E6344B003D /* Pods-LayoutInspectorExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LayoutInspectorExample-umbrella.h"; sourceTree = "<group>"; };
+		FF2F4820233B5DAC005BFBE3 /* UIResponder+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 				0B7691F9CD0FDBDB5D6BBE141A409775 /* UIColor+Extension.swift */,
 				149185671E0DF21FB381D4A02788A3C6 /* UIFont+Extension.swift */,
 				A1F8568722AE88C91023E131298271B1 /* UIView+Extension.swift */,
+				FF2F4820233B5DAC005BFBE3 /* UIResponder+Extension.swift */,
 				2D7DC91B0C181C9F93AC0B49E910E728 /* UtilsProtocols.swift */,
 			);
 			path = Utils;
@@ -625,6 +628,7 @@
 				AE04841B19AB5654BAA42F1789ED1200 /* ViewControllerFactory.swift in Sources */,
 				B935E26DB9708EE9ADB9DE2215C95B84 /* ViewDescription.swift in Sources */,
 				966736856C1E3400C21AC3055394B3B6 /* ViewMetadata.swift in Sources */,
+				FF2F4821233B5DAC005BFBE3 /* UIResponder+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

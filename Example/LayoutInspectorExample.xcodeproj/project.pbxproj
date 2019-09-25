@@ -32,7 +32,6 @@
 		37F93C2221D28B41007CBE78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F93C2121D28B41007CBE78 /* AppDelegate.swift */; };
 		37F93C2421D28B41007CBE78 /* ControlsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F93C2321D28B41007CBE78 /* ControlsDemoViewController.swift */; };
 		37F93C2721D28B41007CBE78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C2521D28B41007CBE78 /* Main.storyboard */; };
-		37F93C2921D28B42007CBE78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C2821D28B42007CBE78 /* Assets.xcassets */; };
 		37F93C2C21D28B42007CBE78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F93C2A21D28B42007CBE78 /* LaunchScreen.storyboard */; };
 		48BEC231A2368C05AC501C79 /* libPods-LayoutInspectorExampleUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B128D89516A864145F7700 /* libPods-LayoutInspectorExampleUITests.a */; };
 		6E434D213A00845EE7728D26 /* libPods-LayoutInspectorExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EE72678526246C2221EC2A /* libPods-LayoutInspectorExampleTests.a */; };
@@ -405,7 +404,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				37F93C2C21D28B42007CBE78 /* LaunchScreen.storyboard in Resources */,
-				37F93C2921D28B42007CBE78 /* Assets.xcassets in Resources */,
 				37F93C2721D28B41007CBE78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

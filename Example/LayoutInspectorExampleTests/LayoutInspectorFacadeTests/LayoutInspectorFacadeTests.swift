@@ -23,4 +23,16 @@ class LayoutInspectorFacadeTests: XCTestCase {
         sharedInspectorUnderTest.setAutoTrigger(.screenshot)
         XCTAssertTrue(notificationCenter.debugDescription.contains(screenshotNotificationName), "Screenshot notification should have subscribers")
     }
+    func testSubscriptionForShake() {
+        // given
+        let sharedInspectorUnderTest = LayoutInspector.shared
+		
+        // when, then
+        sharedInspectorUnderTest.setAutoTrigger(.none)
+		XCTAssertFalse(UIResponder.motionEnded_ShakeIMP == class_getMethodImplementation(UIResponder.self, #selector(UIResponder.motionEnded(_:with:))))
+
+        sharedInspectorUnderTest.setAutoTrigger(.shake)
+		XCTAssertNotNil(UIResponder.motionEnded_ShakeIMP)
+		XCTAssertTrue(UIResponder.motionEnded_ShakeIMP == class_getMethodImplementation(UIResponder.self, #selector(UIResponder.motionEnded(_:with:))))
+    }
 }
