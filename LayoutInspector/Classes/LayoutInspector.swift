@@ -130,19 +130,19 @@ extension LayoutInspector: LayoutInspectorPresenterDelegate {
     }
 }
 
-extension LayoutInspector {
+// MARK: - Shake detection support
+private extension LayoutInspector {
 	func addShake() {
 		guard motionManager.isAccelerometerAvailable else { return }
 		motionManager.accelerometerUpdateInterval = 0.1
 		motionManager.startAccelerometerUpdates(to: OperationQueue()) { [weak self] (data, error) in
 			guard let self = self else { return }
-			guard error == nil, let acceleration = data?.acceleration else {
+            guard error == nil, let acceleration = data?.acceleration, self.currentAutoTrigger == .shake else {
 				self.motionManager.stopAccelerometerUpdates()
 				return
 			}
-			let accelerameter = sqrt( pow( acceleration.x , 2 ) + pow( acceleration.y , 2 )
-				+ pow( acceleration.z , 2) )
-			if accelerameter>2.3 {
+			let accelerationMagnitude = sqrt(pow(acceleration.x, 2) + pow(acceleration.y, 2) + pow(acceleration.z, 2))
+            if accelerationMagnitude > LayoutInspector.Constants.shakeAccelerationThreshold {
 				DispatchQueue.main.async {
 					LayoutInspector.shared.showLayout()
 				}
@@ -152,4 +152,11 @@ extension LayoutInspector {
 	func removeShake() {
 		self.motionManager.stopAccelerometerUpdates()
 	}
+}
+
+// MARK: - Nested types
+private extension LayoutInspector {
+    enum Constants {
+        static let shakeAccelerationThreshold = 2.3
+    }
 }
