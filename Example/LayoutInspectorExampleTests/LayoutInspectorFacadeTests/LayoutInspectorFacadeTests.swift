@@ -32,7 +32,7 @@ class LayoutInspectorFacadeTests: XCTestCase {
 		XCTAssertFalse(LayoutInspector.shared.motionManager.isAccelerometerActive)
 
         sharedInspectorUnderTest.setAutoTrigger(.shake)
-	//this need to be tested in iOS device rather than simulator
+        // this need to be tested in iOS device rather than simulator
 		XCTAssertTrue(LayoutInspector.shared.motionManager.isAccelerometerActive)
     }
 }

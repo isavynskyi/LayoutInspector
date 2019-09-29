@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-LayoutInspectorExample/Pods-LayoutInspectorExample-resources.sh
+${PODS_ROOT}/../../LayoutInspector/Assets/LayoutInspectorAssets.xcassets
+${PODS_ROOT}/../../LayoutInspector/LayoutInspector.storyboard

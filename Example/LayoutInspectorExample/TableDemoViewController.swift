@@ -23,14 +23,14 @@ class TableDemoViewController: UITableViewController {
 extension UIViewController {
 	
 	func changeAutoTrigger() {
-		let alert = UIAlertController(title: nil, message: "select auto trigger", preferredStyle: .actionSheet)
-		alert.addAction(UIAlertAction(title: "screenshot", style: .default, handler: { (_) in
+		let alert = UIAlertController(title: nil, message: "Select auto trigger", preferredStyle: .actionSheet)
+		alert.addAction(UIAlertAction(title: "Screenshot", style: .default, handler: { (_) in
 			LayoutInspector.shared.setAutoTrigger(.screenshot)
 		}))
-		alert.addAction(UIAlertAction(title: "shake", style: .default, handler: { (_) in
+		alert.addAction(UIAlertAction(title: "Shake", style: .default, handler: { (_) in
 			LayoutInspector.shared.setAutoTrigger(.shake)
 		}))
-		alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 		present(alert, animated: true, completion: nil)
 	}
 }
