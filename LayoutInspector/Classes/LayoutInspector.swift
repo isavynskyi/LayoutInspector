@@ -36,7 +36,7 @@ import CoreMotion
     private var hierarchyBuilder: HierarchyBuilderProtocol = HierarchyBuilder()
     private var presenter: LayoutInspectorPresenter?
     private var isInspecting = false
-	lazy var motionManager = CMMotionManager()
+	private lazy var motionManager = CMMotionManager()
 }
 
 //MARK: - Public API
