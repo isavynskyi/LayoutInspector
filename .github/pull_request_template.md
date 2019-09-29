@@ -10,7 +10,9 @@
 - [ ] UI tests added
 - [ ] Tests pass locally
 
-Pod version update
+
+## Versioning
+Pod version updated in `LayoutInspector.podspec`
 - [ ] Major 
 - [ ] Minor 
 - [ ] Patch 
