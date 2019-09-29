@@ -480,19 +480,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LayoutInspectorExample/Pods-LayoutInspectorExample-resources.sh",
-				"${PODS_ROOT}/../../LayoutInspector/Assets/LayoutInspectorAssets.xcassets",
-				"${PODS_ROOT}/../../LayoutInspector/LayoutInspector.storyboard",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LayoutInspectorExample/Pods-LayoutInspectorExample-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Assets.car",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LayoutInspector.storyboardc",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LayoutInspectorExample/Pods-LayoutInspectorExample-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LayoutInspectorExample/Pods-LayoutInspectorExample-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LayoutInspectorExample/Pods-LayoutInspectorExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
