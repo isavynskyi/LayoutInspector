@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 /// Type of trigger used to fire layout inspection automatically
 @objc public enum AutoTrigger: Int {
@@ -14,6 +15,9 @@ import UIKit
     
     /// Fire automatically when device screenshot is taken
     case screenshot
+	
+    /// Fire automatically when shaking device
+	case shake
 }
 
 /**
@@ -32,6 +36,7 @@ import UIKit
     private var hierarchyBuilder: HierarchyBuilderProtocol = HierarchyBuilder()
     private var presenter: LayoutInspectorPresenter?
     private var isInspecting = false
+	lazy var motionManager = CMMotionManager()
 }
 
 //MARK: - Public API
@@ -81,6 +86,8 @@ private extension LayoutInspector {
                                                    selector: #selector(startLayoutInspection),
                                                    name: UIApplication.userDidTakeScreenshotNotification,
                                                    object: nil)
+		case .shake:
+			addShake()
         case .none: return
         }
     }
@@ -91,6 +98,8 @@ private extension LayoutInspector {
             NotificationCenter.default.removeObserver(self,
                                                       name: UIApplication.userDidTakeScreenshotNotification,
                                                       object: nil)
+		case .shake:
+			removeShake()
         case .none: return
         }
     }
@@ -119,4 +128,28 @@ extension LayoutInspector: LayoutInspectorPresenterDelegate {
         presenter = nil
         isInspecting = false
     }
+}
+
+extension LayoutInspector {
+	func addShake() {
+		guard motionManager.isAccelerometerAvailable else { return }
+		motionManager.accelerometerUpdateInterval = 0.1
+		motionManager.startAccelerometerUpdates(to: OperationQueue()) { [weak self] (data, error) in
+			guard let self = self else { return }
+			guard error == nil, let acceleration = data?.acceleration else {
+				self.motionManager.stopAccelerometerUpdates()
+				return
+			}
+			let accelerameter = sqrt( pow( acceleration.x , 2 ) + pow( acceleration.y , 2 )
+				+ pow( acceleration.z , 2) )
+			if accelerameter>2.3 {
+				DispatchQueue.main.async {
+					LayoutInspector.shared.showLayout()
+				}
+			}
+		}
+	}
+	func removeShake() {
+		self.motionManager.stopAccelerometerUpdates()
+	}
 }
