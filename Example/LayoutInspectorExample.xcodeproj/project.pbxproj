@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		371988C421E0151700639FDC /* TableDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371988C321E0151700639FDC /* TableDemoViewController.swift */; };
 		3725F37621EB49780018C5DD /* AttributeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3725F37521EB49780018C5DD /* AttributeViewModelTests.swift */; };
+		375F98442340BFE0005CE45D /* ChangeAutoTriggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F98432340BFE0005CE45D /* ChangeAutoTriggerProtocol.swift */; };
 		3793D11021EA133A0045AD29 /* LayoutInspectorFacadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D10F21EA133A0045AD29 /* LayoutInspectorFacadeTests.swift */; };
 		3793D11421EA1A160045AD29 /* HierarchyBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D11321EA1A160045AD29 /* HierarchyBuilderTests.swift */; };
 		37F29E8D21EB5D5000421B97 /* LayoutInspectorContainerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F29E8C21EB5D5000421B97 /* LayoutInspectorContainerViewControllerTests.swift */; };
@@ -62,6 +63,7 @@
 		32F0EEC0FD002ACD0C0FD0E0 /* Pods-LayoutInspectorExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LayoutInspectorExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LayoutInspectorExampleUITests/Pods-LayoutInspectorExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		371988C321E0151700639FDC /* TableDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDemoViewController.swift; sourceTree = "<group>"; };
 		3725F37521EB49780018C5DD /* AttributeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeViewModelTests.swift; sourceTree = "<group>"; };
+		375F98432340BFE0005CE45D /* ChangeAutoTriggerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAutoTriggerProtocol.swift; sourceTree = "<group>"; };
 		3793D10F21EA133A0045AD29 /* LayoutInspectorFacadeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutInspectorFacadeTests.swift; sourceTree = "<group>"; };
 		3793D11321EA1A160045AD29 /* HierarchyBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchyBuilderTests.swift; sourceTree = "<group>"; };
 		37F29E8C21EB5D5000421B97 /* LayoutInspectorContainerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutInspectorContainerViewControllerTests.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				37F93C2121D28B41007CBE78 /* AppDelegate.swift */,
 				37F93C2321D28B41007CBE78 /* ControlsDemoViewController.swift */,
 				371988C321E0151700639FDC /* TableDemoViewController.swift */,
+				375F98432340BFE0005CE45D /* ChangeAutoTriggerProtocol.swift */,
 				37F93C2521D28B41007CBE78 /* Main.storyboard */,
 				37F93C2821D28B42007CBE78 /* Assets.xcassets */,
 				37F93C2A21D28B42007CBE78 /* LaunchScreen.storyboard */,
@@ -519,6 +522,7 @@
 				37F93C2421D28B41007CBE78 /* ControlsDemoViewController.swift in Sources */,
 				371988C421E0151700639FDC /* TableDemoViewController.swift in Sources */,
 				37F93C2221D28B41007CBE78 /* AppDelegate.swift in Sources */,
+				375F98442340BFE0005CE45D /* ChangeAutoTriggerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
