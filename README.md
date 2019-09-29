@@ -46,6 +46,11 @@ LayoutInspector.shared.showLayout()
 LayoutInspector.shared.setAutoTrigger(.screenshot)
 ```
 
+- automatically on device shaking
+```swift
+LayoutInspector.shared.setAutoTrigger(.shake)
+```
+
 
 **Swift**
 ```swift

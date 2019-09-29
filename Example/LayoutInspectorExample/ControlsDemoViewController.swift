@@ -9,7 +9,7 @@
 import UIKit
 import LayoutInspector
 
-class ControlsDemoViewController: UIViewController {
+class ControlsDemoViewController: UIViewController, ChangeAutoTriggerProtocol {
 
     @IBAction private func inspectLayoutAction(_ sender: Any) {
         LayoutInspector.shared.showLayout()
