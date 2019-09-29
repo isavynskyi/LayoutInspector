@@ -23,4 +23,16 @@ class LayoutInspectorFacadeTests: XCTestCase {
         sharedInspectorUnderTest.setAutoTrigger(.screenshot)
         XCTAssertTrue(notificationCenter.debugDescription.contains(screenshotNotificationName), "Screenshot notification should have subscribers")
     }
+    func testSubscriptionForShake() {
+        // given
+        let sharedInspectorUnderTest = LayoutInspector.shared
+		
+        // when, then
+        sharedInspectorUnderTest.setAutoTrigger(.none)
+		XCTAssertFalse(LayoutInspector.shared.motionManager.isAccelerometerActive)
+
+        sharedInspectorUnderTest.setAutoTrigger(.shake)
+	//this need to be tested in iOS device rather than simulator
+		XCTAssertTrue(LayoutInspector.shared.motionManager.isAccelerometerActive)
+    }
 }

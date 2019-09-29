@@ -14,5 +14,8 @@ class ControlsDemoViewController: UIViewController {
     @IBAction private func inspectLayoutAction(_ sender: Any) {
         LayoutInspector.shared.showLayout()
     }
+	@IBAction func changeAutoTrigger(_ sender: Any) {
+		changeAutoTrigger()
+	}
 }
 
