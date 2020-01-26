@@ -85,11 +85,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 | Version  | Description |
 | ------------- | ------------- |
-| `1.1.0`  | Release: Swift version upgraded to 5.0|
-| `1.0.0`  | Release: test coverage added|
-| `0.2.0`  | Pre-release: Objective-C compatibility |
-| `0.1.1`  | Pre-release: fixed Lint warnings |
-| `0.1.0`  | Pre-release: initial version  |
+| `1.2.0`  | 👋 Shake gesture added to trigger layout inspection <br/> 🧰 CI configuration upgrade|
+| `1.1.0`  | 🏎️ Swift 5.0 and ABI stability in da house <br/> ✈️ New build system activated <br/> 🔌 Dropped iOS 10 support|
+| `1.0.0`  | 🎉 Release 1.0 <br/>👮 Test coverage added|
+| `0.2.0`  | Pre-release: Objective-C compatibility 👦 |
+| `0.1.1`  | Pre-release: fixed Lint warnings 👶 |
+| `0.1.0`  | Pre-release: initial version 🎬 |
 
 ## Author
 
