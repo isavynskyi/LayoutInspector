@@ -44,7 +44,8 @@ private extension HierarchyBuilder {
                                alpha: Float(view.alpha),
                                backgroundColor: view.backgroundColor,
                                tint: view.tintColor,
-                               clipToBounds: view.clipsToBounds)
+                               clipToBounds: view.clipsToBounds,
+                               font: view.visibleFont)
     }
     
     func isViewTransparent(_ view: UIView) -> Bool {

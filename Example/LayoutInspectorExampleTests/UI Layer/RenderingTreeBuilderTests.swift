@@ -26,7 +26,8 @@ class RenderingTreeBuilderTests: XCTestCase {
                                                                            alpha: 1.0,
                                                                            backgroundColor: nil,
                                                                            tint: nil,
-                                                                           clipToBounds: false)
+                                                                           clipToBounds: false,
+                                                                           font: nil)
         // when
         let renderingView = builderUnderTest.build(from: mockViewDescription)
         // then

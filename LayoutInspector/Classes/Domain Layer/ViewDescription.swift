@@ -23,6 +23,7 @@ protocol ViewDescriptionProtocol {
     var backgroundColor: UIColor? { get }
     var tint: UIColor? { get }
     var clipToBounds: Bool { get }
+    var font: UIFont? { get }
 }
 
 class ViewDescription: ViewDescriptionProtocol {
@@ -39,6 +40,7 @@ class ViewDescription: ViewDescriptionProtocol {
     let backgroundColor: UIColor?
     let tint: UIColor?
     let clipToBounds: Bool
+    let font: UIFont?
 
     // MARK: - Init
     init(frame: CGRect,
@@ -53,7 +55,8 @@ class ViewDescription: ViewDescriptionProtocol {
          alpha: Float,
          backgroundColor: UIColor?,
          tint: UIColor?,
-         clipToBounds: Bool)
+         clipToBounds: Bool,
+         font: UIFont?)
     {
         self.frame = frame
         self.snapshotImage = snapshot
@@ -68,5 +71,6 @@ class ViewDescription: ViewDescriptionProtocol {
         self.backgroundColor = backgroundColor
         self.tint = tint
         self.clipToBounds = clipToBounds
+        self.font = font
     }
 }
