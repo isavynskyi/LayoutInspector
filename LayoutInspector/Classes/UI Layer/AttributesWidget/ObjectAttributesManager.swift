@@ -94,11 +94,10 @@ private extension ObjectAttributesManager {
                           AttributeViewModel(title: "Tint", value: .color(metadata.tint)),
                           AttributeViewModel(title: "Clip To Bounds", value: .text(clipToBoundsValue)),
                           AttributeViewModel(title: "Frame", value: .text(String(describing: metadata.frame)))]
-        if metadata.font != nil {
-            attributes.append(AttributeViewModel(title: "Font", value: .text(String(describing: metadata.font!.attributeDescription))))
+        if let font = metadata.font {
+            attributes.append(AttributeViewModel(title: "Font", value: .text(String(describing: font.attributeDescription))))
         }
         
         return attributes
     }
 }
-
