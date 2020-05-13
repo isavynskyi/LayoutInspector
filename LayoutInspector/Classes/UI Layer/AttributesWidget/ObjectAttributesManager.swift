@@ -87,13 +87,17 @@ private extension ObjectAttributesManager {
         let userInteractionValue = metadata.isUserInteractionEnabled ? "On" : "Off"
         let clipToBoundsValue = metadata.clipToBounds ? "On" : "Off"
         
-        return [AttributeViewModel(title: "Class Name", value: .text(metadata.className)),
-                AttributeViewModel(title: "User Interaction Enabled", value: .text(userInteractionValue)),
-                AttributeViewModel(title: "Alpha", value: .text(String(describing: metadata.alpha))),
-                AttributeViewModel(title: "Background Color", value: .color(metadata.backgroundColor)),
-                AttributeViewModel(title: "Tint", value: .color(metadata.tint)),
-                AttributeViewModel(title: "Clip To Bounds", value: .text(clipToBoundsValue)),
-                AttributeViewModel(title: "Frame", value: .text(String(describing: metadata.frame)))]
+        var attributes = [AttributeViewModel(title: "Class Name", value: .text(metadata.className)),
+                          AttributeViewModel(title: "User Interaction Enabled", value: .text(userInteractionValue)),
+                          AttributeViewModel(title: "Alpha", value: .text(String(describing: metadata.alpha))),
+                          AttributeViewModel(title: "Background Color", value: .color(metadata.backgroundColor)),
+                          AttributeViewModel(title: "Tint", value: .color(metadata.tint)),
+                          AttributeViewModel(title: "Clip To Bounds", value: .text(clipToBoundsValue)),
+                          AttributeViewModel(title: "Frame", value: .text(String(describing: metadata.frame)))]
+        if let font = metadata.font {
+            attributes.append(AttributeViewModel(title: "Font", value: .text(String(describing: font.attributeDescription))))
+        }
+        
+        return attributes
     }
 }
-

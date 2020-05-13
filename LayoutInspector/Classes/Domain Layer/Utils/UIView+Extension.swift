@@ -15,5 +15,19 @@ extension UIView {
             layer.render(in: rendererContext.cgContext)
         }
     }
+    
+    var visibleFont: UIFont? {
+        if let textView = self as? UITextView {
+            return textView.font
+        } else if let label = self as? UILabel {
+            return label.font
+        } else if let button = self as? UIButton {
+            return button.titleLabel?.font
+        } else if let textField = self as? UITextField {
+            return textField.font
+        }
+        
+        return nil
+    }
 }
 

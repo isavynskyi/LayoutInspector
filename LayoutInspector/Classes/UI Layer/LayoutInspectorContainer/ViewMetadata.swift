@@ -16,6 +16,7 @@ protocol ViewMetadataProtocol {
     var tint: UIColor? { get }
     var clipToBounds: Bool { get }
     var frame: CGRect { get }
+    var font: UIFont? { get }
 }
 
 struct ViewMetadata: ViewMetadataProtocol {
@@ -26,6 +27,7 @@ struct ViewMetadata: ViewMetadataProtocol {
     var tint: UIColor?
     var clipToBounds: Bool
     var frame: CGRect
+    var font: UIFont?
     
     init(with viewDescriptor: ViewDescriptionProtocol) {
         self.className = viewDescriptor.className
@@ -35,5 +37,6 @@ struct ViewMetadata: ViewMetadataProtocol {
         self.tint = viewDescriptor.tint
         self.clipToBounds = viewDescriptor.clipToBounds
         self.frame = viewDescriptor.frame
+        self.font = viewDescriptor.font
     }
 }
