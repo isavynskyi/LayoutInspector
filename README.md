@@ -85,6 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 | Version  | Description |
 | ------------- | ------------- |
+| `1.2.1`  | 📝 Font attribute added to inspection pane|
 | `1.2.0`  | 👋 Shake gesture added to trigger layout inspection <br/> 🧰 CI configuration upgrade|
 | `1.1.0`  | 🏎️ Swift 5.0 and ABI stability in da house <br/> ✈️ New build system activated <br/> 🔌 Dropped iOS 10 support|
 | `1.0.0`  | 🎉 Release 1.0 <br/>👮 Test coverage added|
